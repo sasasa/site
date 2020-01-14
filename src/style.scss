@@ -1,0 +1,181 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 400;
+  src: local("Noto Sans CJK JP Regular"),
+      url(./font/NotoSansJP-Regular.woff2) format('woff2'),
+      url(./font/NotoSansJP-Regular.woff) format('woff'),
+      url(./font/NotoSansJP-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 500;
+  src: local("Noto Sans CJK JP Medium"),
+      url(./font/NotoSansJP-Medium.woff2) format('woff2'),
+      url(./font/NotoSansJP-Medium.woff) format('woff'),
+      url(./font/NotoSansJP-Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Japanese';
+  font-style: normal;
+  font-weight: 700;
+  src: local("Noto Sans CJK JP Bold"),
+      url(./font/NotoSansJP-Bold.woff2) format('woff2'),
+      url(./font/NotoSansJP-Bold.woff) format('woff'),
+      url(./font/NotoSansJP-Bold.otf) format('opentype');
+}
+/* ---------------------------------------- */
+/* Base Style */
+/* ---------------------------------------- */
+body {
+  color: #111111;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0;
+  font-family: 'Noto Sans Japanese', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ",Helvetica, Arial,  sans-serif;
+  -ms-font-feature-settings: "normal";
+  -webkit-text-size-adjust: 100%;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;  
+}
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video, a {
+  box-sizing: border-box;
+}
+main {
+  display:block;
+}
+p, ul li, ol li, dl dd, address {
+  margin-bottom: 1em;
+}
+img {
+  max-width:100%;
+  height:auto;
+}
+a:link { color: #111; text-decoration: underline;}
+a:visited { color: #111; }
+a:hover { color: #111; text-decoration: none;}
+a:active { color: #111; }
+
+/* clearfix */
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  font-size: 0;
+}
+.clearfix {
+  min-height: 1%;
+}
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+}
+/* ---------------------------------------- */
+/* loading */
+/* ---------------------------------------- */
+.loading {
+  position: fixed;
+  z-index:50;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:#fff;
+}
+.box-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-loader .dot {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin: 0 4px;
+  background-color:#eee;
+  border-radius: 50%;
+  position: relative;
+}
+.box-loader .color {
+  display: block;
+  width:100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity:0;
+  /* どのような要素の変更が予測されているかブラウザーに助言 */
+  /* https://developer.mozilla.org/ja/docs/Web/CSS/will-change */
+  will-change: opacity;
+  transition: opacity .2s linear;
+}
+.box-loader .dot:nth-child(1) .color {
+  background-color: #FFB4AF;
+}
+.box-loader .dot:nth-child(2) .color {
+  background-color: #8CDCC8;
+}
+.box-loader .dot:nth-child(3) .color {
+  background-color: #7DA0D7;
+}
+.box-loader .dot:nth-child(4) .color {
+  background-color: #CDAF78;
+}
+.box-loader .dot:nth-child(5) .color {
+  background-color: #FFFA82;
+}
+.box-loader .dot.is-colored .color {
+  opacity: 1;
+}
+
+/* ---------------------------------------- */
+/* hero */
+/* ---------------------------------------- */
+.swiper-slide {
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 107px);
+  margin: 0;
+}
+.item-01 {
+  background-image:url(./img/hero-slider-01.jpg);
+}
+.item-02 {
+  background-image:url(./img/hero-slider-02.jpg);
+}
+.item-03 {
+  background-image:url(./img/hero-slider-03.jpg);
+}
+.item-04 {
+  background-image:url(./img/hero-slider-04.jpg);
+}
+.swiper-slide img {
+  opacity: 0;
+  height: 0;
+  display: block;
+}
