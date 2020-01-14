@@ -2,7 +2,12 @@ import "es6-promise/auto";
 import "fetch-polyfill";
 // import $ from 'jquery';
 import Swiper from 'swiper';
-import './reset.scss';
+import imagesLoaded from 'imagesLoaded';
+imagesLoaded.makeJQueryPlugin($);
+// import './reset.scss';
+
+import Velocity from 'velocity-animate'
+
 import './style.scss';
 
 
@@ -69,27 +74,86 @@ loading.startLoader = function() {
   dotsLoop();
 }
 loading.startLoader();
-window.cancelAnimationFrame(loading.requestID);
+
+$('.swiper-wrapper').imagesLoaded({ background: true }, () => {
+  $('.loading .box-loader').delay(200).velocity({
+    opacity: 0
+  },{
+    duration: 2800,
+    easing: 'easeInOutQuad',
+    begin() {
+              $('.loading').delay(400).velocity('fadeOut', {
+                duration: 2400,
+                easing: 'easeInOutQuad',
+                begin() {
+                  $('body, html').scrollTop(0);
+                  initSwiper()
+                },
+                complete() {
+                  window.cancelAnimationFrame(loading.requestID);
+                  $('.loading').remove()
+                }
+            });
+    }
+  })
+});
 
 
+const $header = $('#header'); 
+$header.hide();
 
+// var sec = $('.swiper-container');
+const sec = $('.swiper-slide');
+const nvp = sec.outerHeight() + sec.offset().top;
 
-
-
-
-
-
-
-
-
-let mySwiper = new Swiper('.swiper-container', {
-  loop: true,
-  speed: 1600,
-  simulateTouch: false,
-  effect: 'fade',
-  autoplay:{
-    delay:2800,
-    disableOnInteraction: false
+$(window).scroll(function () {
+  var distanceTop = $(document).scrollTop();
+  if (distanceTop > nvp) {
+    $header.show()
+    // $header.velocity(
+    //   'fadeIn',{
+    //   duration: 800,
+    //   easing: 'easeInOutQuad',
+    // })
   }
-})
+  if (distanceTop < nvp) {
+    $header.hide()
+    // $header.velocity(
+    //   'fadeOut',{
+    //   duration: 800,
+    //   easing: 'easeInOutQuad',
+    // })
+  }
+});
+
+$('.js-anchor').click(function(e) {
+  e.preventDefault();
+  let href = $(this).attr("href")
+
+  $(href).delay(200).velocity("scroll", {
+    duration: 600, easing: "easeInOutQuart"
+  });
+  return false;
+});
+
+
+
+
+
+
+
+
+
+function initSwiper(){
+  let mySwiper = new Swiper('.swiper-container', {
+    loop: true,
+    speed: 1600,
+    simulateTouch: false,
+    effect: 'fade',
+    autoplay:{
+      delay:2800,
+      disableOnInteraction: false
+    }
+  })
+}
 // $('h1').text("Jquery")

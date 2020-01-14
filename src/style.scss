@@ -1,4 +1,6 @@
 @charset "utf-8";
+@import "reset.scss";
+
 @font-face {
   font-family: 'Noto Sans Japanese';
   font-style: normal;
@@ -94,6 +96,16 @@ button {
   appearance: none;
 }
 /* ---------------------------------------- */
+/* LAYOUT */
+/* ---------------------------------------- */
+.l-inner{
+  max-width: 1070px;
+  margin: 0 auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* ---------------------------------------- */
 /* loading */
 /* ---------------------------------------- */
 .loading {
@@ -155,11 +167,21 @@ button {
 /* ---------------------------------------- */
 /* hero */
 /* ---------------------------------------- */
+.sec-hero .l-inner {
+  position: relative;
+}
+.swiper-container {
+  height: 100vh;
+  max-height: 667px;
+}
+.swiper-wrapper {
+  max-height: initial;
+  height: calc(100% - 107px)
+}
 .swiper-slide {
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: calc(100vh - 107px);
   margin: 0;
 }
 .item-01 {
@@ -178,4 +200,211 @@ button {
   opacity: 0;
   height: 0;
   display: block;
+}
+/* ---------------------------------------- */
+/* hero catch 縦書き */
+/* ---------------------------------------- */
+.vertical {
+  writing-mode: vertical-rl;
+  font-weight: 700;
+  z-index: 100;
+  white-space: nowrap
+}
+.hero-catch p {
+  position: relative;
+}
+.hero-catch span {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(10px);  
+  will-change: transform, opacity;  
+}
+.hero-catch .catch-01 {
+  font-size: 1.6rem;
+  bottom: 6rem;
+  right: 4rem;
+}
+.hero-catch .catch-02 {
+  font-size: 1.2rem;
+  bottom: 6rem;
+  right: 7rem;
+}
+.hero-catch .catch-03 {
+  font-size: 1.2rem;
+  bottom: 8rem;
+  right: 9rem;
+}
+
+.catch-01,
+.catch-02,
+.catch-03 {
+  animation: fadeIn 0.7s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+.catch-01 {
+  animation-delay: 2.8s;
+}
+.catch-02 {
+  animation-delay: 3.2s;
+}
+.catch-03 { 
+  animation-delay: 3.4s;
+}
+@keyframes fadeIn{
+  0%{
+    opacity:0;
+    transform: translateY(5px);
+  }
+  100%{
+    opacity:1;
+    transform: translateY(0px);
+  }
+}
+/* ---------------------------------------- */
+/* hero date */
+/* ---------------------------------------- */
+.hero-date {
+  font-weight: 700;
+  position: absolute;
+  font-size: 1.2rem;
+  left: 3rem;
+  bottom: 2rem;
+  width: 10rem;
+}
+.hero-date span {
+  writing-mode: vertical-rl;
+  font-size: 0.5rem;
+}
+/* ---------------------------------------- */
+/* header */
+/* ---------------------------------------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+}
+header ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color: #ffffff, $alpha: 0.6)
+}
+header ul li {
+  margin-right: 2rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-bottom: 3px solid transparent;
+}
+header ul li:hover {
+  border-bottom: 3px solid #8CDCC8;
+}
+header ul li a:link {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+
+
+
+
+
+/* ---------------------------------------- */
+/* schedule */
+/* ---------------------------------------- */
+.gc_wrapper {
+  // max-width: 800px;
+  min-width: 300px;
+  margin: 2.0833% auto;
+}
+
+.responsive-iframe-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+.responsive-iframe-container iframe,
+.responsive-iframe-container object,
+.responsive-iframe-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 600px) {
+    .big-container {
+        display: none;
+    }
+    .small-container {
+       padding-bottom: 200%;   /* 高さ */
+    }
+}
+@media (min-width: 600px) {
+    .small-container {
+        display: none;
+    }
+}
+
+
+/* ---------------------------------------- */
+/* price */
+/* ---------------------------------------- */
+
+.dl-outline{
+  max-width:668px;
+  margin:0 auto;
+  border-top:2px solid #D8D8D8;
+  border-bottom:2px solid #D8D8D8;
+  overflow:hidden;
+  letter-spacing: 0.04em;
+}
+.dl-outline dt{
+  float:left;
+  width:141px;
+  padding-top:12px;
+  padding-left:14px;
+  padding-bottom: 12px;  
+}
+.dl-outline dd{
+  margin-bottom: 0;
+  padding-top:12px;
+  padding-right: 14px;
+  padding-bottom: 12px;
+  padding-left:177px;
+  border-bottom:1px solid #D8D8D8;
+}
+.dl-outline dd:last-child{
+  border-bottom: none;
+}
+
+
+/* ---------------------------------------- */
+/* access */
+/* ---------------------------------------- */
+.gmap {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  }
+  .gmap iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  }
+
+
+/* ---------------------------------------- */
+/* test */
+/* ---------------------------------------- */
+section h1 {
+  padding-top: 100px;
+}
+section p + p {
+  margin-top: 100px;
 }
