@@ -111,21 +111,9 @@ $(window).scroll(function () {
   var distanceTop = $(document).scrollTop();
   if (distanceTop > nvp) {
     $header.show().addClass("scroll")
-    
-    // $header.velocity(
-    //   'fadeIn',{
-    //   duration: 800,
-    //   easing: 'easeInOutQuad',
-    // })
   }
   if (distanceTop < nvp) {
     $header.removeClass("scroll").hide()
-    
-    // $header.velocity(
-    //   'fadeOut',{
-    //   duration: 800,
-    //   easing: 'easeInOutQuad',
-    // })
   }
 });
 
