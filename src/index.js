@@ -1,5 +1,6 @@
-import "es6-promise/auto";
-import "fetch-polyfill";
+// import "es6-promise/auto";
+// import "fetch-polyfill";
+
 // import $ from 'jquery';
 import Swiper from 'swiper';
 import imagesLoaded from 'imagesLoaded';
@@ -109,7 +110,8 @@ const nvp = sec.outerHeight() + sec.offset().top;
 $(window).scroll(function () {
   var distanceTop = $(document).scrollTop();
   if (distanceTop > nvp) {
-    $header.show()
+    $header.show().addClass("scroll")
+    
     // $header.velocity(
     //   'fadeIn',{
     //   duration: 800,
@@ -117,7 +119,8 @@ $(window).scroll(function () {
     // })
   }
   if (distanceTop < nvp) {
-    $header.hide()
+    $header.removeClass("scroll").hide()
+    
     // $header.velocity(
     //   'fadeOut',{
     //   duration: 800,
@@ -145,13 +148,31 @@ $('.js-anchor').click(function(e) {
 
 
 function initSwiper(){
-  let mySwiper = new Swiper('.swiper-container', {
+  let mySwiper = new Swiper('.hero-slider', {
     loop: true,
     speed: 1600,
     simulateTouch: false,
     effect: 'fade',
     autoplay:{
       delay:2800,
+      disableOnInteraction: false
+    }
+  })
+
+  let facilitySwiper = new Swiper('.facility-slider', {
+    loop: true,
+    slidesPerView: 5,
+    speed: 600,
+    spaceBetween: 36,//36
+    centeredSlides: true,
+    breakpoints: {
+      800: {
+        spaceBetween: 20
+      }
+    },
+    autoplay:{
+      delay:2000,
+      reverseDirection: true,
       disableOnInteraction: false
     }
   })

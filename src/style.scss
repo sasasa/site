@@ -96,6 +96,23 @@ button {
   appearance: none;
 }
 /* ---------------------------------------- */
+/* MODULE */
+/* ---------------------------------------- */
+/* ATOM=============================== */
+.wf-notomedium {
+  font-family: 'Noto Sans Japanese', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", sans-serif;  
+  font-weight:500;
+}
+.align-c{
+  text-align:center;
+}
+.secttl{
+  font-size: 1.8rem;
+  letter-spacing: 0.08em;
+}
+
+
+/* ---------------------------------------- */
 /* LAYOUT */
 /* ---------------------------------------- */
 .l-inner{
@@ -104,13 +121,18 @@ button {
   padding-left: 25px;
   padding-right: 25px;
 }
+section h2 {
+  margin-bottom: 40px;
+  padding-top: 120px;
+}
+
 
 /* ---------------------------------------- */
 /* loading */
 /* ---------------------------------------- */
 .loading {
   position: fixed;
-  z-index:50;
+  z-index:100;
   top:0;
   left:0;
   width: 100%;
@@ -170,15 +192,15 @@ button {
 .sec-hero .l-inner {
   position: relative;
 }
-.swiper-container {
+.hero-slider {
   height: 100vh;
-  max-height: 667px;
 }
-.swiper-wrapper {
+.hero--wrapper {
   max-height: initial;
-  height: calc(100% - 107px)
 }
-.swiper-slide {
+.hero-slider .item {
+  height:100vh;
+  max-height:calc(100vh - 40px);
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -196,7 +218,7 @@ button {
 .item-04 {
   background-image:url(./img/hero-slider-04.jpg);
 }
-.swiper-slide img {
+.hero-slider .item img {
   opacity: 0;
   height: 0;
   display: block;
@@ -220,21 +242,20 @@ button {
   will-change: transform, opacity;  
 }
 .hero-catch .catch-01 {
-  font-size: 1.6rem;
-  bottom: 6rem;
+  font-size: 2rem;
+  bottom: 1rem;
   right: 4rem;
 }
 .hero-catch .catch-02 {
-  font-size: 1.2rem;
-  bottom: 6rem;
+  font-size: 1.6rem;
+  bottom: 1rem;
   right: 7rem;
 }
 .hero-catch .catch-03 {
-  font-size: 1.2rem;
-  bottom: 8rem;
+  font-size: 1.6rem;
+  bottom: 4rem;
   right: 9rem;
 }
-
 .catch-01,
 .catch-02,
 .catch-03 {
@@ -265,23 +286,30 @@ button {
 .hero-date {
   font-weight: 700;
   position: absolute;
-  font-size: 1.2rem;
+  font-size: 2rem;
   left: 3rem;
-  bottom: 2rem;
-  width: 10rem;
+  bottom: 0.05rem;
+  z-index: 51;
 }
 .hero-date span {
+  font-size: 0.8rem;
   writing-mode: vertical-rl;
-  font-size: 0.5rem;
 }
 /* ---------------------------------------- */
 /* header */
 /* ---------------------------------------- */
 header {
   position: fixed;
+  z-index: 1000;
   top: 0;
   width: 100%;
   height: 60px;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity .3s linear;
+}
+header.scroll {
+  opacity: 1;
 }
 header ul {
   display: flex;
@@ -292,8 +320,8 @@ header ul {
 header ul li {
   margin-right: 2rem;
   margin-top: 1rem;
-  padding: 0.5rem;
   border-bottom: 3px solid transparent;
+  white-space: nowrap
 }
 header ul li:hover {
   border-bottom: 3px solid #8CDCC8;
@@ -301,12 +329,12 @@ header ul li:hover {
 header ul li a:link {
   font-weight: 700;
   text-decoration: none;
+  padding: 0.5rem;
+  display: inline-block;
 }
-
-
-
-
-
+header ul li a:hover {
+  cursor: pointer;
+}
 
 /* ---------------------------------------- */
 /* schedule */
@@ -334,19 +362,7 @@ header ul li a:link {
     height: 100%;
 }
 
-@media (max-width: 600px) {
-    .big-container {
-        display: none;
-    }
-    .small-container {
-       padding-bottom: 200%;   /* 高さ */
-    }
-}
-@media (min-width: 600px) {
-    .small-container {
-        display: none;
-    }
-}
+
 
 
 /* ---------------------------------------- */
@@ -364,15 +380,15 @@ header ul li a:link {
 .dl-outline dt{
   float:left;
   width:141px;
-  padding-top:12px;
+  padding-top:20px;
   padding-left:14px;
-  padding-bottom: 12px;  
+  padding-bottom: 20px;  
 }
 .dl-outline dd{
   margin-bottom: 0;
-  padding-top:12px;
+  padding-top:20px;
   padding-right: 14px;
-  padding-bottom: 12px;
+  padding-bottom: 20px;
   padding-left:177px;
   border-bottom:1px solid #D8D8D8;
 }
@@ -406,11 +422,35 @@ footer {
 }
 
 /* ---------------------------------------- */
-/* test */
+/* facility */
 /* ---------------------------------------- */
-section h1 {
-  padding-top: 100px;
+
+.item .metabox{
+  position: relative;
+  display:flex;
+  margin-top: 10px;
+  width: 316px;
+  height: 100px;
 }
-section p + p {
-  margin-top: 100px;
+.item .place{
+  display:inline-block;
+  position: absolute;
+  top:0;
+  right:0;
+  margin-top:2px;
+  margin-bottom: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+  border-radius: 15px;
+  background-color: #D8D8D8;
 }
+.item .imgbox{
+  border-radius: 10px;
+  overflow: hidden;
+}
+.facility-slider .item {
+  min-width: 316px;
+}
+
+
+@import "smallview.scss";

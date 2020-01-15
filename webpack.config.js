@@ -86,7 +86,7 @@ module.exports = (env, argv) => {
         /*
         {
           // 対象となるファイルの拡張子
-          test: /\.(gif|png|jpg|eot|wof|woff|woff2|ttf|svg)$/,
+          test: /\.(gif|png|jpg|eot|wof|woff|woff2|otf|ttf|svg)$/,
           // 画像をBase64として取り込む
           loader: "url-loader"
         },
@@ -137,7 +137,7 @@ module.exports = (env, argv) => {
       ]
     },
     output: {
-      path: __dirname + '/api/public',
+      path: __dirname + '/docs',
       filename: 'main.js?[hash]'
     },
     plugins: [

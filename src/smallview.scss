@@ -1,0 +1,111 @@
+/* ---------------------------------------- */
+/* Base Style */
+/* ---------------------------------------- */
+
+
+/* ---------------------------------------- */
+/* MODULE */
+/* ---------------------------------------- */
+/* ATOM=============================== */
+@media (max-width: 800px) {
+  .secttl{
+    font-size: 1.4rem;
+  }
+}
+/* ---------------------------------------- */
+/* hero */
+/* ---------------------------------------- */
+@media (max-width: 800px) {
+  .hero-slider {
+    max-height: 667px;
+  }
+  .hero-slider .item {
+    height: calc(100% - 107px)
+  }
+}
+/* ---------------------------------------- */
+/* hero catch 縦書き */
+/* ---------------------------------------- */
+@media (max-width: 800px) {
+  .hero-catch .catch-01 {
+    font-size: 1.6rem;
+    bottom: 6rem;
+    right: 1rem;
+  }
+  .hero-catch .catch-02 {
+    font-size: 1.2rem;
+    bottom: 6rem;
+    right: 4rem;
+  }
+  .hero-catch .catch-03 {
+    font-size: 1.2rem;
+    bottom: 8rem;
+    right: 6rem;
+  }
+}
+/* ---------------------------------------- */
+/* hero date */
+/* ---------------------------------------- */
+@media (max-width: 800px) {
+  .hero-date {
+    font-weight: 700;
+    position: absolute;
+    font-size: 1.2rem;
+    left: 3rem;
+    bottom: 2rem;
+    width: 10rem;
+  }
+  .hero-date span {
+
+    font-size: 0.5rem;
+  }
+}
+
+/* ---------------------------------------- */
+/* schedule */
+/* ---------------------------------------- */
+@media (max-width: 600px) {
+  .big-container {
+      display: none;
+  }
+  .small-container {
+     padding-bottom: 200%;   /* 高さ */
+  }
+}
+@media (min-width: 600px) {
+  .small-container {
+      display: none;
+  }
+}
+/* ---------------------------------------- */
+/* header */
+/* ---------------------------------------- */
+@media (max-width: 480px) {
+  header ul li {
+    margin-right: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+
+/* ---------------------------------------- */
+/* facility */
+/* ---------------------------------------- */
+@media (max-width: 800px) {
+  .facility-slider .item{
+    width:173px;
+    min-width: 173px;
+  }
+  .item .place {
+    padding-left: 6px;
+    padding-right: 6px; 
+    font-size: 10px;
+    line-height: 1;
+    padding-top: 3px;
+    padding-bottom: 1px;
+  }
+  .brand-slider-container {
+    min-height: 164px;
+  }
+}
