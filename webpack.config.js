@@ -10,6 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // jsからcosole.logやコメントを削除
 const TerserPlugin = require('terser-webpack-plugin');  
+// favicon
+const WebappWebpackPlugin = require('webapp-webpack-plugin')
 
 module.exports = (env, argv) => {
   // [定数] webpack の出力オプションを指定します
@@ -32,7 +34,7 @@ module.exports = (env, argv) => {
     // ローカル開発用環境を立ち上げる
     // 実行時にブラウザが自動的に localhost を開く
     devServer: {
-      contentBase: "dist",
+      contentBase: 'dist',
       open: true,
       host: "0.0.0.0"
     },
@@ -146,11 +148,12 @@ module.exports = (env, argv) => {
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
       }),
-      new MiniCssExtractPlugin({filename: 'style.css?[hash]'}),
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: "src/index.html"
       }),
+      new MiniCssExtractPlugin({filename: 'style.css?[hash]'}),
+      new WebappWebpackPlugin('./src/img/favicon.png'),
       new CleanWebpackPlugin(),
     ],
     optimization: {
