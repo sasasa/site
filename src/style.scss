@@ -416,13 +416,6 @@ header ul li a:hover {
   }
 
 /* ---------------------------------------- */
-/* footer */
-/* ---------------------------------------- */
-footer {
-  margin-top: 100px;
-}
-
-/* ---------------------------------------- */
 /* facility */
 /* ---------------------------------------- */
 
@@ -453,5 +446,73 @@ footer {
   min-width: 316px;
 }
 
+/* ---------------------------------------- */
+/* footer */
+/* ---------------------------------------- */
+footer{
+  padding-top: 50px;
+  padding-right:30px;
+  padding-left:30px;
+}
+footer .footer-nav{
+  margin-bottom: 16px;
+}
+footer .footer-nav-unit{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+footer .footer-nav-unit li{
+  position: relative;
+  padding:0 1.5em;
+}
+footer .footer-nav-unit li::after{
+  content:'';
+  display: block;
+  width: 1px;
+  height: 1rem;
+  background-color:#333;
+  position: absolute;
+  top:5px;
+  right:0;
+}
+footer .footer-nav-unit li:last-child::after{
+  display: none;
+}
+footer .footer-nav-unit li a{
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+footer .footer-nav-unit li a:hover{
+  opacity: 0.4;
+  transition: opacity 0.2s ease-out;
+}
+footer .inner{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid #DDDDDD;
+  padding-top:30px;
+  padding-bottom: 20px;
+  font-size:13px;
+  color:#444;
+  line-height: 1.6;
+}
+@media screen and (min-width: 801px){
+  footer .footer-logo{
+    order:2;
+    position: relative;
+    top: -8px;
+  }
+}
+footer .footer-legal{
+  align-items:baseline;
+}
+footer .copyright{
+  margin-left: 18px;
+  font-size:10px;
+  letter-spacing: 0.04em;
+}
 
 @import "smallview.scss";
