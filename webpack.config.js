@@ -153,7 +153,11 @@ module.exports = (env, argv) => {
         template: "src/index.html"
       }),
       new MiniCssExtractPlugin({filename: 'style.css?[hash]'}),
-      new WebappWebpackPlugin('./src/img/favicon.png'),
+      new WebappWebpackPlugin({
+        logo: './src/img/favicon.png',
+        prefix: 'assets/',
+        publicPath: './',
+      }),
       new CleanWebpackPlugin(),
     ],
     optimization: {
