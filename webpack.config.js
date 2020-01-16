@@ -156,7 +156,7 @@ module.exports = (env, argv) => {
       new WebappWebpackPlugin({
         logo: './src/img/favicon.png',
         prefix: 'assets/',
-        publicPath: './',
+        publicPath: './../',
       }),
       new CleanWebpackPlugin(),
     ],
