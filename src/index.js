@@ -150,13 +150,15 @@ function initSwiper(){
   let facilitySwiper = new Swiper('.facility-slider', {
     loop: true,
     slidesPerView: 5,
+
     speed: 600,
-    spaceBetween: 36,//36
+    spaceBetween: 36,
     centeredSlides: true,
     breakpoints: {
+      // when window width is <= 800px
       800: {
         spaceBetween: 20
-      }
+      },
     },
     autoplay:{
       delay:2000,

@@ -3894,7 +3894,7 @@
 
 // https://liginc.co.jp/web/js/130758
 
-//36
+// when window width is <= 800px
 
 // var sec = $('.swiper-container');
 
