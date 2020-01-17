@@ -44,7 +44,8 @@ body {
   -webkit-text-size-adjust: 100%;
   text-rendering:optimizeLegibility;
   -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;  
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x: hidden;
 }
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -125,9 +126,6 @@ button {
 section h2 {
   margin-bottom: 40px;
   padding-top: 120px;
-}
-body {
-  overflow-x: hidden;
 }
 
 
@@ -468,6 +466,9 @@ header ul li a:hover {
 .item .imgbox{
   border-radius: 10px;
   overflow: hidden;
+  img {
+    user-select: none;
+  }
 }
 .facility-slider .item {
   min-width: 316px;
@@ -476,8 +477,9 @@ header ul li a:hover {
   width:1724px;
   position: relative;
   left:50%;
-  margin-left:-862px;
-  overflow:visible;
+  margin-left: -862px;
+  // overflow:visible;
+  overflow: hidden;
 }
 
 /* ---------------------------------------- */
