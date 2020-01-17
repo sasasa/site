@@ -8,7 +8,8 @@ module.exports = function(api) {
       {
         // サポートするブラウザ、この設定に応じて、必要な polyfill のみが import される
         "targets": {
-          "ie": 11
+          "ie": 11,
+          "node": "current",
         },
         // 必要な polyfill のみを import させたい場合、'usage'を指定する（必須）
         useBuiltIns: 'usage',

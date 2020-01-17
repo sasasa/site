@@ -138,9 +138,13 @@ module.exports = (env, argv) => {
         },
       ]
     },
+    entry: {
+      'index': './src/index.js',
+      'input': './src/input.js'
+    },
     output: {
       path: __dirname + '/docs',
-      filename: 'main.js?[hash]'
+      filename: '[name].js?[hash]'
     },
     plugins: [
       new webpack.ProvidePlugin({
@@ -148,11 +152,20 @@ module.exports = (env, argv) => {
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
       }),
+      new MiniCssExtractPlugin({
+        filename: '[name].css?[hash]',
+        chunkFilename: '[id].css?[hash]',
+      }),
       new HtmlWebpackPlugin({
         filename: "index.html",
-        template: "src/index.html"
+        chunks: ['index'],
+        template: "src/index.html",
       }),
-      new MiniCssExtractPlugin({filename: 'style.css?[hash]'}),
+      new HtmlWebpackPlugin({
+        filename: "input.html",
+        chunks: ['input'],
+        template: "src/input.html",
+      }),
       new WebappWebpackPlugin({
         logo: './src/img/favicon.png',
         prefix: 'assets/',
