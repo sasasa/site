@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
 import moment from 'moment'
-
+import "bootstrap";
 import './input.scss'
 
 // window.onload = function() {
