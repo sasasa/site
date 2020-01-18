@@ -7167,8 +7167,6 @@
 
 // var sec = $('.swiper-container');
 
-// $('h1').text("Jquery")
-
 // const get = await jbn.create({
 
 //   start: "2019.12.7", term: "1", at:"いつもの場所"
