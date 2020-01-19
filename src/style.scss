@@ -34,6 +34,13 @@
 /* ---------------------------------------- */
 /* Base Style */
 /* ---------------------------------------- */
+html {
+  overflow: auto;
+}
+_:-ms-lang(x)::-ms-backdrop, html {
+  // 縦スクロールバーが2重に表示される対応
+  overflow-y: hidden;
+}
 body {
   color: #111111;
   font-size: 14px;
