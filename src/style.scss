@@ -247,8 +247,8 @@ section h2 {
 .hero-catch span {
   position: absolute;
   opacity: 0;
-  transform: translateY(10px);  
-  will-change: transform, opacity;  
+  transform: translateY(10px);
+  will-change: transform, opacity;
 }
 .hero-catch .catch-01 {
   font-size: 2rem;
@@ -529,6 +529,9 @@ footer .footer-nav-unit li a{
 footer .footer-nav-unit li a:hover{
   opacity: 0.4;
   transition: opacity 0.2s ease-out;
+}
+footer .footer-nav-unit li a svg{
+  margin-right: 0.5rem;
 }
 footer .inner{
   display:flex;
