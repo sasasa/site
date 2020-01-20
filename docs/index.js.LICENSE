@@ -617,461 +617,6 @@
 
 /* 12 */
 
-/* 13 */
-
-/* 14 */
-
-/*global toString:true*/
-
-// utils is a library of generic helper functions non-specific to axios
-
-/**
- * Determine if a value is an Array
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Array, otherwise false
- */
-
-/**
- * Determine if a value is undefined
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if the value is undefined, otherwise false
- */
-
-/**
- * Determine if a value is a Buffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Buffer, otherwise false
- */
-
-/**
- * Determine if a value is an Object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an Object, otherwise false
- */
-
-/**
- * Determine if a value is a Date
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Date, otherwise false
- */
-
-/**
- * Determine if a value is a Function
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Function, otherwise false
- */
-
-/**
- * Determine if a value is a Stream
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Stream, otherwise false
- */
-
-/**
- * Iterate over an Array or an Object invoking a function for each item.
- *
- * If `obj` is an Array callback will be called passing
- * the value, index, and complete array for each item.
- *
- * If 'obj' is an Object callback will be called passing
- * the value, key, and complete object for each property.
- *
- * @param {Object|Array} obj The object to iterate
- * @param {Function} fn The callback to invoke for each item
- */
-
-// Don't bother if no value provided
-
-// Force an array if not already something iterable
-
-/*eslint no-param-reassign:0*/
-
-// Iterate over array values
-
-// Iterate over object keys
-
-/**
- * Accepts varargs expecting each argument to be an object, then
- * immutably merges the properties of each object and returns result.
- *
- * When multiple objects contain the same key the later object in
- * the arguments list will take precedence.
- *
- * Example:
- *
- * ```js
- * var result = merge({foo: 123}, {foo: 456});
- * console.log(result.foo); // outputs 456
- * ```
- *
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-
-/**
- * Determine if a value is an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an ArrayBuffer, otherwise false
- */
-
-/**
- * Determine if a value is a FormData
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is an FormData, otherwise false
- */
-
-/**
- * Determine if a value is a view on an ArrayBuffer
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
- */
-
-/**
- * Determine if a value is a String
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a String, otherwise false
- */
-
-/**
- * Determine if a value is a Number
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Number, otherwise false
- */
-
-/**
- * Determine if a value is a File
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a File, otherwise false
- */
-
-/**
- * Determine if a value is a Blob
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a Blob, otherwise false
- */
-
-/**
- * Determine if a value is a URLSearchParams object
- *
- * @param {Object} val The value to test
- * @returns {boolean} True if value is a URLSearchParams object, otherwise false
- */
-
-/**
- * Trim excess whitespace off the beginning and end of a string
- *
- * @param {String} str The String to trim
- * @returns {String} The String freed of excess whitespace
- */
-
-/**
- * Determine if we're running in a standard browser environment
- *
- * This allows axios to run in a web worker, and react-native.
- * Both environments support XMLHttpRequest, but not fully standard globals.
- *
- * web workers:
- *  typeof window -> undefined
- *  typeof document -> undefined
- *
- * react-native:
- *  navigator.product -> 'ReactNative'
- * nativescript
- *  navigator.product -> 'NativeScript' or 'NS'
- */
-
-/**
- * Function equal to merge with the difference being that no reference
- * to original objects is kept.
- *
- * @see merge
- * @param {Object} obj1 Object to merge
- * @returns {Object} Result of all merge properties
- */
-
-/**
- * Extends object a by mutably adding to it the properties of object b.
- *
- * @param {Object} a The object to be extended
- * @param {Object} b The object to copy properties from
- * @param {Object} thisArg The object to bind function to
- * @return {Object} The resulting value of object a
- */
-
-/* 15 */
-
-/* 16 */
-
-/* 17 */
-
-// to indexed object, toObject with fallback for non-array-like ES3 strings
-
-/* 18 */
-
-// eslint-disable-next-line no-useless-call
-
-/* 19 */
-
-// optional / simple context binding
-
-/* 20 */
-
-/* 21 */
-
-// 7.1.4 ToInteger
-
-/* 22 */
-
-/* 23 */
-
-// most Object methods by ES6 should accept primitives
-
-/* 24 */
-
-// 0 -> Array#forEach
-
-// 1 -> Array#map
-
-// 2 -> Array#filter
-
-// 3 -> Array#some
-
-// 4 -> Array#every
-
-// 5 -> Array#find
-
-// 6 -> Array#findIndex
-
-// map
-
-// some
-
-// find
-
-// findIndex
-
-// filter
-
-// every
-
-/* 25 */
-
-/* 26 */
-
-// 7.2.1 RequireObjectCoercible(argument)
-
-/* 27 */
-
-// eslint-disable-next-line no-undef
-
-/* , mapfn, thisArg */
-
-/* , end */
-
-/* , thisArg */
-
-/* , start, end */
-
-// eslint-disable-line no-unused-vars
-
-/* , fromIndex */
-
-/* , initialValue */
-
-/* , offset */
-
-/* noop */
-
-// eslint-disable-next-line max-statements
-
-// eslint-disable-line no-new
-
-// `ws` module bug, temporarily remove validation length for Uint8Array
-
-// https://github.com/websockets/ws/pull/645
-
-/* 28 */
-
-// 7.1.1 ToPrimitive(input [, PreferredType])
-
-// instead of the ES6 spec version, we didn't implement @@toPrimitive case
-
-// and the second argument - flag - preferred type is a string
-
-/* 29 */
-
-// object ID
-
-// return primitive with prefix
-
-// can't set metadata to uncaught frozen object
-
-// not necessary to add metadata
-
-// add missing metadata
-
-/* 30 */
-
-/* 31 */
-
-/* 32 */
-
-/* 33 */
-
-// 19.1.2.14 / 15.2.3.14 Object.keys(O)
-
-/* 34 */
-
-/* 35 */
-
-// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
-
-// Thrash, waste and sodomy: IE GC bug
-
-// eslint-disable-line no-script-url
-
-// createDict = iframe.contentWindow.Object;
-
-// html.removeChild(iframe);
-
-// add "__proto__" for Object.getPrototypeOf polyfill
-
-/* 36 */
-
-// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-
-/* 37 */
-
-// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
-
-/* 38 */
-
-// 22.1.3.31 Array.prototype[@@unscopables]
-
-/* 39 */
-
-/* 40 */
-
-/* 41 */
-
-/* 42 */
-
-/* 43 */
-
-/* 44 */
-
-/* 45 */
-
-/* 46 */
-
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
-
-// eslint-disable-next-line no-prototype-builtins
-
-/* 47 */
-
-/* 48 */
-
-// getting tag from 19.1.3.6 Object.prototype.toString()
-
-/* 49 */
-
-// 7.3.20 SpeciesConstructor(O, defaultConstructor)
-
-/* 50 */
-
-/* 51 */
-
-// false -> Array#indexOf
-
-// true  -> Array#includes
-
-// Array#includes uses SameValueZero equality algorithm
-
-// eslint-disable-next-line no-self-compare
-
-// Array#indexOf ignores holes, Array#includes - not
-
-/* 52 */
-
-/* 53 */
-
-// 7.2.2 IsArray(argument)
-
-/* 54 */
-
-// eslint-disable-next-line no-throw-literal
-
-/* 55 */
-
-// 21.2.5.3 get RegExp.prototype.flags
-
-/* 56 */
-
-// `RegExpExec` abstract operation
-
-// https://tc39.github.io/ecma262/#sec-regexpexec
-
-/* 57 */
-
-// #replace needs built-in support for named groups.
-
-// #match works fine because it just return the exec results, even if it has
-
-// a "grops" property.
-
-// Chrome 51 has a buggy "split" implementation when RegExp#exec !== nativeExec
-
-// String methods call symbol-named RegEp methods
-
-// Symbol-named RegExp methods call .exec
-
-// RegExp[@@split] doesn't call the regex's exec method, but first creates
-
-// a new one. We need to return the patched regex when creating the new one.
-
-// 21.2.5.6 RegExp.prototype[@@match](string)
-
-// 21.2.5.9 RegExp.prototype[@@search](string)
-
-/* 58 */
-
-// fast case for arrays with default iterator
-
-/* 59 */
-
-/* 60 */
-
-// V8 ~ Chromium 42- fails only with 5+ elements
-
-// early implementations not supports chaining
-
-// weak collections should not contains .clear method
-
-// create collection constructor
-
-/* 61 */
-
-/* 62 */
-
-// module.parent = undefined by default
-
-/* 63 */
-
 /*!
  * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
@@ -4196,6 +3741,461 @@
 
 // and CommonJS for browser emulators (#13566)
 
+/* 13 */
+
+/* 14 */
+
+/* 15 */
+
+/*global toString:true*/
+
+// utils is a library of generic helper functions non-specific to axios
+
+/**
+ * Determine if a value is an Array
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Array, otherwise false
+ */
+
+/**
+ * Determine if a value is undefined
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if the value is undefined, otherwise false
+ */
+
+/**
+ * Determine if a value is a Buffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Buffer, otherwise false
+ */
+
+/**
+ * Determine if a value is an Object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an Object, otherwise false
+ */
+
+/**
+ * Determine if a value is a Date
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Date, otherwise false
+ */
+
+/**
+ * Determine if a value is a Function
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Function, otherwise false
+ */
+
+/**
+ * Determine if a value is a Stream
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Stream, otherwise false
+ */
+
+/**
+ * Iterate over an Array or an Object invoking a function for each item.
+ *
+ * If `obj` is an Array callback will be called passing
+ * the value, index, and complete array for each item.
+ *
+ * If 'obj' is an Object callback will be called passing
+ * the value, key, and complete object for each property.
+ *
+ * @param {Object|Array} obj The object to iterate
+ * @param {Function} fn The callback to invoke for each item
+ */
+
+// Don't bother if no value provided
+
+// Force an array if not already something iterable
+
+/*eslint no-param-reassign:0*/
+
+// Iterate over array values
+
+// Iterate over object keys
+
+/**
+ * Accepts varargs expecting each argument to be an object, then
+ * immutably merges the properties of each object and returns result.
+ *
+ * When multiple objects contain the same key the later object in
+ * the arguments list will take precedence.
+ *
+ * Example:
+ *
+ * ```js
+ * var result = merge({foo: 123}, {foo: 456});
+ * console.log(result.foo); // outputs 456
+ * ```
+ *
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+
+/**
+ * Determine if a value is an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an ArrayBuffer, otherwise false
+ */
+
+/**
+ * Determine if a value is a FormData
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is an FormData, otherwise false
+ */
+
+/**
+ * Determine if a value is a view on an ArrayBuffer
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a view on an ArrayBuffer, otherwise false
+ */
+
+/**
+ * Determine if a value is a String
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a String, otherwise false
+ */
+
+/**
+ * Determine if a value is a Number
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Number, otherwise false
+ */
+
+/**
+ * Determine if a value is a File
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a File, otherwise false
+ */
+
+/**
+ * Determine if a value is a Blob
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a Blob, otherwise false
+ */
+
+/**
+ * Determine if a value is a URLSearchParams object
+ *
+ * @param {Object} val The value to test
+ * @returns {boolean} True if value is a URLSearchParams object, otherwise false
+ */
+
+/**
+ * Trim excess whitespace off the beginning and end of a string
+ *
+ * @param {String} str The String to trim
+ * @returns {String} The String freed of excess whitespace
+ */
+
+/**
+ * Determine if we're running in a standard browser environment
+ *
+ * This allows axios to run in a web worker, and react-native.
+ * Both environments support XMLHttpRequest, but not fully standard globals.
+ *
+ * web workers:
+ *  typeof window -> undefined
+ *  typeof document -> undefined
+ *
+ * react-native:
+ *  navigator.product -> 'ReactNative'
+ * nativescript
+ *  navigator.product -> 'NativeScript' or 'NS'
+ */
+
+/**
+ * Function equal to merge with the difference being that no reference
+ * to original objects is kept.
+ *
+ * @see merge
+ * @param {Object} obj1 Object to merge
+ * @returns {Object} Result of all merge properties
+ */
+
+/**
+ * Extends object a by mutably adding to it the properties of object b.
+ *
+ * @param {Object} a The object to be extended
+ * @param {Object} b The object to copy properties from
+ * @param {Object} thisArg The object to bind function to
+ * @return {Object} The resulting value of object a
+ */
+
+/* 16 */
+
+/* 17 */
+
+/* 18 */
+
+// to indexed object, toObject with fallback for non-array-like ES3 strings
+
+/* 19 */
+
+// eslint-disable-next-line no-useless-call
+
+/* 20 */
+
+// optional / simple context binding
+
+/* 21 */
+
+/* 22 */
+
+// 7.1.4 ToInteger
+
+/* 23 */
+
+/* 24 */
+
+// most Object methods by ES6 should accept primitives
+
+/* 25 */
+
+// 0 -> Array#forEach
+
+// 1 -> Array#map
+
+// 2 -> Array#filter
+
+// 3 -> Array#some
+
+// 4 -> Array#every
+
+// 5 -> Array#find
+
+// 6 -> Array#findIndex
+
+// map
+
+// some
+
+// find
+
+// findIndex
+
+// filter
+
+// every
+
+/* 26 */
+
+/* 27 */
+
+// 7.2.1 RequireObjectCoercible(argument)
+
+/* 28 */
+
+// eslint-disable-next-line no-undef
+
+/* , mapfn, thisArg */
+
+/* , end */
+
+/* , thisArg */
+
+/* , start, end */
+
+// eslint-disable-line no-unused-vars
+
+/* , fromIndex */
+
+/* , initialValue */
+
+/* , offset */
+
+/* noop */
+
+// eslint-disable-next-line max-statements
+
+// eslint-disable-line no-new
+
+// `ws` module bug, temporarily remove validation length for Uint8Array
+
+// https://github.com/websockets/ws/pull/645
+
+/* 29 */
+
+// 7.1.1 ToPrimitive(input [, PreferredType])
+
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+
+// and the second argument - flag - preferred type is a string
+
+/* 30 */
+
+// object ID
+
+// return primitive with prefix
+
+// can't set metadata to uncaught frozen object
+
+// not necessary to add metadata
+
+// add missing metadata
+
+/* 31 */
+
+/* 32 */
+
+/* 33 */
+
+/* 34 */
+
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
+
+/* 35 */
+
+/* 36 */
+
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+
+// Thrash, waste and sodomy: IE GC bug
+
+// eslint-disable-line no-script-url
+
+// createDict = iframe.contentWindow.Object;
+
+// html.removeChild(iframe);
+
+// add "__proto__" for Object.getPrototypeOf polyfill
+
+/* 37 */
+
+// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
+
+/* 38 */
+
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
+
+/* 39 */
+
+// 22.1.3.31 Array.prototype[@@unscopables]
+
+/* 40 */
+
+/* 41 */
+
+/* 42 */
+
+/* 43 */
+
+/* 44 */
+
+/* 45 */
+
+/* 46 */
+
+/* 47 */
+
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
+
+// eslint-disable-next-line no-prototype-builtins
+
+/* 48 */
+
+/* 49 */
+
+// getting tag from 19.1.3.6 Object.prototype.toString()
+
+/* 50 */
+
+// 7.3.20 SpeciesConstructor(O, defaultConstructor)
+
+/* 51 */
+
+/* 52 */
+
+// false -> Array#indexOf
+
+// true  -> Array#includes
+
+// Array#includes uses SameValueZero equality algorithm
+
+// eslint-disable-next-line no-self-compare
+
+// Array#indexOf ignores holes, Array#includes - not
+
+/* 53 */
+
+/* 54 */
+
+// 7.2.2 IsArray(argument)
+
+/* 55 */
+
+// eslint-disable-next-line no-throw-literal
+
+/* 56 */
+
+// 21.2.5.3 get RegExp.prototype.flags
+
+/* 57 */
+
+// `RegExpExec` abstract operation
+
+// https://tc39.github.io/ecma262/#sec-regexpexec
+
+/* 58 */
+
+// #replace needs built-in support for named groups.
+
+// #match works fine because it just return the exec results, even if it has
+
+// a "grops" property.
+
+// Chrome 51 has a buggy "split" implementation when RegExp#exec !== nativeExec
+
+// String methods call symbol-named RegEp methods
+
+// Symbol-named RegExp methods call .exec
+
+// RegExp[@@split] doesn't call the regex's exec method, but first creates
+
+// a new one. We need to return the patched regex when creating the new one.
+
+// 21.2.5.6 RegExp.prototype[@@match](string)
+
+// 21.2.5.9 RegExp.prototype[@@search](string)
+
+/* 59 */
+
+// fast case for arrays with default iterator
+
+/* 60 */
+
+/* 61 */
+
+// V8 ~ Chromium 42- fails only with 5+ elements
+
+// early implementations not supports chaining
+
+// weak collections should not contains .clear method
+
+// create collection constructor
+
+/* 62 */
+
+/* 63 */
+
+// module.parent = undefined by default
+
 /* 64 */
 
 /* 65 */
@@ -6469,591 +6469,7 @@
 
 /* 468 */
 
-// CONCATENATED MODULE: ./node_modules/ssr-window/dist/ssr-window.esm.js
-
-/**
- * SSR Window 1.0.1
- * Better handling for window object in SSR environment
- * https://github.com/nolimits4web/ssr-window
- *
- * Copyright 2018, Vladimir Kharlampidi
- *
- * Licensed under MIT
- *
- * Released on: July 18, 2018
- */
-
-/**
- * Dom7 2.1.3
- * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
- * http://framework7.io/docs/dom.html
- *
- * Copyright 2019, Vladimir Kharlampidi
- * The iDangero.us
- * http://www.idangero.us/
- *
- * Licensed under MIT
- *
- * Released on: February 11, 2019
- */
-
-// CONCATENATED MODULE: ./node_modules/dom7/dist/dom7.modular.js
-
-// Create array-like object
-
-// Return collection with methods
-
-// String
-
-// Other selectors
-
-// Node/element
-
-// Array of elements or instance of Dom
-
-// CONCATENATED MODULE: ./node_modules/swiper/js/swiper.esm.bundle.js
-
-/**
- * Swiper 5.3.0
- * Most modern mobile touch slider and framework with hardware accelerated transitions
- * http://swiperjs.com
- *
- * Copyright 2014-2020 Vladimir Kharlampidi
- *
- * Released under the MIT License
- *
- * Released on: January 11, 2020
- */
-
-// Classes and attributes
-
-// Get attr
-
-// Set attrs
-
-// Object
-
-// eslint-disable-next-line
-
-// Set value
-
-// Get value
-
-// Transforms
-
-// Events
-
-// Live events
-
-/* jshint validthis:true */
-
-// Dom manipulation
-
-// Iterate over the collection passing elements to `callback`
-
-// Don't bother continuing without a callback
-
-// Iterate over the current collection
-
-// If the callback returns false
-
-// End the loop early
-
-// Return `this` to allow chained DOM operations
-
-// no getter for object
-
-// something got wrong
-
-// Some old versions of Webkit choke when 'none' is passed; pass
-
-// empty string instead in this case
-
-// Latest Chrome and webkits Fix
-
-// No support
-
-/*#__PURE__*/
-
-// Extend params
-
-// Extend instance methods and props
-
-// Add event listeners
-
-// Module create callback
-
-// Prototype
-
-// Subtract paddings
-
-// reset margins
-
-// Set slides order
-
-// Remove last grid elements depending on width
-
-// Find slides currently in view
-
-// Find new height from highest slide in view
-
-// Update Height
-
-// Visible Slides
-
-// Active classes
-
-// Duplicate to all looped slides
-
-// Next Slide
-
-// Prev Slide
-
-// Normalize slideIndex
-
-// Get real index
-
-// Update progress
-
-// Directions locks
-
-// Update Index
-
-/* eslint no-unused-vars: "off" */
-
-// The current translate is on or after the current snap index, so the choice
-
-// is between the current index and the one after it.
-
-// The current translate is before the current snap index, so the choice
-
-// is between the current index and the one before it.
-
-// Remove duplicated slides
-
-// Fix For Negative Oversliding
-
-// Fix For Positive Oversliding
-
-// iPadOs 13 fix
-
-// Pro 12.9
-
-// Android
-
-// iOS
-
-// iOS 8+ changed UA
-
-// Webview
-
-// Desktop
-
-// Pixel Ratio
-
-// isMoved = true;
-
-// Vertical
-
-// Grab Cursor
-
-// Threshold
-
-// Update active index in free mode
-
-// Velocity
-
-// Update translate
-
-// Return Grab Cursor
-
-// Time diff
-
-// Tap, doubleTap, Click
-
-// this implies that the user stopped moving a finger then released.
-
-// There would be no events with distance zero, so the last event is stale.
-
-// Fix duration
-
-// If freeModeSticky is active and the user ends a swipe with a slow-velocity
-
-// event, then durations can be 20+ seconds to slide one (or zero!) slides.
-
-// It's easy to see this when simulating touch with mouse events. To fix this,
-
-// limit single-slide swipes to the default slide duration. This also has the
-
-// nice side effect of matching slide speed if the user stopped moving before
-
-// lifting finger or mouse vs. moving slowly before lifting the finger/mouse.
-
-// For faster swipes, also apply limits (albeit higher ones).
-
-// Find current slide
-
-// Find current slide size
-
-// Long touches
-
-// Short swipes
-
-// Breakpoints
-
-// Save locks
-
-// Disable locks on resize
-
-// Return locks after resize
-
-// To support iOS's swipe-to-go-back gesture (when being used in-app, with UIWebView).
-
-// Free mode
-
-// Autoheight
-
-// Set wrapper width
-
-// Virtual Translate
-
-// Effects
-
-// 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
-
-// Slides grid
-
-// in px
-
-// Disable swiper and hide navigation when container not overflow
-
-// Round length
-
-// Touches
-
-// Unique Navigation Elements
-
-// Resistance
-
-// Progress
-
-// Cursor
-
-// Clicks
-
-// Images
-
-// loop
-
-// Swiping/no swiping
-
-// '.swipe-handler',
-
-// Passive Listeners
-
-// NS
-
-// NEW
-
-// Callbacks
-
-// Touch Events
-
-// Prevent Links Clicks
-
-// Resize handler
-
-// Get breakpoint for window width and update parameters
-
-// Get breakpoint for window width
-
-// events
-
-// image already loaded...
-
-// Swiper Instance
-
-// Extend defaults with modules params
-
-// Extend defaults with passed params
-
-// Save Dom lib
-
-// Find el
-
-// Return app instance
-
-// Children needs to return slot items
-
-// Extend Swiper
-
-// Classes
-
-// Slides
-
-// isDirection
-
-// RTL
-
-// Indexes
-
-// Props
-
-// Locks
-
-// Form elements to match
-
-// Last click time
-
-// Velocities
-
-// Install Modules
-
-// Init
-
-// Set breakpoint
-
-// Add Classes
-
-// Create loop
-
-// Update size
-
-// Update slides
-
-// Set Grab Cursor
-
-// Slide To Initial Slide
-
-// Attach events
-
-// Init Flag
-
-// Emit
-
-// Detach events
-
-// Destroy loop
-
-// Cleanup styles
-
-// Detach emitter events
-
-// Emit resize
-
-// Emit orientationchange
-
-// The observerUpdate event should only be triggered
-
-// once despite the number of mutations.  Additional
-
-// triggers are redundant and are very costly
-
-// Observe container
-
-// Observe wrapper
-
-// jquery fix
-
-// Check that swiper should be inside of visible area of window
-
-// This is the only way to test support for the `wheel` event in IE9+.
-
-// Reasonable defaults
-
-// pixelX, pixelY
-
-// Legacy
-
-// side scrolling on FF with DOMMouseScroll
-
-// if user scrolls with shift he wants horizontal scroll
-
-// delta in LINE units
-
-// delta in PAGE units
-
-// Fall-back if spin cannot be determined
-
-// Freemode or scrollContainer:
-
-// If we recently snapped after a momentum scroll, then ignore wheel events
-
-// to give time for the deceleration to finish. Stop ignoring after 500 msecs
-
-// or if it's a new scroll (larger delta or inverse sign as last event before
-
-// an end-of-momentum snap).
-
-// When wheel scrolling starts with sticky (aka snap) enabled, then detect
-
-// the end of a momentum scroll by storing recent (N=15?) wheel events.
-
-// 1. do all N events have decreasing or same (absolute value) delta?
-
-// 2. did all N events arrive in the last M (M=500?) msecs?
-
-// 3. does the earliest event have an (absolute value) delta that's
-
-//    at least P (P=1?) larger than the most recent event's delta?
-
-// 4. does the latest event have a delta that's smaller than Q (Q=6?) pixels?
-
-// If 1-4 are "yes" then we're near the end of a momuntum scroll deceleration.
-
-// Snap immediately and ignore remaining wheel events in this scroll.
-
-// See comment above for "remaining wheel events in this scroll" determination.
-
-// If 1-4 aren't satisfied, then wait to snap until 500ms after the last event.
-
-// Increasing or reverse-sign delta means the user started scrolling again. Clear the wheel event log.
-
-// We're at the end of the deceleration of a momentum scroll, so there's no need
-
-// to wait for more events. Snap ASAP on the next tick.
-
-// Also, because there's some remaining momentum we'll bias the snap in the
-
-// direction of the ongoing scroll because it's better UX for the scroll to snap
-
-// in the same direction as the scroll instead of reversing to snap.  Therefore,
-
-// if it's already scrolled more than 20% in the current direction, keep going.
-
-// if we get here, then we haven't detected the end of a momentum scroll, so
-
-// we'll consider a scroll "complete" when there haven't been any wheel events
-
-// for 500ms.
-
-// Emit event
-
-// Return page scroll on edge positions
-
-// Stop autoplay
-
-// Register the new event in a variable which stores the relevant data
-
-// Keep the most recent events
-
-// If it's time to release the scroll:
-
-//   Return now so you don't hit the preventDefault.
-
-// If there is at least one previous recorded event:
-
-//   If direction has changed or
-
-//   if the scroll is quicker than the previous one:
-
-//     Animate the slider.
-
-// Else (this is the first time the wheel is moved):
-
-// If the movement is NOT big enough and
-
-// if the last time the user scrolled was too close to the current one (avoid continuously triggering the slider):
-
-//   Don't go any further (avoid insignificant scroll movement).
-
-// If user is scrolling towards the end:
-
-//   If the slider hasn't hit the latest slide or
-
-//   if the slider is a loop and
-
-//   if the slider isn't moving right now:
-
-//     Go to next slide and
-
-//     emit a scroll event.
-
-// Else (the user is scrolling towards the beginning) and
-
-// if the slider hasn't hit the first slide or
-
-// if the slider is a loop and
-
-// if the slider isn't moving right now:
-
-//   Go to prev slide and
-
-//   emit a scroll event.
-
-// If you got here is because an animation has been triggered so store the current time
-
-// Return true to animate scroll on edges
-
-// Update Navigation Buttons
-
-// Render || Update Pagination bullets/items
-
-// Types
-
-// Render Container
-
-// Calc Scale From Multi-touches
-
-// Define if we need image drag
-
-// Toggle Zoom
-
-// Zoom Out
-
-// Zoom In
-
-// Attach/Detach Events
-
-// Scale image
-
-// Move image
-
-// Next Slides
-
-// Prev Slides
-
-// Get the indexes of x1 and x3 (the array indexes before and after given x2):
-
-// xxx: for now i will just save one spline function to to
-
-// this will create an Interpolate function based on the snapGrids
-
-// x is the Grid of the scrolled scroller and y will be the controlled scroller
-
-// it makes sense to create this only once and recall it for the interpolation
-
-// the function does a lot of value caching for performance
-
-// i am not sure why the values have to be multiplicated this way, tried to invert the snapGrid
-
-// but it did not work out
-
-// Navigation
-
-// Pagination
-
-// Set shadows
-
-// if (!$(this).hasClass(swiper.params.slideActiveClass)) return;
-
-// Each slide offset from center
-
-// Fix for ultra small values
-
-// Set correct perspective for IE10
-
-// Find actual thumbs index to slide to
-
-// Activate thumbs
-
-// 'bullets' or 'progressbar' or 'fraction' or 'custom'
-
-/* harmony default export */
-
 /* 469 */
-
-/* 470 */
 
 /*!
  * imagesLoaded v4.1.4
@@ -7153,47 +6569,7 @@
 
 // try making plugin
 
-/* 471 */
-
-/* harmony import */
-
-// import "es6-promise/auto";
-
-// import "fetch-polyfill";
-
-// マイクロ秒までの精度を持った浮動小数点の値
-
-// https://developer.mozilla.org/ja/docs/Web/API/Performance/now
-
-// 一回前のカラーを外す
-
-// カラーをつける
-
-// ブラウザの描画更新単位と同じ単位で呼び出される
-
-// 次の再描画が行われる前に次のアニメーションをする関数を呼び出す
-
-// タブが非アクティブの時はFPSを落とす
-
-// https://liginc.co.jp/web/js/130758
-
-// when window width is <= 800px
-
-// var sec = $('.swiper-container');
-
-// const get = await jbn.create({
-
-//   start: "2019.12.7", term: "1", at:"いつもの場所"
-
-// }, BOX_ID, 'date');
-
-// console.log(get);
-
-// await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, '5e21b50fcd442f0017cd446d');
-
-// await jbn.delete(BOX_ID, '5e21b50fcd442f0017cd446d')
-
-/* 472 */
+/* 470 */
 
 // set events hash
 
@@ -7223,7 +6599,7 @@
 
 // trigger listener
 
-/* 473 */
+/* 471 */
 
 /*! VelocityJS.org (1.5.2). (C) 2014 Julian Shapiro. MIT @license: en.wikipedia.org/wiki/MIT_License */
 
@@ -9088,7 +8464,7 @@
 
 /* Revert to jQuery's $.animate(), and lose Velocity's extra features. */
 
-/* 474 */
+/* 472 */
 
 /*!
  * Font Awesome Free 5.12.0 by @fontawesome - https://fontawesome.com
@@ -9142,7 +8518,9 @@
 
 // Delete the old one, since we're replacing it with a new one
 
-/* 475 */
+/*#__PURE__*/
+
+/* 473 */
 
 // DOM APIs, for completeness
 
@@ -9156,7 +8534,7 @@
 
 // `setimmediate` library.
 
-/* 476 */
+/* 474 */
 
 // Spec says greater than zero
 
@@ -9190,8 +8568,626 @@
 
 // "too much recursion" error.
 
+/* 475 */
+
+/* 476 */
+
+// extracted by mini-css-extract-plugin
+
 /* 477 */
 
 /* 478 */
 
-// extracted by mini-css-extract-plugin
+/* 479 */
+
+/* 480 */
+
+// EXTERNAL MODULE: ./node_modules/@babel/polyfill/lib/index.js
+
+// EXTERNAL MODULE: ./node_modules/jsonbox-node/dist/index.js
+
+/**
+ * Dom7 2.1.3
+ * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
+ * http://framework7.io/docs/dom.html
+ *
+ * Copyright 2019, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ *
+ * Licensed under MIT
+ *
+ * Released on: February 11, 2019
+ */
+
+// CONCATENATED MODULE: ./node_modules/dom7/dist/dom7.modular.js
+
+// Create array-like object
+
+// Return collection with methods
+
+// String
+
+// Other selectors
+
+// Node/element
+
+// Array of elements or instance of Dom
+
+// CONCATENATED MODULE: ./node_modules/swiper/js/swiper.esm.bundle.js
+
+/**
+ * Swiper 5.3.0
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * http://swiperjs.com
+ *
+ * Copyright 2014-2020 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: January 11, 2020
+ */
+
+// Classes and attributes
+
+// Get attr
+
+// Set attrs
+
+// Object
+
+// eslint-disable-next-line
+
+// Set value
+
+// Get value
+
+// Transforms
+
+// Events
+
+// Live events
+
+/* jshint validthis:true */
+
+// Dom manipulation
+
+// Iterate over the collection passing elements to `callback`
+
+// Don't bother continuing without a callback
+
+// Iterate over the current collection
+
+// If the callback returns false
+
+// End the loop early
+
+// Return `this` to allow chained DOM operations
+
+// no getter for object
+
+// something got wrong
+
+// Some old versions of Webkit choke when 'none' is passed; pass
+
+// empty string instead in this case
+
+// Latest Chrome and webkits Fix
+
+// No support
+
+// Extend params
+
+// Extend instance methods and props
+
+// Add event listeners
+
+// Module create callback
+
+// Prototype
+
+// Subtract paddings
+
+// reset margins
+
+// Set slides order
+
+// Remove last grid elements depending on width
+
+// Find slides currently in view
+
+// Find new height from highest slide in view
+
+// Update Height
+
+// Visible Slides
+
+// Active classes
+
+// Duplicate to all looped slides
+
+// Next Slide
+
+// Prev Slide
+
+// Normalize slideIndex
+
+// Get real index
+
+// Update progress
+
+// Directions locks
+
+// Update Index
+
+/* eslint no-unused-vars: "off" */
+
+// The current translate is on or after the current snap index, so the choice
+
+// is between the current index and the one after it.
+
+// The current translate is before the current snap index, so the choice
+
+// is between the current index and the one before it.
+
+// Remove duplicated slides
+
+// Fix For Negative Oversliding
+
+// Fix For Positive Oversliding
+
+// iPadOs 13 fix
+
+// Pro 12.9
+
+// Android
+
+// iOS
+
+// iOS 8+ changed UA
+
+// Webview
+
+// Desktop
+
+// Pixel Ratio
+
+// isMoved = true;
+
+// Vertical
+
+// Grab Cursor
+
+// Threshold
+
+// Update active index in free mode
+
+// Velocity
+
+// Update translate
+
+// Return Grab Cursor
+
+// Time diff
+
+// Tap, doubleTap, Click
+
+// this implies that the user stopped moving a finger then released.
+
+// There would be no events with distance zero, so the last event is stale.
+
+// Fix duration
+
+// If freeModeSticky is active and the user ends a swipe with a slow-velocity
+
+// event, then durations can be 20+ seconds to slide one (or zero!) slides.
+
+// It's easy to see this when simulating touch with mouse events. To fix this,
+
+// limit single-slide swipes to the default slide duration. This also has the
+
+// nice side effect of matching slide speed if the user stopped moving before
+
+// lifting finger or mouse vs. moving slowly before lifting the finger/mouse.
+
+// For faster swipes, also apply limits (albeit higher ones).
+
+// Find current slide
+
+// Find current slide size
+
+// Long touches
+
+// Short swipes
+
+// Breakpoints
+
+// Save locks
+
+// Disable locks on resize
+
+// Return locks after resize
+
+// To support iOS's swipe-to-go-back gesture (when being used in-app, with UIWebView).
+
+// Free mode
+
+// Autoheight
+
+// Set wrapper width
+
+// Virtual Translate
+
+// Effects
+
+// 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
+
+// Slides grid
+
+// in px
+
+// Disable swiper and hide navigation when container not overflow
+
+// Round length
+
+// Touches
+
+// Unique Navigation Elements
+
+// Resistance
+
+// Progress
+
+// Cursor
+
+// Clicks
+
+// Images
+
+// loop
+
+// Swiping/no swiping
+
+// '.swipe-handler',
+
+// Passive Listeners
+
+// NS
+
+// NEW
+
+// Callbacks
+
+// Touch Events
+
+// Prevent Links Clicks
+
+// Resize handler
+
+// Get breakpoint for window width and update parameters
+
+// Get breakpoint for window width
+
+// events
+
+// image already loaded...
+
+// Swiper Instance
+
+// Extend defaults with modules params
+
+// Extend defaults with passed params
+
+// Save Dom lib
+
+// Find el
+
+// Return app instance
+
+// Children needs to return slot items
+
+// Extend Swiper
+
+// Classes
+
+// Slides
+
+// isDirection
+
+// RTL
+
+// Indexes
+
+// Props
+
+// Locks
+
+// Form elements to match
+
+// Last click time
+
+// Velocities
+
+// Install Modules
+
+// Init
+
+// Set breakpoint
+
+// Add Classes
+
+// Create loop
+
+// Update size
+
+// Update slides
+
+// Set Grab Cursor
+
+// Slide To Initial Slide
+
+// Attach events
+
+// Init Flag
+
+// Emit
+
+// Detach events
+
+// Destroy loop
+
+// Cleanup styles
+
+// Detach emitter events
+
+// Emit resize
+
+// Emit orientationchange
+
+// The observerUpdate event should only be triggered
+
+// once despite the number of mutations.  Additional
+
+// triggers are redundant and are very costly
+
+// Observe container
+
+// Observe wrapper
+
+// jquery fix
+
+// Check that swiper should be inside of visible area of window
+
+// This is the only way to test support for the `wheel` event in IE9+.
+
+// Reasonable defaults
+
+// pixelX, pixelY
+
+// Legacy
+
+// side scrolling on FF with DOMMouseScroll
+
+// if user scrolls with shift he wants horizontal scroll
+
+// delta in LINE units
+
+// delta in PAGE units
+
+// Fall-back if spin cannot be determined
+
+// Freemode or scrollContainer:
+
+// If we recently snapped after a momentum scroll, then ignore wheel events
+
+// to give time for the deceleration to finish. Stop ignoring after 500 msecs
+
+// or if it's a new scroll (larger delta or inverse sign as last event before
+
+// an end-of-momentum snap).
+
+// When wheel scrolling starts with sticky (aka snap) enabled, then detect
+
+// the end of a momentum scroll by storing recent (N=15?) wheel events.
+
+// 1. do all N events have decreasing or same (absolute value) delta?
+
+// 2. did all N events arrive in the last M (M=500?) msecs?
+
+// 3. does the earliest event have an (absolute value) delta that's
+
+//    at least P (P=1?) larger than the most recent event's delta?
+
+// 4. does the latest event have a delta that's smaller than Q (Q=6?) pixels?
+
+// If 1-4 are "yes" then we're near the end of a momuntum scroll deceleration.
+
+// Snap immediately and ignore remaining wheel events in this scroll.
+
+// See comment above for "remaining wheel events in this scroll" determination.
+
+// If 1-4 aren't satisfied, then wait to snap until 500ms after the last event.
+
+// Increasing or reverse-sign delta means the user started scrolling again. Clear the wheel event log.
+
+// We're at the end of the deceleration of a momentum scroll, so there's no need
+
+// to wait for more events. Snap ASAP on the next tick.
+
+// Also, because there's some remaining momentum we'll bias the snap in the
+
+// direction of the ongoing scroll because it's better UX for the scroll to snap
+
+// in the same direction as the scroll instead of reversing to snap.  Therefore,
+
+// if it's already scrolled more than 20% in the current direction, keep going.
+
+// if we get here, then we haven't detected the end of a momentum scroll, so
+
+// we'll consider a scroll "complete" when there haven't been any wheel events
+
+// for 500ms.
+
+// Emit event
+
+// Return page scroll on edge positions
+
+// Stop autoplay
+
+// Register the new event in a variable which stores the relevant data
+
+// Keep the most recent events
+
+// If it's time to release the scroll:
+
+//   Return now so you don't hit the preventDefault.
+
+// If there is at least one previous recorded event:
+
+//   If direction has changed or
+
+//   if the scroll is quicker than the previous one:
+
+//     Animate the slider.
+
+// Else (this is the first time the wheel is moved):
+
+// If the movement is NOT big enough and
+
+// if the last time the user scrolled was too close to the current one (avoid continuously triggering the slider):
+
+//   Don't go any further (avoid insignificant scroll movement).
+
+// If user is scrolling towards the end:
+
+//   If the slider hasn't hit the latest slide or
+
+//   if the slider is a loop and
+
+//   if the slider isn't moving right now:
+
+//     Go to next slide and
+
+//     emit a scroll event.
+
+// Else (the user is scrolling towards the beginning) and
+
+// if the slider hasn't hit the first slide or
+
+// if the slider is a loop and
+
+// if the slider isn't moving right now:
+
+//   Go to prev slide and
+
+//   emit a scroll event.
+
+// If you got here is because an animation has been triggered so store the current time
+
+// Return true to animate scroll on edges
+
+// Update Navigation Buttons
+
+// Render || Update Pagination bullets/items
+
+// Types
+
+// Render Container
+
+// Calc Scale From Multi-touches
+
+// Define if we need image drag
+
+// Toggle Zoom
+
+// Zoom Out
+
+// Zoom In
+
+// Attach/Detach Events
+
+// Scale image
+
+// Move image
+
+// Next Slides
+
+// Prev Slides
+
+// Get the indexes of x1 and x3 (the array indexes before and after given x2):
+
+// xxx: for now i will just save one spline function to to
+
+// this will create an Interpolate function based on the snapGrids
+
+// x is the Grid of the scrolled scroller and y will be the controlled scroller
+
+// it makes sense to create this only once and recall it for the interpolation
+
+// the function does a lot of value caching for performance
+
+// i am not sure why the values have to be multiplicated this way, tried to invert the snapGrid
+
+// but it did not work out
+
+// Navigation
+
+// Pagination
+
+// Set shadows
+
+// if (!$(this).hasClass(swiper.params.slideActiveClass)) return;
+
+// Each slide offset from center
+
+// Fix for ultra small values
+
+// Set correct perspective for IE10
+
+// Find actual thumbs index to slide to
+
+// Activate thumbs
+
+// 'bullets' or 'progressbar' or 'fraction' or 'custom'
+
+/* harmony default export */
+
+// EXTERNAL MODULE: ./node_modules/imagesLoaded/imagesloaded.js
+
+// CONCATENATED MODULE: ./src/index.js
+
+// import "es6-promise/auto";
+
+// import "fetch-polyfill";
+
+// マイクロ秒までの精度を持った浮動小数点の値
+
+// https://developer.mozilla.org/ja/docs/Web/API/Performance/now
+
+// 一回前のカラーを外す
+
+// カラーをつける
+
+// ブラウザの描画更新単位と同じ単位で呼び出される
+
+// 次の再描画が行われる前に次のアニメーションをする関数を呼び出す
+
+// タブが非アクティブの時はFPSを落とす
+
+// https://liginc.co.jp/web/js/130758
+
+// when window width is <= 800px
+
+// var sec = $('.swiper-container');
+
+// const get = await jbn.create({
+
+//   start: "2019.12.7", term: "1", at:"いつもの場所"
+
+// }, BOX_ID, 'date');
+
+// console.log(get);
+
+// await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, '5e21b50fcd442f0017cd446d');
+
+// await jbn.delete(BOX_ID, '5e21b50fcd442f0017cd446d')

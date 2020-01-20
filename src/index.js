@@ -4,6 +4,7 @@
 import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
 import moment from 'moment'
+import $ from 'jquery';
 
 import Swiper from 'swiper';
 import imagesLoaded from 'imagesLoaded';
@@ -113,11 +114,16 @@ const sec = $('.swiper-slide');
 const nvp = sec.outerHeight() + sec.offset().top;
 
 $(window).scroll(function () {
+  console.log(`----scroll--------------------`);
   var distanceTop = $(document).scrollTop();
   if (distanceTop > nvp) {
+    console.log(`----distanceTop > nvp--------------------`);
+    
     $header.show().addClass("scroll")
   }
   if (distanceTop < nvp) {
+    console.log(`----distanceTop < nvp--------------------`);
+
     $header.removeClass("scroll").hide()
   }
 });
@@ -125,7 +131,8 @@ $(window).scroll(function () {
 $('.js-anchor').click(function(e) {
   e.preventDefault();
   let href = $(this).attr("href")
-
+  console.log(`----clicked: ${href}--------------------`);
+  
   $(href).delay(200).velocity("scroll", {
     duration: 600, easing: "easeInOutQuart"
   });
