@@ -36,12 +36,14 @@
 /* ---------------------------------------- */
 html {
   overflow: auto;
+  height: 100%;
 }
 _:-ms-lang(x)::-ms-backdrop, html {
   // 縦スクロールバーが2重に表示される対応
   overflow-y: hidden;
 }
 body {
+  height: 100%;
   color: #111111;
   font-size: 14px;
   line-height: 1.6;
@@ -198,18 +200,21 @@ section h2 {
 /* ---------------------------------------- */
 /* hero */
 /* ---------------------------------------- */
+.sec-hero {
+  height: 100%;
+}
 .sec-hero .l-inner {
   position: relative;
 }
 .hero-slider {
-  height: 100vh;
+  height: 100%;
 }
 .hero-wrapper {
   max-height: initial;
 }
 .hero-slider .item {
-  height:100vh;
-  max-height:calc(100vh - 40px);
+  height:100%;
+  max-height:calc(100% - 40px);
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
