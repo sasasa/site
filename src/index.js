@@ -5,13 +5,14 @@ import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
 import moment from 'moment'
 
-
 import Swiper from 'swiper';
 import imagesLoaded from 'imagesLoaded';
 imagesLoaded.makeJQueryPlugin($);
-// import './reset.scss';
 
 import Velocity from 'velocity-animate'
+
+import '@fortawesome/fontawesome-free/js/fontawesome';
+import '@fortawesome/fontawesome-free/js/brands';
 
 import './style.scss';
 

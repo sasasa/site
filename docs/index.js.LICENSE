@@ -5070,11 +5070,59 @@
 
 /* 261 */
 
+// This works in non-strict mode
+
+// This works if eval is allowed (see CSP)
+
+// This works if the window reference is available
+
+// g can still be undefined, but nothing to do about it...
+
+// We return undefined, instead of nothing here, so it's
+
+// easier to handle this case. if(!global) { ...}
+
 /* 262 */
+
+// shim for using process in browser
+
+// cached from whatever global is present so that test runners that stub it
+
+// don't break things.  But we need to wrap it in a try catch in case it is
+
+// wrapped in strict mode code which doesn't define any globals.  It's inside a
+
+// function because try/catches deoptimize in certain engines.
+
+//normal enviroments in sane situations
+
+// if setTimeout wasn't available but was latter defined
+
+// when when somebody has screwed with setTimeout but no I.E. maddness
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
+
+// if clearTimeout wasn't available but was latter defined
+
+// When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
+
+// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
+
+// Some versions of I.E. have different rules for clearTimeout vs setTimeout
+
+// v8 likes predictible objects
+
+// empty string to avoid regexp issues
 
 /* 263 */
 
 /* 264 */
+
+/* 265 */
+
+/* 266 */
 
 // ECMAScript 6 symbols shim
 
@@ -5120,97 +5168,97 @@
 
 // 24.3.3 JSON[@@toStringTag]
 
-/* 265 */
-
-/* 266 */
-
-// all enumerable object keys, includes symbols
-
 /* 267 */
 
 /* 268 */
 
-// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+// all enumerable object keys, includes symbols
 
 /* 269 */
 
-// 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-
 /* 270 */
+
+// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 
 /* 271 */
 
-// 19.1.2.9 Object.getPrototypeOf(O)
+// 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
 
 /* 272 */
 
-// 19.1.2.14 Object.keys(O)
-
 /* 273 */
+
+// 19.1.2.9 Object.getPrototypeOf(O)
 
 /* 274 */
 
-// 19.1.2.5 Object.freeze(O)
+// 19.1.2.14 Object.keys(O)
 
 /* 275 */
 
-// 19.1.2.17 Object.seal(O)
-
 /* 276 */
 
-// 19.1.2.15 Object.preventExtensions(O)
+// 19.1.2.5 Object.freeze(O)
 
 /* 277 */
 
-// 19.1.2.12 Object.isFrozen(O)
+// 19.1.2.17 Object.seal(O)
 
 /* 278 */
 
-// 19.1.2.13 Object.isSealed(O)
+// 19.1.2.15 Object.preventExtensions(O)
 
 /* 279 */
 
-// 19.1.2.11 Object.isExtensible(O)
+// 19.1.2.12 Object.isFrozen(O)
 
 /* 280 */
 
-// 19.1.3.1 Object.assign(target, source)
+// 19.1.2.13 Object.isSealed(O)
 
 /* 281 */
 
-// 19.1.3.10 Object.is(value1, value2)
+// 19.1.2.11 Object.isExtensible(O)
 
 /* 282 */
 
-// 19.1.3.19 Object.setPrototypeOf(O, proto)
+// 19.1.3.1 Object.assign(target, source)
 
 /* 283 */
 
-// 19.1.3.6 Object.prototype.toString()
+// 19.1.3.10 Object.is(value1, value2)
 
 /* 284 */
 
-// 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
+// 19.1.3.19 Object.setPrototypeOf(O, proto)
 
 /* 285 */
 
-// 19.2.4.2 name
+// 19.1.3.6 Object.prototype.toString()
 
 /* 286 */
+
+// 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
+
+/* 287 */
+
+// 19.2.4.2 name
+
+/* 288 */
 
 // 19.2.3.6 Function.prototype[@@hasInstance](V)
 
 // for environment w/o native `@@hasInstance` logic enough `instanceof`, but add this:
 
-/* 287 */
+/* 289 */
 
 // 18.2.5 parseInt(string, radix)
 
-/* 288 */
+/* 290 */
 
 // 18.2.4 parseFloat(string)
 
-/* 289 */
+/* 291 */
 
 // Number('+0x1') should be NaN, old V8 fix
 
@@ -5224,229 +5272,225 @@
 
 // ES3:
 
-/* 290 */
+/* 292 */
 
 // V8 ~ Android 4.3-
 
-/* 291 */
+/* 293 */
 
 // IE7-
 
-/* 292 */
+/* 294 */
 
 // 20.1.2.1 Number.EPSILON
 
-/* 293 */
+/* 295 */
 
 // 20.1.2.2 Number.isFinite(number)
 
-/* 294 */
-
-/* 295 */
-
-// 20.1.2.4 Number.isNaN(number)
-
 /* 296 */
-
-// 20.1.2.5 Number.isSafeInteger(number)
 
 /* 297 */
 
-// 20.1.2.6 Number.MAX_SAFE_INTEGER
+// 20.1.2.4 Number.isNaN(number)
 
 /* 298 */
 
-// 20.1.2.10 Number.MIN_SAFE_INTEGER
+// 20.1.2.5 Number.isSafeInteger(number)
 
 /* 299 */
 
-// 20.1.2.12 Number.parseFloat(string)
+// 20.1.2.6 Number.MAX_SAFE_INTEGER
 
 /* 300 */
 
-// 20.1.2.13 Number.parseInt(string, radix)
+// 20.1.2.10 Number.MIN_SAFE_INTEGER
 
 /* 301 */
 
-// 20.2.2.3 Math.acosh(x)
+// 20.1.2.12 Number.parseFloat(string)
 
 /* 302 */
+
+// 20.1.2.13 Number.parseInt(string, radix)
+
+/* 303 */
+
+// 20.2.2.3 Math.acosh(x)
+
+/* 304 */
 
 // 20.2.2.5 Math.asinh(x)
 
 // Tor Browser bug: Math.asinh(0) -> -0
 
-/* 303 */
+/* 305 */
 
 // 20.2.2.7 Math.atanh(x)
 
 // Tor Browser bug: Math.atanh(-0) -> 0
 
-/* 304 */
+/* 306 */
 
 // 20.2.2.9 Math.cbrt(x)
 
-/* 305 */
+/* 307 */
 
 // 20.2.2.11 Math.clz32(x)
 
-/* 306 */
-
-// 20.2.2.12 Math.cosh(x)
-
-/* 307 */
-
 /* 308 */
 
-// 20.2.2.16 Math.fround(x)
+// 20.2.2.12 Math.cosh(x)
 
 /* 309 */
 
 /* 310 */
 
-// 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
+// 20.2.2.16 Math.fround(x)
 
 /* 311 */
+
+/* 312 */
+
+// 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
+
+/* 313 */
 
 // 20.2.2.18 Math.imul(x, y)
 
 // some WebKit versions fails with big numbers, some has wrong arity
 
-/* 312 */
-
-// 20.2.2.21 Math.log10(x)
-
-/* 313 */
-
 /* 314 */
 
-// 20.2.2.22 Math.log2(x)
+// 20.2.2.21 Math.log10(x)
 
 /* 315 */
 
 /* 316 */
 
+// 20.2.2.22 Math.log2(x)
+
+/* 317 */
+
+/* 318 */
+
 // 20.2.2.30 Math.sinh(x)
 
 // V8 near Chromium 38 has a problem with very small numbers
 
-/* 317 */
+/* 319 */
 
 // 20.2.2.33 Math.tanh(x)
 
-/* 318 */
+/* 320 */
 
 // 20.2.2.34 Math.trunc(x)
 
-/* 319 */
+/* 321 */
 
 // length should be 1, old FF problem
 
 // 21.1.2.2 String.fromCodePoint(...codePoints)
 
-/* 320 */
+/* 322 */
 
 // 21.1.2.4 String.raw(callSite, ...substitutions)
 
-/* 321 */
+/* 323 */
 
 // 21.1.3.25 String.prototype.trim()
 
-/* 322 */
+/* 324 */
 
 // 21.1.3.27 String.prototype[@@iterator]()
 
-/* 323 */
+/* 325 */
 
 // 21.1.3.3 String.prototype.codePointAt(pos)
 
-/* 324 */
+/* 326 */
 
 // 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
 
 /* , endPosition = @length */
 
-/* 325 */
+/* 327 */
 
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 
 /* , position = 0 */
 
-/* 326 */
+/* 328 */
 
 // 21.1.3.13 String.prototype.repeat(count)
 
-/* 327 */
+/* 329 */
 
 // 21.1.3.18 String.prototype.startsWith(searchString [, position ])
 
-/* 328 */
+/* 330 */
 
 // B.2.3.2 String.prototype.anchor(name)
 
-/* 329 */
+/* 331 */
 
 // B.2.3.3 String.prototype.big()
 
-/* 330 */
+/* 332 */
 
 // B.2.3.4 String.prototype.blink()
 
-/* 331 */
+/* 333 */
 
 // B.2.3.5 String.prototype.bold()
 
-/* 332 */
+/* 334 */
 
 // B.2.3.6 String.prototype.fixed()
 
-/* 333 */
+/* 335 */
 
 // B.2.3.7 String.prototype.fontcolor(color)
 
-/* 334 */
+/* 336 */
 
 // B.2.3.8 String.prototype.fontsize(size)
 
-/* 335 */
+/* 337 */
 
 // B.2.3.9 String.prototype.italics()
 
-/* 336 */
+/* 338 */
 
 // B.2.3.10 String.prototype.link(url)
 
-/* 337 */
+/* 339 */
 
 // B.2.3.11 String.prototype.small()
 
-/* 338 */
+/* 340 */
 
 // B.2.3.12 String.prototype.strike()
 
-/* 339 */
+/* 341 */
 
 // B.2.3.13 String.prototype.sub()
 
-/* 340 */
+/* 342 */
 
 // B.2.3.14 String.prototype.sup()
 
-/* 341 */
-
-// 20.3.3.1 / 15.9.4.4 Date.now()
-
-/* 342 */
-
 /* 343 */
 
-// 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
-
-// PhantomJS / old WebKit has a broken implementations
+// 20.3.3.1 / 15.9.4.4 Date.now()
 
 /* 344 */
 
 /* 345 */
+
+// 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
+
+// PhantomJS / old WebKit has a broken implementations
 
 /* 346 */
 
@@ -5454,9 +5498,13 @@
 
 /* 348 */
 
+/* 349 */
+
+/* 350 */
+
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 
-/* 349 */
+/* 351 */
 
 // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 
@@ -5464,23 +5512,23 @@
 
 // if object isn't iterable or it's array with default iterator - use simple case
 
-/* 350 */
+/* 352 */
 
 // WebKit Array.of isn't generic
 
 // 22.1.2.3 Array.of( ...items)
 
-/* 351 */
+/* 353 */
 
 // 22.1.3.13 Array.prototype.join(separator)
 
 // fallback for not array-like strings
 
-/* 352 */
+/* 354 */
 
 // fallback for not array-like ES3 strings and DOM objects
 
-/* 353 */
+/* 355 */
 
 // IE8-
 
@@ -5490,45 +5538,45 @@
 
 // 22.1.3.25 Array.prototype.sort(comparefn)
 
-/* 354 */
+/* 356 */
 
 // 22.1.3.10 / 15.4.4.18 Array.prototype.forEach(callbackfn [, thisArg])
 
-/* 355 */
+/* 357 */
 
 // cross-realm fallback
 
-/* 356 */
+/* 358 */
 
 // 22.1.3.15 / 15.4.4.19 Array.prototype.map(callbackfn [, thisArg])
 
-/* 357 */
+/* 359 */
 
 // 22.1.3.7 / 15.4.4.20 Array.prototype.filter(callbackfn [, thisArg])
 
-/* 358 */
+/* 360 */
 
 // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
 
-/* 359 */
+/* 361 */
 
 // 22.1.3.5 / 15.4.4.16 Array.prototype.every(callbackfn [, thisArg])
 
-/* 360 */
+/* 362 */
 
 // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
 
-/* 361 */
+/* 363 */
 
 // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
 
-/* 362 */
+/* 364 */
 
 // 22.1.3.11 / 15.4.4.14 Array.prototype.indexOf(searchElement [, fromIndex])
 
 /* , fromIndex = 0 */
 
-/* 363 */
+/* 365 */
 
 // 22.1.3.14 / 15.4.4.15 Array.prototype.lastIndexOf(searchElement [, fromIndex])
 
@@ -5536,31 +5584,31 @@
 
 // convert -0 to +0
 
-/* 364 */
-
-/* 365 */
-
 /* 366 */
+
+/* 367 */
+
+/* 368 */
 
 // 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
 
 // Shouldn't skip holes
 
-/* 367 */
+/* 369 */
 
 // 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
 
-/* 368 */
+/* 370 */
 
-/* 369 */
+/* 371 */
 
 // RegExp constructor can alter flags and IsRegExp works correct with @@match
 
-/* 370 */
+/* 372 */
 
 // 21.2.5.14 RegExp.prototype.toString()
 
-/* 371 */
+/* 373 */
 
 // @@match logic
 
@@ -5572,7 +5620,7 @@
 
 // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@match
 
-/* 372 */
+/* 374 */
 
 // @@replace logic
 
@@ -5598,7 +5646,7 @@
 
 // \d\d?
 
-/* 373 */
+/* 375 */
 
 // @@search logic
 
@@ -5610,7 +5658,7 @@
 
 // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@search
 
-/* 374 */
+/* 376 */
 
 // @@split logic
 
@@ -5632,7 +5680,7 @@
 
 // the 'y' flag.
 
-/* 375 */
+/* 377 */
 
 // Node.js
 
@@ -5642,9 +5690,9 @@
 
 // strange IE + webpack dev server bug - use .call(global)
 
-/* 376 */
+/* 378 */
 
-/* 377 */
+/* 379 */
 
 // 23.1 Map Objects
 
@@ -5652,13 +5700,13 @@
 
 // 23.1.3.9 Map.prototype.set(key, value)
 
-/* 378 */
+/* 380 */
 
 // 23.2 Set Objects
 
 // 23.2.3.1 Set.prototype.add(value)
 
-/* 379 */
+/* 381 */
 
 // 23.3.3.3 WeakMap.prototype.get(key)
 
@@ -5670,23 +5718,19 @@
 
 // store all the rest on native weakmap
 
-/* 380 */
+/* 382 */
 
 // 23.4 WeakSet Objects
 
 // 23.4.3.1 WeakSet.prototype.add(value)
 
-/* 381 */
+/* 383 */
 
 // 24.1.3.1 ArrayBuffer.isView(arg)
 
 // 24.1.4.3 ArrayBuffer.prototype.slice(start, end)
 
 // FF fix
-
-/* 382 */
-
-/* 383 */
 
 /* 384 */
 
@@ -5706,11 +5750,15 @@
 
 /* 392 */
 
+/* 393 */
+
+/* 394 */
+
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
 
 // MS Edge argumentsList argument is optional
 
-/* 393 */
+/* 395 */
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
 
@@ -5722,95 +5770,91 @@
 
 // with altered newTarget, not support built-in constructors
 
-/* 394 */
+/* 396 */
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
 
 // MS Edge has broken Reflect.defineProperty - throwing instead of returning false
 
-/* 395 */
+/* 397 */
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
 
-/* 396 */
+/* 398 */
 
 // 26.1.5 Reflect.enumerate(target)
 
 // keys
 
-/* 397 */
+/* 399 */
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
 
 /* , receiver */
 
-/* 398 */
+/* 400 */
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
 
-/* 399 */
+/* 401 */
 
 // 26.1.8 Reflect.getPrototypeOf(target)
 
-/* 400 */
+/* 402 */
 
 // 26.1.9 Reflect.has(target, propertyKey)
 
-/* 401 */
+/* 403 */
 
 // 26.1.10 Reflect.isExtensible(target)
 
-/* 402 */
+/* 404 */
 
 // 26.1.11 Reflect.ownKeys(target)
 
-/* 403 */
+/* 405 */
 
 // 26.1.12 Reflect.preventExtensions(target)
 
-/* 404 */
+/* 406 */
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 
-/* 405 */
-
-// 26.1.14 Reflect.setPrototypeOf(target, proto)
-
-/* 406 */
-
 /* 407 */
 
-// https://github.com/tc39/Array.prototype.includes
+// 26.1.14 Reflect.setPrototypeOf(target, proto)
 
 /* 408 */
 
 /* 409 */
 
-// https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
+// https://github.com/tc39/Array.prototype.includes
 
 /* 410 */
 
-// https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
-
 /* 411 */
+
+// https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 
 /* 412 */
 
-/* , fillString = ' ' */
+// https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
 
 /* 413 */
 
 /* 414 */
 
+/* , fillString = ' ' */
+
 /* 415 */
 
 /* 416 */
 
-// https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-
 /* 417 */
 
 /* 418 */
+
+// https://github.com/sebmarkbage/ecmascript-string-left-right-trim
 
 /* 419 */
 
@@ -5820,37 +5864,41 @@
 
 /* 422 */
 
-// https://github.com/tc39/proposal-object-getownpropertydescriptors
-
 /* 423 */
 
 /* 424 */
 
-// https://github.com/tc39/proposal-object-values-entries
+// https://github.com/tc39/proposal-object-getownpropertydescriptors
 
 /* 425 */
 
 /* 426 */
 
+// https://github.com/tc39/proposal-object-values-entries
+
 /* 427 */
 
 /* 428 */
-
-// https://github.com/tc39/proposal-promise-finally
 
 /* 429 */
 
 /* 430 */
 
-// ie9- setTimeout & setInterval additional parameters fix
+// https://github.com/tc39/proposal-promise-finally
 
 /* 431 */
 
 /* 432 */
 
-// TODO: Not spec compliant, should be false.
+// ie9- setTimeout & setInterval additional parameters fix
 
 /* 433 */
+
+/* 434 */
+
+// TODO: Not spec compliant, should be false.
+
+/* 435 */
 
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -6117,13 +6165,13 @@
 
 // problems, please detail your unique predicament in a GitHub issue.
 
-/* 434 */
+/* 436 */
 
-/* 435 */
+/* 437 */
 
 // https://github.com/tc39/proposal-global
 
-/* 436 */
+/* 438 */
 
 // prevent global pollution for namespaces
 
@@ -6132,10 +6180,6 @@
 // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
 
 // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-
-/* 437 */
-
-/* 438 */
 
 /* 439 */
 
@@ -6156,6 +6200,10 @@
 /* 447 */
 
 /* 448 */
+
+/* 449 */
+
+/* 450 */
 
 /**
  * Create an instance of Axios
@@ -6180,7 +6228,7 @@
 
 // Allow use of default import syntax in TypeScript
 
-/* 449 */
+/* 451 */
 
 /**
  * Create a new instance of Axios
@@ -6204,7 +6252,7 @@
 
 /*eslint func-names:0*/
 
-/* 450 */
+/* 452 */
 
 /**
  * Add a new interceptor to the stack
@@ -6230,7 +6278,7 @@
  * @param {Function} fn The function to call for each interceptor
  */
 
-/* 451 */
+/* 453 */
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -6251,7 +6299,7 @@
 
 // Transform response data
 
-/* 452 */
+/* 454 */
 
 /**
  * Transform the data for a request or a response
@@ -6262,43 +6310,9 @@
  * @returns {*} The resulting transformed data
  */
 
-/* 453 */
-
-// shim for using process in browser
-
-// cached from whatever global is present so that test runners that stub it
-
-// don't break things.  But we need to wrap it in a try catch in case it is
-
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-
-// function because try/catches deoptimize in certain engines.
-
-//normal enviroments in sane situations
-
-// if setTimeout wasn't available but was latter defined
-
-// when when somebody has screwed with setTimeout but no I.E. maddness
-
-// When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-
-// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-
-// if clearTimeout wasn't available but was latter defined
-
-// When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-
-// same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-
-// Some versions of I.E. have different rules for clearTimeout vs setTimeout
-
-// v8 likes predictible objects
-
-// empty string to avoid regexp issues
-
-/* 454 */
-
 /* 455 */
+
+/* 456 */
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -6308,7 +6322,7 @@
  * @param {object} response The response.
  */
 
-/* 456 */
+/* 457 */
 
 /**
  * Update an Error with the specified config, error code, and response.
@@ -6329,7 +6343,7 @@
 
 // Axios
 
-/* 457 */
+/* 458 */
 
 /**
  * Creates a new URL by combining the baseURL with the requestedURL,
@@ -6341,7 +6355,7 @@
  * @returns {string} The combined full path
  */
 
-/* 458 */
+/* 459 */
 
 /**
  * Determines whether the specified URL is absolute
@@ -6356,7 +6370,7 @@
 
 // by any combination of letters, digits, plus, period, or hyphen.
 
-/* 459 */
+/* 460 */
 
 /**
  * Creates a new URL by combining the specified URLs
@@ -6366,7 +6380,7 @@
  * @returns {string} The combined URL
  */
 
-/* 460 */
+/* 461 */
 
 // Headers whose duplicates are ignored by node
 
@@ -6386,7 +6400,7 @@
  * @returns {Object} Headers parsed into an object
  */
 
-/* 461 */
+/* 462 */
 
 // Standard browser envs have full support of the APIs needed to test
 
@@ -6410,11 +6424,11 @@
   * @returns {boolean} True if URL shares the same origin, otherwise false
   */
 
-/* 462 */
-
 /* 463 */
 
 /* 464 */
+
+/* 465 */
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -6428,7 +6442,7 @@
  * cancels the `CancelToken`.
  */
 
-/* 465 */
+/* 466 */
 
 /**
  * Syntactic sugar for invoking a function and expanding an array for arguments.
@@ -6451,9 +6465,9 @@
  * @returns {Function}
  */
 
-/* 466 */
-
 /* 467 */
+
+/* 468 */
 
 // CONCATENATED MODULE: ./node_modules/ssr-window/dist/ssr-window.esm.js
 
@@ -7037,9 +7051,9 @@
 
 /* harmony default export */
 
-/* 468 */
-
 /* 469 */
+
+/* 470 */
 
 /*!
  * imagesLoaded v4.1.4
@@ -7139,15 +7153,13 @@
 
 // try making plugin
 
-/* 470 */
+/* 471 */
 
 /* harmony import */
 
 // import "es6-promise/auto";
 
 // import "fetch-polyfill";
-
-// import './reset.scss';
 
 // マイクロ秒までの精度を持った浮動小数点の値
 
@@ -7181,7 +7193,7 @@
 
 // await jbn.delete(BOX_ID, '5e21b50fcd442f0017cd446d')
 
-/* 471 */
+/* 472 */
 
 // set events hash
 
@@ -7211,7 +7223,7 @@
 
 // trigger listener
 
-/* 472 */
+/* 473 */
 
 /*! VelocityJS.org (1.5.2). (C) 2014 Julian Shapiro. MIT @license: en.wikipedia.org/wiki/MIT_License */
 
@@ -9076,6 +9088,110 @@
 
 /* Revert to jQuery's $.animate(), and lose Velocity's extra features. */
 
-/* 473 */
+/* 474 */
+
+/*!
+ * Font Awesome Free 5.12.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
+// Getting an empty string will occur if the attribute is set on the HTML tag but without a value
+
+// We'll assume that this is an indication that it should be toggled to true
+
+// For example <script data-search-pseudo-elements src="..."></script>
+
+// run promise callbacks
+
+// reset async asyncQueue
+
+// then should be retrieved only once
+
+/**
+   * @class
+   */
+
+// already resolved, call callback async
+
+// subscribe
+
+/**
+     * Font Awesome 4 used the prefix of `fa` for all icons. With the introduction
+     * of new styles we needed to differentiate between them. Prefix `fa` is now an alias
+     * for `fas` so we'll easy the upgrade process for our users by automatically defining
+     * this as well.
+     */
+
+// If we already have a replaced node we do not want to continue nesting within it.
+
+// Short-circuit to the standard replacement
+
+// noop
+
+// This node is already being processed
+
+// If we've already processed it but the current computed style does not result in a font-family,
+
+// that probably means that a class name that was previously present to make the icon has been
+
+// removed. So we now should delete the icon.
+
+// Only convert the pseudo element in this :before/:after position into an icon if we haven't
+
+// already done so with the same prefix and iconName
+
+// Delete the old one, since we're replacing it with a new one
+
+/* 475 */
+
+// DOM APIs, for completeness
+
+// Does not start the time, just sets up the members needed.
+
+// setimmediate attaches itself to the global object
+
+// On some exotic environments, it's not clear which object `setimmediate` was
+
+// able to install onto.  Search each possibility in the same order as the
+
+// `setimmediate` library.
+
+/* 476 */
+
+// Spec says greater than zero
+
+// Don't get fooled by e.g. browserify environments.
+
+// The test against `importScripts` prevents this implementation from being installed inside a web worker,
+
+// where `global.postMessage` means something completely different and can't be used for this purpose.
+
+// For web workers, where supported
+
+// For IE 6–8
+
+// Create a <script> element; its readystatechange event will be fired asynchronously once it is inserted
+
+// into the document. Do so, thus queuing up the task. Remember to clean up once it's been called.
+
+// For non-IE10 modern browsers
+
+// Callback can either be a function or a string
+
+// Copy function arguments
+
+// Store and register the task
+
+// From the spec: "Wait until any invocations of this algorithm started before this one have completed."
+
+// So if we're currently running a task, we'll need to delay this invocation.
+
+// Delay by doing a setTimeout. setImmediate was tried instead, but in Firefox 7 it generated a
+
+// "too much recursion" error.
+
+/* 477 */
+
+/* 478 */
 
 // extracted by mini-css-extract-plugin
