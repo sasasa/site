@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>キャンペーン日付入力</title>
+  <title>更新</title>
 </head>
 <body>
   <div class="container mt-5">
@@ -12,7 +12,7 @@
       <div class="col-7">
         <div class="jumbotron">
           <h1 class="display-5">日付入力</h1>
-          <p>その日だけの時は期間に0をいれてください。その日と次の日の時は1を3日間の時は2を入れてください。日付を変えたら幅を確認してatの所で折り返されるように変更してください。</p>
+          <p>「YYYY.mm.dd」の形式で入力してください。その日だけの時は期間に0をいれてください。その日と次の日の時は1を3日間の時は2を入れてください。日付を変えたら幅を確認してatの所で折り返されるように幅の調節をしてください。場所には大まかな場所を入力してください。</p>
         </div>
       </div>
       <div class="col-5">
@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
           <label for="term">期間</label>
-          <input type="text" class="form-control" id="term">
+          <input type="number" class="form-control" id="term">
         </div>
         <div class="form-group">
           <label for="at">場所</label>
@@ -46,8 +46,40 @@
           </datalist>
         </div>
         <input type="button" value="日付更新" class="btn btn-primary" id="update_btn">
+        <a href="./" class="btn btn-info" target="_blank">サイトを確認する</a>
       </div>
     </div>
+    <div class="row rounded border shadow-sm py-5 mt-5">
+      <div class="col-7">
+        <div class="jumbotron">
+          <h1 class="display-5">イベント入力</h1>
+          <p>日付以外の入力をしてください。日付は上の値が入力されます。会場には詳しい場所を入力してください。</p>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="form-group">
+          <label for="event_name">イベント名</label>
+          <input type="text" class="form-control" id="event_name">
+        </div>
+        <div class="form-group">
+          <label for="venue">会場</label>
+          <input type="text" class="form-control" id="venue">
+        </div>
+        <div class="form-group">
+          <label for="time">開催時間</label>
+          <input type="text" class="form-control" id="time">
+        </div>
+        <div class="form-group">
+          <label for="fee">入場料</label>
+          <input type="text" class="form-control" id="fee">
+        </div>
+        <div class="form-group">
+          <label for="hashtag">ハッシュタグ</label>
+          <input type="text" class="form-control" id="hashtag">
+        </div>
+        <input type="button" value="イベント更新" class="btn btn-primary" id="event_btn">
+        <a href="./" class="btn btn-info" target="_blank">サイトを確認する</a>
+      </div>
   </div>
 </body>
 </html>

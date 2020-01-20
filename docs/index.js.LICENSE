@@ -605,14 +605,6 @@
 
 /* 9 */
 
-// Thank's IE8 for his funny defineProperty
-
-/* 10 */
-
-/* empty */
-
-/* 11 */
-
 /*!
  * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
@@ -3736,6 +3728,14 @@
 // (#7102#comment:10, https://github.com/jquery/jquery/pull/557)
 
 // and CommonJS for browser emulators (#13566)
+
+/* 10 */
+
+// Thank's IE8 for his funny defineProperty
+
+/* 11 */
+
+/* empty */
 
 /* 12 */
 
@@ -9177,8 +9177,6 @@
 // https://liginc.co.jp/web/js/130758
 
 // when window width is <= 800px
-
-// var sec = $('.swiper-container');
 
 // const get = await jbn.create({
 

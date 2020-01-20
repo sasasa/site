@@ -25,6 +25,12 @@ async function fetch() {
   $('#term').val(escape_html(data[0].term))
   $('#at').val(escape_html(data[0].at))
   $('#width').val(escape_html(data[0].width))
+  $('#event_name').val(escape_html(data[0].event_name))
+  $('#venue').val(escape_html(data[0].venue))
+  $('#time').val(escape_html(data[0].time))
+  $('#fee').val(escape_html(data[0].fee))
+  $('#hashtag').val(escape_html(data[0].hashtag))
+
   
 
   const startDay = moment(data[0].start, "YYYY.MM.DD")
@@ -45,9 +51,30 @@ $('#update_btn').click(async () => {
     term: $('#term').val(), 
     at: $('#at').val(),
     width: $('#width').val(),
+    event_name: $('#event_name').val(),
+    venue: $('#venue').val(),
+    time: $('#time').val(),
+    fee: $('#fee').val(),
+    hashtag: $('#hashtag').val(),
   }, BOX_ID, '5e21b50fcd442f0017cd446d');
-  alert("更新しました。")
+  alert("日付入力更新しました。")
 })
+$('#event_btn').click(async () => {
+  const jbn = new JsonBox();
+  const update = await jbn.update({ 
+    start: $('#start').val(), 
+    term: $('#term').val(), 
+    at: $('#at').val(),
+    width: $('#width').val(),
+    event_name: $('#event_name').val(),
+    venue: $('#venue').val(),
+    time: $('#time').val(),
+    fee: $('#fee').val(),
+    hashtag: $('#hashtag').val(),
+  }, BOX_ID, '5e21b50fcd442f0017cd446d');
+  alert("イベント入力更新しました。")
+})
+
 
 
 

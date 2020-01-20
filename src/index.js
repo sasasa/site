@@ -109,21 +109,15 @@ $('.swiper-wrapper').imagesLoaded({ background: true }, () => {
 const $header = $('#header'); 
 $header.hide();
 
-// var sec = $('.swiper-container');
 const sec = $('.swiper-slide');
 const nvp = sec.outerHeight() + sec.offset().top;
 
 $(window).scroll(function () {
-  console.log(`----scroll--------------------`);
   var distanceTop = $(document).scrollTop();
   if (distanceTop > nvp) {
-    console.log(`----distanceTop > nvp--------------------`);
-    
     $header.show().addClass("scroll")
   }
   if (distanceTop < nvp) {
-    console.log(`----distanceTop < nvp--------------------`);
-
     $header.removeClass("scroll").hide()
   }
 });
@@ -131,7 +125,6 @@ $(window).scroll(function () {
 $('.js-anchor').click(function(e) {
   e.preventDefault();
   let href = $(this).attr("href")
-  console.log(`----clicked: ${href}--------------------`);
   
   $(href).delay(200).velocity("scroll", {
     duration: 600, easing: "easeInOutQuart"
@@ -192,6 +185,10 @@ async function fetch() {
   // await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, '5e21b50fcd442f0017cd446d');
   // await jbn.delete(BOX_ID, '5e21b50fcd442f0017cd446d')
   const data = await jbn.read(BOX_ID);
+  moment.locale("ja", {
+    weekdays: ["日", "月", "火", "水", "木", "金", "土"],//dddd
+    // weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"]//ddd
+  })
   const startDay = moment(data[0].start, "YYYY.MM.DD")
   const clone = moment(startDay)
 
@@ -207,6 +204,24 @@ async function fetch() {
     $('#end_day').text(lastDay.format('ddd').toUpperCase())
   }
   $('#at').text(escape_html(data[0].at))
+
+  if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
+    $('#date').text(escape_html(clone.format('YYYY年MM月DD日(dddd)')))
+  } else {
+    $('#date').text(
+      escape_html(clone.format('YYYY年MM月DD日(dddd)')) +
+      '～' +
+      escape_html(lastDay.format('MM月DD日(dddd)'))
+    )
+  }
+  $('#event_name').text(escape_html(data[0].event_name))
+  
+  $('#venue').text(escape_html(data[0].venue))
+  $('#time').text(escape_html(data[0].time))
+  $('#fee').text(escape_html(data[0].fee))
+  $('#hashtag').text(escape_html(data[0].hashtag))
+
+
   setWidth(data[0].width)
   $(window).resize(function() {
     setWidth(data[0].width)
