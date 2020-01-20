@@ -210,12 +210,19 @@ async function fetch() {
   setWidth(data[0].width)
   $(window).resize(function() {
     setWidth(data[0].width)
+    setFullHeight()
   });
 }
 
 $(document).ready(function(){
+  setFullHeight()
   fetch()
 });
+
+function setFullHeight() {
+  var hSize = $(window).height();
+  $('.hero-slider').height(hSize);
+}
 function setWidth(width) {
   if(window.innerWidth < 800) {
     $('.hero-date').css('width', width + 'rem')
