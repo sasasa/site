@@ -1,5 +1,6 @@
 // import "es6-promise/auto";
 // import "fetch-polyfill";
+import 'intersection-observer';
 
 import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
@@ -14,6 +15,8 @@ import Velocity from 'velocity-animate'
 
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/brands';
+
+import { escape_html } from './util'
 
 import './style.scss';
 
@@ -109,27 +112,35 @@ $('.swiper-wrapper').imagesLoaded({ background: true }, () => {
 const $header = $('#header'); 
 $header.hide();
 
-const sec = $('.swiper-slide');
-const nvp = sec.outerHeight() + sec.offset().top;
-
-$(window).scroll(function () {
-  var distanceTop = $(document).scrollTop();
-  if (distanceTop > nvp) {
-    $header.show().addClass("scroll")
-  }
-  if (distanceTop < nvp) {
-    $header.removeClass("scroll").hide()
-  }
-});
+// const sec = $('.swiper-slide');
+// const nvp = sec.outerHeight() + sec.offset().top;
+// $(window).scroll(function () {
+//   var distanceTop = $(document).scrollTop();
+//   if (distanceTop > nvp) {
+//     $header.show().addClass("scroll")
+//   }
+//   if (distanceTop < nvp) {
+//     $header.removeClass("scroll").hide()
+//   }
+// });
 
 $('.js-anchor').click(function(e) {
-  e.preventDefault();
-  let href = $(this).attr("href")
-  
-  $(href).delay(200).velocity("scroll", {
-    duration: 600, easing: "easeInOutQuart"
-  });
-  return false;
+  const ua = window.navigator.userAgent.toLowerCase();
+  if(ua.indexOf('trident') !== -1) {
+    // IE11ではスムーススクロールさせない
+  } else {
+    e.preventDefault();
+    let href = $(this).attr("href")
+
+    $(href).delay(200).velocity("scroll", {
+      duration: 600, easing: "easeInOutQuart"
+    });
+    // document.querySelector(href).scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "start"
+    // });
+    return false;
+  }
 });
 
 
@@ -177,13 +188,6 @@ function initSwiper(){
 const BOX_ID = 'box_efaacfeddbbd64bb47f3';
 async function fetch() {
   const jbn = new JsonBox();
-  // const get = await jbn.create({
-  //   start: "2019.12.7", term: "1", at:"いつもの場所"
-  // }, BOX_ID, 'date');
-  // console.log(get);
-
-  // await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, '5e21b50fcd442f0017cd446d');
-  // await jbn.delete(BOX_ID, '5e21b50fcd442f0017cd446d')
   const data = await jbn.read(BOX_ID);
   moment.locale("ja", {
     weekdays: ["日", "月", "火", "水", "木", "金", "土"],//dddd
@@ -246,18 +250,20 @@ function setWidth(width) {
   }
 }
 
-function escape_html(string) {
-  if(typeof string !== 'string') {
-    return string;
+
+
+let element = document.getElementById('hero')
+let observer = new IntersectionObserver(callback); // IntersectionObserverのインスタンスを生成
+observer.observe(element)
+function callback(entries, observer) {
+  for (const entry of entries) {
+    let element = entry.target;
+    if(entry.isIntersecting) {
+      // ヒーローイメージが表示されているとき
+      $header.removeClass("scrolled").hide()
+    } else {
+       // ヒーローイメージが表示されていないとき
+      $header.show().addClass("scrolled")
+    }
   }
-  return string.replace(/[&'`"<>]/g, (match) => {
-    return {
-      '&': '&amp;',
-      "'": '&#x27;',
-      '`': '&#x60;',
-      '"': '&quot;',
-      '<': '&lt;',
-      '>': '&gt;',
-    }[match]
-  });
 }
