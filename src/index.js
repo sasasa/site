@@ -125,22 +125,17 @@ $header.hide();
 // });
 
 $('.js-anchor').click(function(e) {
-  const ua = window.navigator.userAgent.toLowerCase();
-  if(ua.indexOf('trident') !== -1) {
-    // IE11ではスムーススクロールさせない
-  } else {
-    e.preventDefault();
-    let href = $(this).attr("href")
+  e.preventDefault();
+  let href = $(this).attr("href")
 
-    $(href).delay(200).velocity("scroll", {
-      duration: 600, easing: "easeInOutQuart"
-    });
-    // document.querySelector(href).scrollIntoView({
-    //   behavior: "smooth",
-    //   block: "start"
-    // });
-    return false;
-  }
+  $(href).delay(200).velocity("scroll", {
+    duration: 600, easing: "easeInOutQuart"
+  });
+  // document.querySelector(href).scrollIntoView({
+  //   behavior: "smooth",
+  //   block: "start"
+  // });
+  return false;
 });
 
 

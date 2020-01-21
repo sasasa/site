@@ -37,10 +37,6 @@
 html {
   overflow: auto;
 }
-_:-ms-lang(x)::-ms-backdrop, html {
-  // 縦スクロールバーが2重に表示される対応
-  overflow-y: hidden;
-}
 body {
   color: #111111;
   font-size: 14px;
@@ -236,10 +232,18 @@ section h2 {
 /* hero catch 縦書き */
 /* ---------------------------------------- */
 .vertical {
+  -ms-writing-mode: tb-rl; /* for MS IE11 */
   writing-mode: vertical-rl;
   font-weight: 700;
   z-index: 100;
-  white-space: nowrap
+  white-space: nowrap;
+  text-align: center;
+  // この2つの設定値で以下の問題が解決
+  // - スムーススクロールができない
+  // - スクロールバーが長すぎる
+  // - 縦書きが表示されない
+  left:50%;  // for IE11
+  transform:translate(-50%, 0%);  // for IE11
 }
 .hero-catch p {
   position: relative;
@@ -303,6 +307,9 @@ section h2 {
 .hero-date .vertical {
   font-size: 0.8rem;
   writing-mode: vertical-rl;
+}
+.hero-date span {
+  white-space: nowrap;
 }
 /* ---------------------------------------- */
 /* header-logo */
