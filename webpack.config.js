@@ -152,9 +152,16 @@ module.exports = (env, argv) => {
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
       }),
+      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|ja/),
+      new webpack.ProvidePlugin({
+        moment: "moment"
+      }),
+      new webpack.ProvidePlugin({
+        Velocity: 'velocity-animate'
+      }),
       new MiniCssExtractPlugin({
         filename: '[name].css?[hash]',
-        chunkFilename: '[id].css?[hash]',
+        // chunkFilename: '[id].css?[hash]',
       }),
       new HtmlWebpackPlugin({
         filename: "index.html",
@@ -174,6 +181,19 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin(),
     ],
     optimization: {
+      splitChunks: {
+        // cacheGroups内にバンドルの設定を複数記述できる
+        cacheGroups: {
+          // 今回はvendorだが、任意の名前で問題ない
+          vendor: {
+            // node_modules配下のモジュールをバンドル対象とする
+            test: /node_modules/,
+            name: 'vendor',
+            chunks: 'initial',
+            enforce: true,
+          }
+        }
+      },
       minimizer: [
         new OptimizeCSSAssetsPlugin({}),
         new TerserPlugin({

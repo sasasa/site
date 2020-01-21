@@ -16,9 +16,9 @@ import Velocity from 'velocity-animate'
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import { escape_html } from './util'
+import { escape_html } from './module/util'
 
-import './style.scss';
+import './style.scss'
 
 
 (function() {

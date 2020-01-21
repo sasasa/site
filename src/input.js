@@ -1,8 +1,9 @@
+import $ from 'jquery';
 import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
 import moment from 'moment'
 import "bootstrap";
-import { escape_html } from './util'
+import { escape_html } from './module/util'
 
 import './input.scss'
 
