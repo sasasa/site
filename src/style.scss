@@ -154,41 +154,42 @@ section h2 {
 }
 .box-loader .dot {
   display: block;
-  width: 16px;
-  height: 16px;
-  margin: 0 4px;
+  width: 22px;
+  height: 22px;
+  margin: 0 6px;
   background-color:#eee;
   border-radius: 50%;
   position: relative;
 }
 .box-loader .color {
   display: block;
-  width:100%;
+  width: 100%;
   height: 100%;
   border-radius: 50%;
   opacity:0;
   /* どのような要素の変更が予測されているかブラウザーに助言 */
   /* https://developer.mozilla.org/ja/docs/Web/CSS/will-change */
-  will-change: opacity;
-  transition: opacity .2s linear;
+  will-change: opacity, transform;
+  transition: opacity .3s linear, transform .3s cubic-bezier(0.38, 1.43, 0.96, 0.27);
 }
 .box-loader .dot:nth-child(1) .color {
-  background-color: #FFB4AF;
+  background-color: #FFEA82;
 }
 .box-loader .dot:nth-child(2) .color {
-  background-color: #8CDCC8;
+  background-color: #CD9F78;
 }
 .box-loader .dot:nth-child(3) .color {
-  background-color: #7DA0D7;
+  background-color: #8CCCC8;
 }
 .box-loader .dot:nth-child(4) .color {
-  background-color: #CDAF78;
+  background-color: #7D90D7;
 }
 .box-loader .dot:nth-child(5) .color {
-  background-color: #FFFA82;
+  background-color: #FFA4AF;
 }
 .box-loader .dot.is-colored .color {
   opacity: 1;
+  transform: scale(1.2, 1.2);
 }
 
 /* ---------------------------------------- */
