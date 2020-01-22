@@ -49,7 +49,7 @@ fetch();
 function validate() {
   $('.alert').hide()
   $('body, html').scrollTop(0)
-  
+
   const startMessage = /^\d{4}\.\d{1,2}\.\d{1,2}$/.test($('#start').val());
   if(!startMessage) {
     $('.errorMes').text("開始日はxxxx.x.xの形式で入力してください")
@@ -82,7 +82,7 @@ $('#update_btn').click(async () => {
     await patch()
     $('.alert-danger').hide()
     $('.successMes').text("日付入力更新しました。")
-    $('.alert-success').show()
+    $('.alert-success').show(600)
   }
 })
 $('#event_btn').click(async () => {
@@ -90,7 +90,7 @@ $('#event_btn').click(async () => {
     await patch()
     $('.alert-danger').hide()
     $('.successMes').text("イベント入力更新しました。")
-    $('.alert-success').show()
+    $('.alert-success').show(600)
   }
 })
 
