@@ -3,15 +3,11 @@ import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
 import moment from 'moment'
 import "bootstrap";
-import { escape_html } from './module/util'
+import { escape_html, BOX_ID, JBN_ID } from './module/util'
 
 import './input.scss'
 
-// window.onload = function() {
-//   alert('hogehoge')
-// }
 
-const BOX_ID = 'box_efaacfeddbbd64bb47f3';
 async function fetch() {
   const jbn = new JsonBox();
   // const get = await jbn.create({
@@ -19,8 +15,8 @@ async function fetch() {
   // }, BOX_ID, 'date');
   // console.log(get);
 
-  // await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, '5e21b50fcd442f0017cd446d');
-  // await jbn.delete(BOX_ID, '5e21b50fcd442f0017cd446d')
+  // await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, JBN_ID);
+  // await jbn.delete(BOX_ID, JBN_ID)
 
 
   const data = await jbn.read(BOX_ID);
@@ -59,7 +55,7 @@ $('#update_btn').click(async () => {
     time: $('#time').val(),
     fee: $('#fee').val(),
     hashtag: $('#hashtag').val(),
-  }, BOX_ID, '5e21b50fcd442f0017cd446d');
+  }, BOX_ID, JBN_ID);
   alert("日付入力更新しました。")
 })
 $('#event_btn').click(async () => {
@@ -74,7 +70,7 @@ $('#event_btn').click(async () => {
     time: $('#time').val(),
     fee: $('#fee').val(),
     hashtag: $('#hashtag').val(),
-  }, BOX_ID, '5e21b50fcd442f0017cd446d');
+  }, BOX_ID, JBN_ID);
   alert("イベント入力更新しました。")
 })
 

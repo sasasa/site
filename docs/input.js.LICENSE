@@ -64,12 +64,6 @@
 
 /*#__PURE__*/
 
-// window.onload = function() {
-
-//   alert('hogehoge')
-
-// }
-
 // const get = await jbn.create({
 
 //   start: "2019.12.7", term: "1", at:"いつもの場所"
@@ -78,9 +72,9 @@
 
 // console.log(get);
 
-// await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, '5e21b50fcd442f0017cd446d');
+// await jbn.update({ start: "2019.12.7", term: "8", at:"いつもの場所" }, BOX_ID, JBN_ID);
 
-// await jbn.delete(BOX_ID, '5e21b50fcd442f0017cd446d')
+// await jbn.delete(BOX_ID, JBN_ID)
 
 // extracted by mini-css-extract-plugin
 

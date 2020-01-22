@@ -14,3 +14,5 @@ export　function escape_html(string) {
     }[match]
   });
 }
+export const BOX_ID = 'box_efaacfeddbbd64bb47f3';
+export const JBN_ID = '5e21b50fcd442f0017cd446d';

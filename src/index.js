@@ -16,7 +16,7 @@ import Velocity from 'velocity-animate'
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import { escape_html } from './module/util'
+import { escape_html, BOX_ID } from './module/util'
 
 import './style.scss'
 
@@ -98,6 +98,7 @@ $('.swiper-wrapper').imagesLoaded({ background: true }, () => {
                 begin() {
                   $('body, html').scrollTop(0);
                   initSwiper()
+                  fetch()
                 },
                 complete() {
                   window.cancelAnimationFrame(loading.requestID);
@@ -180,7 +181,7 @@ function initSwiper(){
 }
 
 
-const BOX_ID = 'box_efaacfeddbbd64bb47f3';
+
 async function fetch() {
   const jbn = new JsonBox();
   const data = await jbn.read(BOX_ID);
@@ -230,7 +231,6 @@ async function fetch() {
 
 $(document).ready(function(){
   setFullHeight()
-  fetch()
 });
 
 function setFullHeight() {
