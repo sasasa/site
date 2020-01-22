@@ -71,15 +71,16 @@
 /* ---------------------------------------- */
 /* schedule */
 /* ---------------------------------------- */
-@media (max-width: 600px) {
+@media (max-width: 440px) {
   .big-container {
       display: none;
   }
   .small-container {
-     padding-bottom: 200%;   /* 高さ */
+    padding-bottom: 180%;
+    /* 高さ */
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 441px) {
   .small-container {
       display: none;
   }
