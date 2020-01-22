@@ -3,10 +3,10 @@
   "short_name": "site",
   "description": "",
   "dir": "auto",
-  "lang": "en-US",
+  "lang": "ja-JP",
   "display": "standalone",
   "orientation": "any",
-  "start_url": "/?homescreen=1",
+  "start_url": "/site?homescreen=1",
   "background_color": "#fff",
   "theme_color": "#fff",
   "icons": [
