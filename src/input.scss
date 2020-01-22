@@ -34,3 +34,7 @@ $font-family-base: 'Noto Sans Japanese';
 
 /* Bootstrap を読み込む */
 @import "~bootstrap/scss/bootstrap.scss";
+
+.alertMes {
+  text-align: center;
+}

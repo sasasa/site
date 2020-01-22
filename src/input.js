@@ -35,15 +35,32 @@ async function fetch() {
   const startDay = moment(data[0].start, "YYYY.MM.DD")
   console.log(startDay.format('YYYY.MM.D'));
   console.log(startDay.format('ddd').toUpperCase());
-  const lastDay = startDay.add(data[0].term, 'days')
+  const lastDay = startDay.add(data[0].term - 1, 'days')
   console.log(lastDay.format('D'));
   console.log(lastDay.format('ddd').toUpperCase());
   console.log(data[0].at);
   console.log(data[0].width);
 }
+
+$('.alert').hide()
 fetch();
 
-$('#update_btn').click(async () => {
+function validate() {
+  $('.alert').hide()
+
+  const startMessage = /^\d{4}\.\d{1,2}\.\d{1,2}$/.test($('#start').val());
+  if(!startMessage) {
+    $('.errorMes').text("開始日はxxxx.x.xの形式で入力してください")
+    $('.alert-danger').show(600)
+  }
+  const termMessage = $('#term').val() > 0
+  if(!termMessage) {
+    $('.errorMes').text("期間は1以上にしてください。")
+    $('.alert-danger').show(600)
+  }
+  return startMessage && termMessage
+}
+async function patch() {
   const jbn = new JsonBox();
   const update = await jbn.update({ 
     start: $('#start').val(), 
@@ -56,22 +73,23 @@ $('#update_btn').click(async () => {
     fee: $('#fee').val(),
     hashtag: $('#hashtag').val(),
   }, BOX_ID, JBN_ID);
-  alert("日付入力更新しました。")
+}
+
+$('#update_btn').click(async () => {
+  if(validate()) {
+    await patch()
+    $('.alert-danger').hide()
+    $('.successMes').text("日付入力更新しました。")
+    $('.alert-success').show()
+  }
 })
 $('#event_btn').click(async () => {
-  const jbn = new JsonBox();
-  const update = await jbn.update({ 
-    start: $('#start').val(), 
-    term: $('#term').val(), 
-    at: $('#at').val(),
-    width: $('#width').val(),
-    event_name: $('#event_name').val(),
-    venue: $('#venue').val(),
-    time: $('#time').val(),
-    fee: $('#fee').val(),
-    hashtag: $('#hashtag').val(),
-  }, BOX_ID, JBN_ID);
-  alert("イベント入力更新しました。")
+  if(validate()) {
+    await patch()
+    $('.alert-danger').hide()
+    $('.successMes').text("イベント入力更新しました。")
+    $('.alert-success').show()
+  }
 })
 
 

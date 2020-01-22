@@ -195,7 +195,7 @@ async function fetch() {
   $('#start').text(escape_html(startDay.format('YYYY.MM.D')))
   $('#start_day').text(escape_html(startDay.format('ddd').toUpperCase()))
 
-  const lastDay = startDay.add(data[0].term, 'days')
+  const lastDay = startDay.add(data[0].term - 1, 'days')
   if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
     $('#end').text("")
     $('#end_day').text("")
