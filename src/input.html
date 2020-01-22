@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>更新</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="alert alert-danger" role="alert">
@@ -18,17 +19,17 @@
       <div class="col-7">
         <div class="jumbotron">
           <h1 class="display-5">日付入力</h1>
-          <p>「YYYY.mm.dd」の形式で入力してください。その日だけの時は期間に0をいれてください。その日と次の日の時は1を3日間の時は2を入れてください。日付を変えたら幅を確認してatの所で折り返されるように幅の調節をしてください。場所には大まかな場所を入力してください。</p>
+          <p>「YYYY.mm.dd」の形式で入力してください。その日だけの時は期間に1をいれてください。その日と次の日の時は2を入れてください。日付を変えたら幅を確認してatの所で折り返されるように幅の調節をしてください。場所には大まかな場所を入力してください。</p>
         </div>
       </div>
       <div class="col-5">
         <div class="form-group">
           <label for="start">開始日</label>
-          <input type="text" class="form-control" id="start">
+          <input type="text" class="datetimepicker form-control" id="start">
         </div>
         <div class="form-group">
           <label for="term">期間</label>
-          <input type="number" class="form-control" id="term">
+          <input min="1" type="number" class="form-control" id="term" required>
         </div>
         <div class="form-group">
           <label for="at">場所</label>
@@ -59,7 +60,7 @@
       <div class="col-7">
         <div class="jumbotron">
           <h1 class="display-5">イベント入力</h1>
-          <p>日付以外の入力をしてください。日付は上の値が入力されます。会場には詳しい場所を入力してください。</p>
+          <p>日付以外の入力をしてください。日付は上の日付入力の値が入力されます。会場には詳しい場所を入力してください。</p>
         </div>
       </div>
       <div class="col-5">

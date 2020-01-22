@@ -3178,12 +3178,6 @@
 
 /* 8 */
 
-// 7.1.15 ToLength
-
-// pow(2, 53) - 1 == 9007199254740991
-
-/* 9 */
-
 //! moment.js
 
 // This is done to register the method called with moment()
@@ -3682,6 +3676,12 @@
 // <input type="time" step="0.001" />
 
 // <input type="week" />
+
+/* 9 */
+
+// 7.1.15 ToLength
+
+// pow(2, 53) - 1 == 9007199254740991
 
 /* 10 */
 

@@ -34,7 +34,18 @@ $font-family-base: 'Noto Sans Japanese';
 
 /* Bootstrap を読み込む */
 @import "~bootstrap/scss/bootstrap.scss";
+@import "./lib/bootstrap-datetimepicker.min.css";
 
 .alertMes {
   text-align: center;
+}
+
+
+.datepicker-days th.dow:first-child,
+.datepicker-days td:first-child {
+    color: #f00;
+}
+.datepicker-days th.dow:last-child,
+.datepicker-days td:last-child {
+    color: #00f;
 }
