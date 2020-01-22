@@ -98,7 +98,6 @@ $('.swiper-wrapper').imagesLoaded({ background: true }, () => {
                 begin() {
                   $('body, html').scrollTop(0);
                   initSwiper()
-                  fetch()
                 },
                 complete() {
                   window.cancelAnimationFrame(loading.requestID);
@@ -231,6 +230,7 @@ async function fetch() {
 
 $(document).ready(function(){
   setFullHeight()
+  fetch()
 });
 
 function setFullHeight() {
