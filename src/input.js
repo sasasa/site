@@ -48,7 +48,8 @@ fetch();
 
 function validate() {
   $('.alert').hide()
-
+  $('body, html').scrollTop(0)
+  
   const startMessage = /^\d{4}\.\d{1,2}\.\d{1,2}$/.test($('#start').val());
   if(!startMessage) {
     $('.errorMes').text("開始日はxxxx.x.xの形式で入力してください")
