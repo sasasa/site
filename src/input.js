@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import Velocity from 'velocity-animate'
 import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
 import moment from 'moment'
@@ -8,7 +9,7 @@ import { escape_html, BOX_ID, JBN_ID } from './module/util'
 import "./lib/bootstrap-datetimepicker.min.js"
 import './input.scss'
 
-
+let pass = ""
 async function fetch() {
   const jbn = new JsonBox();
   // const get = await jbn.create({
@@ -30,8 +31,7 @@ async function fetch() {
   $('#time').val(escape_html(data[0].time))
   $('#fee').val(escape_html(data[0].fee))
   $('#hashtag').val(escape_html(data[0].hashtag))
-
-  
+  pass = data[0].password
 
   const startDay = moment(data[0].start, "YYYY.MM.DD")
   console.log(startDay.format('YYYY.MM.D'));
@@ -48,17 +48,23 @@ fetch();
 
 function validate() {
   $('.alert').hide()
-  $('body, html').scrollTop(0)
+  // $('body, html').scrollTop(0)
 
   const startMessage = /^\d{4}\.\d{1,2}\.\d{1,2}$/.test($('#start').val());
   if(!startMessage) {
     $('.errorMes').text("開始日はxxxx.x.xの形式で入力してください")
     $('.alert-danger').show(600)
+    $('.alert-danger').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
   }
   const termMessage = $('#term').val() > 0
   if(!termMessage) {
     $('.errorMes').text("期間は1以上にしてください。")
     $('.alert-danger').show(600)
+    $('.alert-danger').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
   }
   return startMessage && termMessage
 }
@@ -74,6 +80,7 @@ async function patch() {
     time: $('#time').val(),
     fee: $('#fee').val(),
     hashtag: $('#hashtag').val(),
+    password: pass,
   }, BOX_ID, JBN_ID);
 }
 
@@ -81,16 +88,28 @@ $('#update_btn').click(async () => {
   if(validate()) {
     await patch()
     $('.alert-danger').hide()
-    $('.successMes').text("日付入力更新しました。")
-    $('.alert-success').show(600)
+    $('#alert-date .successMes').text("日付入力更新しました。")
+    $('#alert-date').show(600)
+    $('#alert-date').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
   }
 })
 $('#event_btn').click(async () => {
   if(validate()) {
     await patch()
     $('.alert-danger').hide()
-    $('.successMes').text("イベント入力更新しました。")
-    $('.alert-success').show(600)
+    $('#alert-event .successMes').text("イベント入力更新しました。")
+    $('#alert-event').show(600)
+    $('#alert-event').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+})
+
+$('#password_btn').click(() => {
+  if($('#pass').val() == pass) {
+    $('#password_panel').slideUp(600)
   }
 })
 

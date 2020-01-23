@@ -49,3 +49,32 @@ $font-family-base: 'Noto Sans Japanese';
 .datepicker-days td:last-child {
     color: #00f;
 }
+body {
+  position: relative;
+}
+#password_panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba($color: #000000, $alpha: .8);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#password_panel .form-group {
+  margin-bottom: 600px;
+}
+#password_panel input {
+  width: 10rem;
+}
+
+.btn-primary,
+.btn-info {
+  width: 8rem;
+}

@@ -8,14 +8,22 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-  <div class="alert alert-danger mb-0 rounded-0" role="alert">
-    <div class="errorMes alertMes">このアラートはあなたの注意が必要です。</div>
+  <div id="password_panel">
+    <div class="form-group">
+      <label for="password">パスワード</label>
+      <input type="password" class="mb-2 form-control" id="pass" required>
+      <input type="button" value="認証" class="btn btn-primary" id="password_btn">
+    </div>
   </div>
-  <div class="alert alert-success mb-0 rounded-0" role="alert">
-    <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
-  </div>
-  <div class="container mt-5">
-    <div class="row rounded border shadow-sm py-5">
+
+  <div class="container-fluid">
+    <div class="alert alert-danger mb-0 rounded-0" role="alert">
+      <div class="errorMes alertMes">このアラートはあなたの注意が必要です。</div>
+    </div>
+    <div id="alert-date" class="alert alert-success mb-0 rounded-0" role="alert">
+      <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
+    </div>
+    <div class="row rounded border shadow-sm py-5 mb-5">
       <div class="col-6">
         <div class="jumbotron">
           <h1 class="display-5">日付入力</h1>
@@ -56,7 +64,10 @@
         <a href="./" class="btn btn-info mb-2" target="_blank">サイト確認</a>
       </div>
     </div>
-    <div class="row rounded border shadow-sm py-5 mt-5">
+    <div id="alert-event" class="alert alert-success mb-0 rounded-0" role="alert">
+      <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
+    </div id="alert-date">
+    <div class="row rounded border shadow-sm py-5">
       <div class="col-6">
         <div class="jumbotron">
           <h1 class="display-5">イベント</h1>

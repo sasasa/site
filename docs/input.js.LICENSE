@@ -76,6 +76,8 @@
 
 // await jbn.delete(BOX_ID, JBN_ID)
 
+// $('body, html').scrollTop(0)
+
 // extracted by mini-css-extract-plugin
 
 /* harmony export (binding) */
