@@ -184,9 +184,33 @@
 /* ---------------------------------------- */
 @media (max-width: 800px) {
   /* ナビゲーションボタン */
+  .nav-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 29px;
+    height: 20px;
+    box-sizing: content-box;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #7D90D7;
+    transition: all 0.4s ease-in-out;
+  }
   .nav-button::before,
   .nav-button::after {
+    content: '';
+    height: 2px;
+    background-color: currentColor;
+    transform: translateY(10px);
+    transition: all .3s ease-in-out;
     display: block;
+  }
+  .nav-button::before {
+    transform: translateY(-10px);
+    box-shadow: 0 11px currentColor;
   }
   /* ナビゲーションボタン閉じるボタン */
   .open .nav-button {
@@ -194,10 +218,12 @@
   }
   .open .nav-button::before {
     transform: rotate(-45deg);
+    height: 1px;
     box-shadow: none;
   }
   .open .nav-button::after {
     transform: rotate(45deg);
+    height: 1px;
   }
   header nav {
     display: block;
