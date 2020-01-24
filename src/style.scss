@@ -441,10 +441,23 @@ header ul li a:hover {
 /* ---------------------------------------- */
 /* access */
 /* ---------------------------------------- */
+#access .flex {
+  display: flex;
+  max-width:668px;
+  margin: 0 auto;
+}
+#access .info {
+  flex: 0 0 50%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  line-height: 1.2;
+}
 .gmap {
+  border-radius: 15px;
+  flex: 0 0 50%;
   height: 0;
   overflow: hidden;
-  padding-bottom: 56.25%;
+  padding-bottom: 28.125%;
   position: relative;
 }
 .gmap iframe {
