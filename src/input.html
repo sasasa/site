@@ -17,19 +17,24 @@
   </div>
 
   <div class="container-fluid">
+    
     <div class="alert alert-danger mb-0 rounded-0" role="alert">
       <div class="errorMes alertMes">このアラートはあなたの注意が必要です。</div>
     </div>
+    
     <div id="alert-date" class="alert alert-success mb-0 rounded-0" role="alert">
       <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
     </div>
+    
     <div class="row rounded border shadow-sm py-5 mb-5">
+      
       <div class="col-6">
         <div class="jumbotron">
           <h1 class="display-5">日付入力</h1>
           <p>「YYYY.mm.dd」の形式で入力してください。その日だけの時は期間に1をいれてください。その日と次の日の時は2を入れてください。日付を変えたら幅を確認してatの所で折り返されるように幅の調節をしてください。場所には大まかな場所を入力してください。</p>
         </div>
       </div>
+      
       <div class="col-6">
         <div class="form-group mb-4">
           <label for="start">開始日</label>
@@ -64,16 +69,20 @@
         <a href="./" class="btn btn-info mb-2" target="_blank">サイト確認</a>
       </div>
     </div>
+    
     <div id="alert-event" class="alert alert-success mb-0 rounded-0" role="alert">
       <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
-    </div id="alert-date">
-    <div class="row rounded border shadow-sm py-5">
+    </div>
+
+    <div class="row rounded border shadow-sm py-5 mb-5">
+      
       <div class="col-6">
         <div class="jumbotron">
           <h1 class="display-5">イベント</h1>
           <p>日付以外の入力をしてください。日付は上の日付入力の値が入力されます。会場には詳しい場所を入力してください。</p>
         </div>
       </div>
+
       <div class="col-6">
         <div class="form-group mb-4">
           <label for="event_name">イベント名</label>
@@ -98,6 +107,46 @@
         <input type="button" value="イベント更新" class="btn btn-primary mb-2" id="event_btn">
         <a href="./" class="btn btn-info mb-2" target="_blank">サイト確認</a>
       </div>
+    </div>
+
+    <div id="alert-fee" class="alert alert-success mb-0 rounded-0" role="alert">
+      <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
+    </div>
+
+    <div class="row rounded border shadow-sm py-5">
+      
+      <div class="col-6">
+        <div class="jumbotron">
+          <h1 class="display-5">料金表</h1>
+          <p>料金項目と料金を対で入力してください。</p>
+        </div>
+      </div>
+      
+      <div class="col-6">
+        <div class="form-group mb-4">
+          <label for="fee_item1 mb-2">料金項目1</label>
+          <input type="text" class="form-control mb-2" id="fee_item1">
+          <input type="text" class="form-control" id="fee1">
+        </div>
+        <div class="form-group mb-4">
+          <label for="fee_item2 mb-2">料金項目2</label>
+          <input type="text" class="form-control mb-2" id="fee_item2">
+          <input type="text" class="form-control" id="fee2">
+        </div>
+        <div class="form-group mb-4">
+          <label for="fee_item3 mb-2">料金項目3</label>
+          <input type="text" class="form-control mb-2" id="fee_item3">
+          <input type="text" class="form-control" id="fee3">
+        </div>
+        <div class="form-group mb-4">
+          <label for="fee_item4 mb-2">料金項目4</label>
+          <input type="text" class="form-control mb-2" id="fee_item4">
+          <input type="text" class="form-control" id="fee4">
+        </div>
+        <input type="button" value="料金更新" class="btn btn-primary mb-2" id="fee_btn">
+        <a href="./" class="btn btn-info mb-2" target="_blank">サイト確認</a>
+      </div>
+    </div>
   </div>
   <script type="text/javascript" src="./vendor.js"></script>
 </body>

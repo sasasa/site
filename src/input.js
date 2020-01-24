@@ -4,10 +4,13 @@ import '@babel/polyfill';
 import { JsonBox } from 'jsonbox-node'
 import moment from 'moment'
 import "bootstrap";
+import xxhash from "xxhash-wasm";
+
 import { escape_html, BOX_ID, JBN_ID } from './module/util'
 
 import "./lib/bootstrap-datetimepicker.min.js"
 import './input.scss'
+
 
 let pass = ""
 async function fetch() {
@@ -31,6 +34,15 @@ async function fetch() {
   $('#time').val(escape_html(data[0].time))
   $('#fee').val(escape_html(data[0].fee))
   $('#hashtag').val(escape_html(data[0].hashtag))
+  $('#fee_item1').val(escape_html(data[0].fee_item1))
+  $('#fee1').val(escape_html(data[0].fee1))
+  $('#fee_item2').val(escape_html(data[0].fee_item2))
+  $('#fee2').val(escape_html(data[0].fee2))
+  $('#fee_item3').val(escape_html(data[0].fee_item3))
+  $('#fee3').val(escape_html(data[0].fee3))
+  $('#fee_item4').val(escape_html(data[0].fee_item4))
+  $('#fee4').val(escape_html(data[0].fee4))
+
   pass = data[0].password
 
   const startDay = moment(data[0].start, "YYYY.MM.DD")
@@ -48,7 +60,6 @@ fetch();
 
 function validate() {
   $('.alert').hide()
-  // $('body, html').scrollTop(0)
 
   const startMessage = /^\d{4}\.\d{1,2}\.\d{1,2}$/.test($('#start').val());
   if(!startMessage) {
@@ -68,7 +79,12 @@ function validate() {
   }
   return startMessage && termMessage
 }
+
+
+
 async function patch() {
+  const { h64 } = await xxhash();
+
   const jbn = new JsonBox();
   const update = await jbn.update({ 
     start: $('#start').val(), 
@@ -80,35 +96,46 @@ async function patch() {
     time: $('#time').val(),
     fee: $('#fee').val(),
     hashtag: $('#hashtag').val(),
+    fee_item1: $('#fee_item1').val(),
+    fee1: $('#fee1').val(),
+    fee_item2: $('#fee_item2').val(),
+    fee2: $('#fee2').val(),
+    fee_item3: $('#fee_item3').val(),
+    fee3: $('#fee3').val(),
+    fee_item4: $('#fee_item4').val(),
+    fee4: $('#fee4').val(),
     password: pass,
   }, BOX_ID, JBN_ID);
 }
 
-$('#update_btn').click(async () => {
+const execute = async (id, mess, btn) => {
+  $(btn).prop("disabled", true)
   if(validate()) {
     await patch()
     $('.alert-danger').hide()
-    $('#alert-date .successMes').text("日付入力更新しました。")
-    $('#alert-date').show(600)
-    $('#alert-date').velocity("scroll", {
+    $(`${id} .successMes`).text(mess)
+    $(id).show(600)
+    $(id).velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
+  $(btn).prop("disabled", false)
+}
+
+$('#update_btn').click(async function() {
+  await execute('#alert-date', "日付入力更新しました。", this)
 })
-$('#event_btn').click(async () => {
-  if(validate()) {
-    await patch()
-    $('.alert-danger').hide()
-    $('#alert-event .successMes').text("イベント入力更新しました。")
-    $('#alert-event').show(600)
-    $('#alert-event').velocity("scroll", {
-      duration: 100, easing: "easeInOutQuart"
-    });
-  }
+$('#event_btn').click(async function() {
+  await execute('#alert-event', "イベント入力更新しました。", this)
+})
+$('#fee_btn').click(async function() {
+  await execute('#alert-fee', "料金表入力更新しました。", this)
 })
 
-$('#password_btn').click(() => {
-  if($('#pass').val() == pass) {
+
+$('#password_btn').click(async () => {
+  const { h64 } = await xxhash()
+  if(h64($('#pass').val()) == pass) {
     $('#password_panel').slideUp(600)
   }
 })

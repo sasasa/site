@@ -220,6 +220,23 @@ async function fetch() {
   $('#fee').text(escape_html(data[0].fee))
   $('#hashtag').text(escape_html(data[0].hashtag))
 
+  if(data[0].fee_item1) {
+    $('#price-table').append(`<dt>${escape_html(data[0].fee_item1)}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(data[0].fee1)}</dd>`);
+  }
+  if(data[0].fee_item2) {
+    $('#price-table').append(`<dt>${escape_html(data[0].fee_item2)}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(data[0].fee2)}</dd>`);
+  }
+  if(data[0].fee_item3) {
+    $('#price-table').append(`<dt>${escape_html(data[0].fee_item3)}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(data[0].fee3)}</dd>`);
+  }
+  if(data[0].fee_item4) {
+    $('#price-table').append(`<dt>${escape_html(data[0].fee_item4)}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(data[0].fee4)}</dd>`);
+  }
+  
 
   setWidth(data[0].width)
   $(window).resize(function() {
