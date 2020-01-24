@@ -115,6 +115,16 @@ button {
   font-size: 1.8rem;
   letter-spacing: 0.08em;
 }
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 
 
 /* ---------------------------------------- */
@@ -437,6 +447,60 @@ header ul li a:hover {
   border-bottom: none;
 }
 
+/* ---------------------------------------- */
+/* voices */
+/* ---------------------------------------- */
+.voice {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 30px 40px 25px;
+  background-color: #EFEFFF;
+  background-color: #e3e9ff;
+  display: block;
+}
+.voice:first-child {
+  border-radius: 15px 15px 0 0;
+}
+.voice:last-child {
+  border-radius: 0 0 15px 15px;
+}
+.voice img {
+  border-radius: 50%;
+  border: 10px solid #EFEFFF;
+  border: 10px solid #e3e9ff;
+  margin: 0 auto;
+  display: block;
+  width: 90px;
+  height: 90px;
+}
+.voice h3 {
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+}
+
+@media (min-width: 801px) {
+  .voice {
+    width: 30%;
+    padding: 60px 40px 25px;
+  }
+  .voice img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -55px;
+  }
+  .flexbox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 90px;
+  }
+  .flexbox .voice {
+    border-radius: 15px;
+  }
+}
+
 
 /* ---------------------------------------- */
 /* access */
@@ -579,6 +643,35 @@ footer .copyright{
   margin-left: 18px;
   font-size:10px;
   letter-spacing: 0.04em;
+}
+
+/* ナビゲーションボタン */
+.nav-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  box-sizing: content-box;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  width: 29px;
+  height: 20px;
+  cursor: pointer;
+  color: #7D90D7;
+}
+.nav-button::before,
+.nav-button::after {
+  content: '';
+  height: 1px;
+  background-color: currentColor;
+  transform: translateY(10px);
+  transition: .3s ease-in-out;
+  display: none;
+}
+.nav-button::before {
+  transform: translateY(-10px);
+  box-shadow: 0 10px currentColor;
 }
 
 @import "smallview.scss";

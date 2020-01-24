@@ -128,8 +128,12 @@ $('.js-anchor').click(function(e) {
   e.preventDefault();
   let href = $(this).attr("href")
 
-  $(href).delay(200).velocity("scroll", {
-    duration: 600, easing: "easeInOutQuart"
+  $(href).delay(100).velocity("scroll", {
+    duration: 500,
+    easing: "easeInOutQuart",
+    complete() {
+      document.querySelector('html').classList.remove('open')
+    }
   });
   // document.querySelector(href).scrollIntoView({
   //   behavior: "smooth",
@@ -248,6 +252,9 @@ async function fetch() {
 $(document).ready(function(){
   setFullHeight()
   fetch()
+  $('.nav-button').click(() => {
+    document.querySelector('html').classList.toggle('open')
+  })
 });
 
 function setFullHeight() {
