@@ -513,17 +513,20 @@ header ul li a:hover {
   margin: 0 auto;
 }
 #access .info {
-  flex: 0 0 50%;
+  flex: 0 0 42%;
   margin-top: 1em;
   margin-bottom: 1em;
+  margin-right: 1em;
   line-height: 1.2;
 }
 .gmap {
   border-radius: 15px;
-  flex: 0 0 50%;
+  flex: 0 0 58%;
   height: 0;
   overflow: hidden;
-  padding-bottom: 28.125%;
+  // 56.25%
+  // padding-bottom: 28.125%;
+  padding-bottom: 32.625%;
   position: relative;
 }
 .gmap iframe {
