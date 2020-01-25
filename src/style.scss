@@ -136,7 +136,8 @@ button {
   padding-left: 25px;
   padding-right: 25px;
 }
-section h2 {
+section h2,
+article h2 {
   margin-bottom: 40px;
   padding-top: 120px;
 }
@@ -389,6 +390,66 @@ header ul li a:hover {
   cursor: pointer;
 }
 
+
+/* ---------------------------------------- */
+/* yoga */
+/* ---------------------------------------- */
+.ashtanga {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 30px 40px 25px;
+  display: block;
+}
+.ashtanga p {
+  line-height: 1.8;
+}
+.ashtanga:first-child {
+  border-radius: 15px 15px 0 0;
+  border-top: 1px solid #D8D8D8;
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+}
+.ashtanga:nth-child(2) {
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+}
+.ashtanga:last-child {
+  border-radius: 0 0 15px 15px;
+  border-bottom: 1px solid #D8D8D8;
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+}
+.ashtanga h3 {
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 801px) {
+  .ashtanga {
+    width: 30%;
+    padding: 60px 40px 25px;
+    border: 1px solid #D8D8D8;
+  }
+  .ashtanga:first-child {
+    border-radius: 15px 15px 15px 15px;
+  }
+  .ashtanga:nth-child(2) {
+    border-radius: 15px 15px 15px 15px;
+  }
+  .ashtanga:last-child {
+    border-radius: 15px 15px 15px 15px;
+  }
+  #yoga .flexbox {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+
 /* ---------------------------------------- */
 /* schedule */
 /* ---------------------------------------- */
@@ -515,7 +576,7 @@ header ul li a:hover {
     right: 0;
     top: -55px;
   }
-  .flexbox {
+  #voices .flexbox {
     display: flex;
     justify-content: space-between;
     margin-top: 90px;
