@@ -457,20 +457,32 @@ header ul li a:hover {
   position: relative;
   box-sizing: border-box;
   padding: 30px 40px 25px;
-  background-color: #EFEFFF;
-  background-color: #e3e9ff;
+  // background-color: #EFEFFF;
+  // background-color: #e3e9ff;
+  // border: 1px solid #D8D8D8;
   display: block;
 }
 .voice:first-child {
   border-radius: 15px 15px 0 0;
+  border-top: 1px solid #D8D8D8;
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
+}
+.voice:nth-child(2) {
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
 }
 .voice:last-child {
   border-radius: 0 0 15px 15px;
+  border-bottom: 1px solid #D8D8D8;
+  border-left: 1px solid #D8D8D8;
+  border-right: 1px solid #D8D8D8;
 }
 .voice img {
   border-radius: 50%;
-  border: 10px solid #EFEFFF;
-  border: 10px solid #e3e9ff;
+  // border: 10px solid #EFEFFF;
+  border: 10px solid #ffffff;
+  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.4);
   margin: 0 auto;
   display: block;
   width: 90px;
@@ -486,6 +498,16 @@ header ul li a:hover {
   .voice {
     width: 30%;
     padding: 60px 40px 25px;
+    border: 1px solid #D8D8D8;
+  }
+  .voice:first-child {
+    border-radius: 15px 15px 15px 15px;
+  }
+  .voice:nth-child(2) {
+    border-radius: 15px 15px 15px 15px;
+  }
+  .voice:last-child {
+    border-radius: 15px 15px 15px 15px;
   }
   .voice img {
     position: absolute;
@@ -497,9 +519,6 @@ header ul li a:hover {
     display: flex;
     justify-content: space-between;
     margin-top: 90px;
-  }
-  .flexbox .voice {
-    border-radius: 15px;
   }
 }
 
