@@ -279,7 +279,8 @@ function callback(entries, observer) {
     let element = entry.target;
     if(entry.isIntersecting) {
       // ヒーローイメージが表示されているとき
-      $header.removeClass("scrolled").hide()
+      // $header.removeClass("scrolled").hide()
+      $header.removeClass("scrolled")//.hide()
     } else {
        // ヒーローイメージが表示されていないとき
       $header.show().addClass("scrolled")
