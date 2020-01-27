@@ -254,8 +254,8 @@
   }
   .open header nav {
     width: 100%;
-    min-height: 100%;
-    height: auto;
+    height: 100%;
+    // height: auto;
     margin-top: 0;
     display: flex;
     justify-content: center;
@@ -269,7 +269,6 @@
   .open header ul {
     display: block;
     background-color: transparent;
-    margin-bottom: 30vw;
   }
   .open header ul li {
     margin-top: 0.5rem;
