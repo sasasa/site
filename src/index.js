@@ -20,6 +20,17 @@ import { escape_html, BOX_ID } from './module/util'
 
 import './style.scss'
 
+import mov from './img/movie-01.mp4';
+// const vidtag = document.getElementById('bg-video');
+// vidtag.src = mov;
+
+import objectFitImages from 'object-fit-images'
+if(!document.currentScript) {
+  objectFitImages()//IE only
+}
+
+
+
 
 (function() {
   const requestAnimationFrame = window.requestAnimationFrame || 

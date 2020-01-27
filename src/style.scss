@@ -241,24 +241,32 @@ article h2 {
 }
 .hero-slider .item {
   height:100%;
-  max-height:calc(100% - 40px);
+  max-height: calc(100% - 40px);
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
 }
-.item-01 {
-  background-image:url(./img/hero-slider-01.jpg);
+.hero-slider .item video {
+  height: 100%;
 }
-.item-02 {
-  background-image:url(./img/hero-slider-02.jpg);
+.hero-slider .item-01 {
+  background-image: url(./img/hero-slider-01.jpg);
+  background-position: right;
 }
-.item-03 {
-  background-image:url(./img/hero-slider-03.jpg);
+.hero-slider .item-02 {
+  background-image: url(./img/hero-slider-02.jpg);
 }
-.item-04 {
-  background-image:url(./img/hero-slider-04.jpg);
+.hero-slider .item-03 {
+  background-image: url(./img/hero-slider-03.jpg);
 }
+.hero-slider .item-04 {
+  background-image: url(./img/hero-slider-04.jpg);
+}
+.hero-slider .item-05 {
+  background-image: url(./img/poster-01.png);
+}
+
 .hero-slider .item img {
   opacity: 0;
   height: 0;
@@ -699,6 +707,10 @@ header ul li a:hover {
   overflow: hidden;
   img {
     user-select: none;
+    max-width: 316px;
+    height: 237px;
+    object-fit: cover;
+    font-family: "object-fit: cover"
   }
 }
 .facility-slider .item {
@@ -784,6 +796,20 @@ footer .copyright{
   letter-spacing: 0.04em;
 }
 
+
+// #bg-video {
+//   position: fixed;
+//   right: 0;
+//   bottom: 0;
+//   min-width: 100%;
+//   min-height: 100%;
+//   width: auto;
+//   height: auto;
+//   z-index: -100;
+//   z-index: 2000;
+//   background: url('./img/poster.png') no-repeat;
+//   background-size: cover;
+// }
 
 
 @import "smallview.scss";

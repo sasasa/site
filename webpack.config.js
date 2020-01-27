@@ -108,6 +108,17 @@ module.exports = (env, argv) => {
           ]
         },
         {
+          test: /\.(mov|mp4)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'img/[name].[ext]'
+              }  
+            }
+          ]
+        },
+        {
           // 拡張子 .js の場合
           test: /\.js$/,
           use: [

@@ -68,6 +68,10 @@
 
 // import "fetch-polyfill";
 
+// const vidtag = document.getElementById('bg-video');
+
+// vidtag.src = mov;
+
 // マイクロ秒までの精度を持った浮動小数点の値
 
 // https://developer.mozilla.org/ja/docs/Web/API/Performance/now

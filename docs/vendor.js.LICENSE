@@ -8430,7 +8430,55 @@
 
 /* 152 */
 
+/*! npm.im/object-fit-images 3.2.4 */
+
+// Default: fill width, no height
+
+// Only set placeholder if it's different
+
+// naturalWidth is only available when the image headers are loaded,
+
+// this loop will poll it every 100ms.
+
+// default value
+
+// Avoid running where unnecessary, unless OFI had already done its deed
+
+// fill is the default behavior so no action is necessary
+
+// Where object-fit is supported and object-position isn't (Safari < 10)
+
+// unless user wants to apply regardless of browser support
+
+// if browser already supports object-fit
+
+// keep a clone in memory while resetting the original to a blank
+
+// preserve for any future cloneNode calls
+
+// https://github.com/bfred-it/object-fit-images/issues/53
+
+// remove srcset because it overrides src
+
+// preserve for any future cloneNode
+
+// parse srcset with picturefill where currentSrc isn't available
+
+// force synchronous srcset parsing
+
+// force picturefill to parse srcset
+
+// retrieve parsed currentSrc, if any
+
+// use imgs as a selector or just select all images
+
+// apply fix to all
+
+// if requested, watch media queries for object-fit change
+
 /* 153 */
+
+/* 154 */
 
 /**
  * Copyright 2016 Google Inc. All Rights Reserved.
@@ -8737,11 +8785,11 @@
    * @return {Node|null} The parent node or null if no parent exists.
    */
 
-/* 154 */
-
 /* 155 */
 
 /* 156 */
+
+/* 157 */
 
 // ECMAScript 6 symbols shim
 
@@ -8787,97 +8835,97 @@
 
 // 24.3.3 JSON[@@toStringTag]
 
-/* 157 */
-
 /* 158 */
-
-// all enumerable object keys, includes symbols
 
 /* 159 */
 
-/* 160 */
+// all enumerable object keys, includes symbols
 
-// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+/* 160 */
 
 /* 161 */
 
-// 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
+// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
 
 /* 162 */
 
-/* 163 */
+// 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
 
-// 19.1.2.9 Object.getPrototypeOf(O)
+/* 163 */
 
 /* 164 */
 
-// 19.1.2.14 Object.keys(O)
+// 19.1.2.9 Object.getPrototypeOf(O)
 
 /* 165 */
 
-/* 166 */
+// 19.1.2.14 Object.keys(O)
 
-// 19.1.2.5 Object.freeze(O)
+/* 166 */
 
 /* 167 */
 
-// 19.1.2.17 Object.seal(O)
+// 19.1.2.5 Object.freeze(O)
 
 /* 168 */
 
-// 19.1.2.15 Object.preventExtensions(O)
+// 19.1.2.17 Object.seal(O)
 
 /* 169 */
 
-// 19.1.2.12 Object.isFrozen(O)
+// 19.1.2.15 Object.preventExtensions(O)
 
 /* 170 */
 
-// 19.1.2.13 Object.isSealed(O)
+// 19.1.2.12 Object.isFrozen(O)
 
 /* 171 */
 
-// 19.1.2.11 Object.isExtensible(O)
+// 19.1.2.13 Object.isSealed(O)
 
 /* 172 */
 
-// 19.1.3.1 Object.assign(target, source)
+// 19.1.2.11 Object.isExtensible(O)
 
 /* 173 */
 
-// 19.1.3.10 Object.is(value1, value2)
+// 19.1.3.1 Object.assign(target, source)
 
 /* 174 */
 
-// 19.1.3.19 Object.setPrototypeOf(O, proto)
+// 19.1.3.10 Object.is(value1, value2)
 
 /* 175 */
 
-// 19.1.3.6 Object.prototype.toString()
+// 19.1.3.19 Object.setPrototypeOf(O, proto)
 
 /* 176 */
 
-// 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
+// 19.1.3.6 Object.prototype.toString()
 
 /* 177 */
 
-// 19.2.4.2 name
+// 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 
 /* 178 */
+
+// 19.2.4.2 name
+
+/* 179 */
 
 // 19.2.3.6 Function.prototype[@@hasInstance](V)
 
 // for environment w/o native `@@hasInstance` logic enough `instanceof`, but add this:
 
-/* 179 */
+/* 180 */
 
 // 18.2.5 parseInt(string, radix)
 
-/* 180 */
+/* 181 */
 
 // 18.2.4 parseFloat(string)
 
-/* 181 */
+/* 182 */
 
 // Number('+0x1') should be NaN, old V8 fix
 
@@ -8891,227 +8939,225 @@
 
 // ES3:
 
-/* 182 */
+/* 183 */
 
 // V8 ~ Android 4.3-
 
-/* 183 */
+/* 184 */
 
 // IE7-
 
-/* 184 */
+/* 185 */
 
 // 20.1.2.1 Number.EPSILON
 
-/* 185 */
+/* 186 */
 
 // 20.1.2.2 Number.isFinite(number)
 
-/* 186 */
-
 /* 187 */
-
-// 20.1.2.4 Number.isNaN(number)
 
 /* 188 */
 
-// 20.1.2.5 Number.isSafeInteger(number)
+// 20.1.2.4 Number.isNaN(number)
 
 /* 189 */
 
-// 20.1.2.6 Number.MAX_SAFE_INTEGER
+// 20.1.2.5 Number.isSafeInteger(number)
 
 /* 190 */
 
-// 20.1.2.10 Number.MIN_SAFE_INTEGER
+// 20.1.2.6 Number.MAX_SAFE_INTEGER
 
 /* 191 */
 
-// 20.1.2.12 Number.parseFloat(string)
+// 20.1.2.10 Number.MIN_SAFE_INTEGER
 
 /* 192 */
 
-// 20.1.2.13 Number.parseInt(string, radix)
+// 20.1.2.12 Number.parseFloat(string)
 
 /* 193 */
 
-// 20.2.2.3 Math.acosh(x)
+// 20.1.2.13 Number.parseInt(string, radix)
 
 /* 194 */
+
+// 20.2.2.3 Math.acosh(x)
+
+/* 195 */
 
 // 20.2.2.5 Math.asinh(x)
 
 // Tor Browser bug: Math.asinh(0) -> -0
 
-/* 195 */
+/* 196 */
 
 // 20.2.2.7 Math.atanh(x)
 
 // Tor Browser bug: Math.atanh(-0) -> 0
 
-/* 196 */
+/* 197 */
 
 // 20.2.2.9 Math.cbrt(x)
 
-/* 197 */
+/* 198 */
 
 // 20.2.2.11 Math.clz32(x)
 
-/* 198 */
+/* 199 */
 
 // 20.2.2.12 Math.cosh(x)
 
-/* 199 */
-
 /* 200 */
-
-// 20.2.2.16 Math.fround(x)
 
 /* 201 */
 
+// 20.2.2.16 Math.fround(x)
+
 /* 202 */
+
+/* 203 */
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
 
-/* 203 */
+/* 204 */
 
 // 20.2.2.18 Math.imul(x, y)
 
 // some WebKit versions fails with big numbers, some has wrong arity
 
-/* 204 */
+/* 205 */
 
 // 20.2.2.21 Math.log10(x)
 
-/* 205 */
-
 /* 206 */
-
-// 20.2.2.22 Math.log2(x)
 
 /* 207 */
 
+// 20.2.2.22 Math.log2(x)
+
 /* 208 */
+
+/* 209 */
 
 // 20.2.2.30 Math.sinh(x)
 
 // V8 near Chromium 38 has a problem with very small numbers
 
-/* 209 */
+/* 210 */
 
 // 20.2.2.33 Math.tanh(x)
 
-/* 210 */
+/* 211 */
 
 // 20.2.2.34 Math.trunc(x)
 
-/* 211 */
+/* 212 */
 
 // length should be 1, old FF problem
 
 // 21.1.2.2 String.fromCodePoint(...codePoints)
 
-/* 212 */
+/* 213 */
 
 // 21.1.2.4 String.raw(callSite, ...substitutions)
 
-/* 213 */
+/* 214 */
 
 // 21.1.3.25 String.prototype.trim()
 
-/* 214 */
+/* 215 */
 
 // 21.1.3.27 String.prototype[@@iterator]()
 
-/* 215 */
+/* 216 */
 
 // 21.1.3.3 String.prototype.codePointAt(pos)
 
-/* 216 */
+/* 217 */
 
 // 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
 
 /* , endPosition = @length */
 
-/* 217 */
+/* 218 */
 
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 
 /* , position = 0 */
 
-/* 218 */
+/* 219 */
 
 // 21.1.3.13 String.prototype.repeat(count)
 
-/* 219 */
+/* 220 */
 
 // 21.1.3.18 String.prototype.startsWith(searchString [, position ])
 
-/* 220 */
+/* 221 */
 
 // B.2.3.2 String.prototype.anchor(name)
 
-/* 221 */
+/* 222 */
 
 // B.2.3.3 String.prototype.big()
 
-/* 222 */
+/* 223 */
 
 // B.2.3.4 String.prototype.blink()
 
-/* 223 */
+/* 224 */
 
 // B.2.3.5 String.prototype.bold()
 
-/* 224 */
+/* 225 */
 
 // B.2.3.6 String.prototype.fixed()
 
-/* 225 */
+/* 226 */
 
 // B.2.3.7 String.prototype.fontcolor(color)
 
-/* 226 */
+/* 227 */
 
 // B.2.3.8 String.prototype.fontsize(size)
 
-/* 227 */
+/* 228 */
 
 // B.2.3.9 String.prototype.italics()
 
-/* 228 */
+/* 229 */
 
 // B.2.3.10 String.prototype.link(url)
 
-/* 229 */
+/* 230 */
 
 // B.2.3.11 String.prototype.small()
 
-/* 230 */
+/* 231 */
 
 // B.2.3.12 String.prototype.strike()
 
-/* 231 */
+/* 232 */
 
 // B.2.3.13 String.prototype.sub()
 
-/* 232 */
+/* 233 */
 
 // B.2.3.14 String.prototype.sup()
 
-/* 233 */
+/* 234 */
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
 
-/* 234 */
-
 /* 235 */
+
+/* 236 */
 
 // 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 
 // PhantomJS / old WebKit has a broken implementations
-
-/* 236 */
 
 /* 237 */
 
@@ -9121,9 +9167,11 @@
 
 /* 240 */
 
+/* 241 */
+
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 
-/* 241 */
+/* 242 */
 
 // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
 
@@ -9131,23 +9179,23 @@
 
 // if object isn't iterable or it's array with default iterator - use simple case
 
-/* 242 */
+/* 243 */
 
 // WebKit Array.of isn't generic
 
 // 22.1.2.3 Array.of( ...items)
 
-/* 243 */
+/* 244 */
 
 // 22.1.3.13 Array.prototype.join(separator)
 
 // fallback for not array-like strings
 
-/* 244 */
+/* 245 */
 
 // fallback for not array-like ES3 strings and DOM objects
 
-/* 245 */
+/* 246 */
 
 // IE8-
 
@@ -9157,45 +9205,45 @@
 
 // 22.1.3.25 Array.prototype.sort(comparefn)
 
-/* 246 */
+/* 247 */
 
 // 22.1.3.10 / 15.4.4.18 Array.prototype.forEach(callbackfn [, thisArg])
 
-/* 247 */
+/* 248 */
 
 // cross-realm fallback
 
-/* 248 */
+/* 249 */
 
 // 22.1.3.15 / 15.4.4.19 Array.prototype.map(callbackfn [, thisArg])
 
-/* 249 */
+/* 250 */
 
 // 22.1.3.7 / 15.4.4.20 Array.prototype.filter(callbackfn [, thisArg])
 
-/* 250 */
+/* 251 */
 
 // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
 
-/* 251 */
+/* 252 */
 
 // 22.1.3.5 / 15.4.4.16 Array.prototype.every(callbackfn [, thisArg])
 
-/* 252 */
+/* 253 */
 
 // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
 
-/* 253 */
+/* 254 */
 
 // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
 
-/* 254 */
+/* 255 */
 
 // 22.1.3.11 / 15.4.4.14 Array.prototype.indexOf(searchElement [, fromIndex])
 
 /* , fromIndex = 0 */
 
-/* 255 */
+/* 256 */
 
 // 22.1.3.14 / 15.4.4.15 Array.prototype.lastIndexOf(searchElement [, fromIndex])
 
@@ -9203,31 +9251,31 @@
 
 // convert -0 to +0
 
-/* 256 */
-
 /* 257 */
 
 /* 258 */
+
+/* 259 */
 
 // 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
 
 // Shouldn't skip holes
 
-/* 259 */
+/* 260 */
 
 // 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
 
-/* 260 */
-
 /* 261 */
-
-// RegExp constructor can alter flags and IsRegExp works correct with @@match
 
 /* 262 */
 
-// 21.2.5.14 RegExp.prototype.toString()
+// RegExp constructor can alter flags and IsRegExp works correct with @@match
 
 /* 263 */
+
+// 21.2.5.14 RegExp.prototype.toString()
+
+/* 264 */
 
 // @@match logic
 
@@ -9239,7 +9287,7 @@
 
 // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@match
 
-/* 264 */
+/* 265 */
 
 // @@replace logic
 
@@ -9265,7 +9313,7 @@
 
 // \d\d?
 
-/* 265 */
+/* 266 */
 
 // @@search logic
 
@@ -9277,7 +9325,7 @@
 
 // https://tc39.github.io/ecma262/#sec-regexp.prototype-@@search
 
-/* 266 */
+/* 267 */
 
 // @@split logic
 
@@ -9299,7 +9347,7 @@
 
 // the 'y' flag.
 
-/* 267 */
+/* 268 */
 
 // Node.js
 
@@ -9309,9 +9357,9 @@
 
 // strange IE + webpack dev server bug - use .call(global)
 
-/* 268 */
-
 /* 269 */
+
+/* 270 */
 
 // 23.1 Map Objects
 
@@ -9319,13 +9367,13 @@
 
 // 23.1.3.9 Map.prototype.set(key, value)
 
-/* 270 */
+/* 271 */
 
 // 23.2 Set Objects
 
 // 23.2.3.1 Set.prototype.add(value)
 
-/* 271 */
+/* 272 */
 
 // 23.3.3.3 WeakMap.prototype.get(key)
 
@@ -9337,21 +9385,19 @@
 
 // store all the rest on native weakmap
 
-/* 272 */
+/* 273 */
 
 // 23.4 WeakSet Objects
 
 // 23.4.3.1 WeakSet.prototype.add(value)
 
-/* 273 */
+/* 274 */
 
 // 24.1.3.1 ArrayBuffer.isView(arg)
 
 // 24.1.4.3 ArrayBuffer.prototype.slice(start, end)
 
 // FF fix
-
-/* 274 */
 
 /* 275 */
 
@@ -9373,11 +9419,13 @@
 
 /* 284 */
 
+/* 285 */
+
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
 
 // MS Edge argumentsList argument is optional
 
-/* 285 */
+/* 286 */
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
 
@@ -9389,83 +9437,81 @@
 
 // with altered newTarget, not support built-in constructors
 
-/* 286 */
+/* 287 */
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
 
 // MS Edge has broken Reflect.defineProperty - throwing instead of returning false
 
-/* 287 */
+/* 288 */
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
 
-/* 288 */
+/* 289 */
 
 // 26.1.5 Reflect.enumerate(target)
 
 // keys
 
-/* 289 */
+/* 290 */
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
 
 /* , receiver */
 
-/* 290 */
+/* 291 */
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
 
-/* 291 */
+/* 292 */
 
 // 26.1.8 Reflect.getPrototypeOf(target)
 
-/* 292 */
+/* 293 */
 
 // 26.1.9 Reflect.has(target, propertyKey)
 
-/* 293 */
+/* 294 */
 
 // 26.1.10 Reflect.isExtensible(target)
 
-/* 294 */
+/* 295 */
 
 // 26.1.11 Reflect.ownKeys(target)
 
-/* 295 */
+/* 296 */
 
 // 26.1.12 Reflect.preventExtensions(target)
 
-/* 296 */
+/* 297 */
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
 
-/* 297 */
+/* 298 */
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
 
-/* 298 */
-
 /* 299 */
-
-// https://github.com/tc39/Array.prototype.includes
 
 /* 300 */
 
-/* 301 */
+// https://github.com/tc39/Array.prototype.includes
 
-// https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
+/* 301 */
 
 /* 302 */
 
-// https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
+// https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 
 /* 303 */
 
+// https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
+
 /* 304 */
 
-/* , fillString = ' ' */
-
 /* 305 */
+
+/* , fillString = ' ' */
 
 /* 306 */
 
@@ -9473,9 +9519,9 @@
 
 /* 308 */
 
-// https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-
 /* 309 */
+
+// https://github.com/sebmarkbage/ecmascript-string-left-right-trim
 
 /* 310 */
 
@@ -9487,15 +9533,15 @@
 
 /* 314 */
 
-// https://github.com/tc39/proposal-object-getownpropertydescriptors
-
 /* 315 */
+
+// https://github.com/tc39/proposal-object-getownpropertydescriptors
 
 /* 316 */
 
-// https://github.com/tc39/proposal-object-values-entries
-
 /* 317 */
+
+// https://github.com/tc39/proposal-object-values-entries
 
 /* 318 */
 
@@ -9503,21 +9549,23 @@
 
 /* 320 */
 
-// https://github.com/tc39/proposal-promise-finally
-
 /* 321 */
+
+// https://github.com/tc39/proposal-promise-finally
 
 /* 322 */
 
-// ie9- setTimeout & setInterval additional parameters fix
-
 /* 323 */
+
+// ie9- setTimeout & setInterval additional parameters fix
 
 /* 324 */
 
+/* 325 */
+
 // TODO: Not spec compliant, should be false.
 
-/* 325 */
+/* 326 */
 
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
@@ -9784,13 +9832,13 @@
 
 // problems, please detail your unique predicament in a GitHub issue.
 
-/* 326 */
-
 /* 327 */
+
+/* 328 */
 
 // https://github.com/tc39/proposal-global
 
-/* 328 */
+/* 329 */
 
 // prevent global pollution for namespaces
 
@@ -9799,8 +9847,6 @@
 // export proto methods to core.%CONSTRUCTOR%.methods.%NAME%
 
 // export proto methods to core.%CONSTRUCTOR%.prototype.%NAME%
-
-/* 329 */
 
 /* 330 */
 
@@ -9823,6 +9869,8 @@
 /* 339 */
 
 /* 340 */
+
+/* 341 */
 
 /**
  * Create an instance of Axios
@@ -9847,7 +9895,7 @@
 
 // Allow use of default import syntax in TypeScript
 
-/* 341 */
+/* 342 */
 
 /**
  * Create a new instance of Axios
@@ -9871,7 +9919,7 @@
 
 /*eslint func-names:0*/
 
-/* 342 */
+/* 343 */
 
 /**
  * Add a new interceptor to the stack
@@ -9897,7 +9945,7 @@
  * @param {Function} fn The function to call for each interceptor
  */
 
-/* 343 */
+/* 344 */
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -9918,7 +9966,7 @@
 
 // Transform response data
 
-/* 344 */
+/* 345 */
 
 /**
  * Transform the data for a request or a response
@@ -9929,9 +9977,9 @@
  * @returns {*} The resulting transformed data
  */
 
-/* 345 */
-
 /* 346 */
+
+/* 347 */
 
 /**
  * Resolve or reject a Promise based on response status.
@@ -9941,7 +9989,7 @@
  * @param {object} response The response.
  */
 
-/* 347 */
+/* 348 */
 
 /**
  * Update an Error with the specified config, error code, and response.
@@ -9962,7 +10010,7 @@
 
 // Axios
 
-/* 348 */
+/* 349 */
 
 /**
  * Creates a new URL by combining the baseURL with the requestedURL,
@@ -9974,7 +10022,7 @@
  * @returns {string} The combined full path
  */
 
-/* 349 */
+/* 350 */
 
 /**
  * Determines whether the specified URL is absolute
@@ -9989,7 +10037,7 @@
 
 // by any combination of letters, digits, plus, period, or hyphen.
 
-/* 350 */
+/* 351 */
 
 /**
  * Creates a new URL by combining the specified URLs
@@ -9999,7 +10047,7 @@
  * @returns {string} The combined URL
  */
 
-/* 351 */
+/* 352 */
 
 // Headers whose duplicates are ignored by node
 
@@ -10019,7 +10067,7 @@
  * @returns {Object} Headers parsed into an object
  */
 
-/* 352 */
+/* 353 */
 
 // Standard browser envs have full support of the APIs needed to test
 
@@ -10043,11 +10091,11 @@
   * @returns {boolean} True if URL shares the same origin, otherwise false
   */
 
-/* 353 */
-
 /* 354 */
 
 /* 355 */
+
+/* 356 */
 
 /**
  * A `CancelToken` is an object that can be used to request cancellation of an operation.
@@ -10061,7 +10109,7 @@
  * cancels the `CancelToken`.
  */
 
-/* 356 */
+/* 357 */
 
 /**
  * Syntactic sugar for invoking a function and expanding an array for arguments.
@@ -10084,7 +10132,7 @@
  * @returns {Function}
  */
 
-/* 357 */
+/* 358 */
 
 // set events hash
 
@@ -10114,7 +10162,7 @@
 
 // trigger listener
 
-/* 358 */
+/* 359 */
 
 /*!
  * Font Awesome Free 5.12.0 by @fontawesome - https://fontawesome.com
@@ -10168,7 +10216,7 @@
 
 // Delete the old one, since we're replacing it with a new one
 
-/* 359 */
+/* 360 */
 
 // DOM APIs, for completeness
 
@@ -10182,7 +10230,7 @@
 
 // `setimmediate` library.
 
-/* 360 */
+/* 361 */
 
 // Spec says greater than zero
 
@@ -10216,13 +10264,15 @@
 
 // "too much recursion" error.
 
-/* 361 */
-
 /* 362 */
 
 /* 363 */
 
 /* 364 */
+
+/* 365 */
+
+/* 366 */
 
 /*!
   * Bootstrap v4.4.1 (https://getbootstrap.com/)

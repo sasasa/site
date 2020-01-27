@@ -4966,6 +4966,10 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
+object-fit-images@^3.2.4:
+  version "3.2.4"
+  resolved "https://registry.yarnpkg.com/object-fit-images/-/object-fit-images-3.2.4.tgz#6c299d38fdf207746e5d2d46c2877f6f25d15b52"
+
 object-inspect@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/object-inspect/-/object-inspect-1.7.0.tgz#f4f6bd181ad77f006b5ece60bd0b6f398ff74a67"
@@ -7496,7 +7500,6 @@ xtend@^4.0.0, xtend@~4.0.1:
 xxhash-wasm@^0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/xxhash-wasm/-/xxhash-wasm-0.3.1.tgz#2b8a7dbd9647d36a7eba8fd867cef08edab03394"
-  integrity sha512-amhCgCYQfhiQFvYjn6kvk4jmY1NXBn5MKdsS0jvxofmHFo77CBrXuV46NYeXACC3qTleugHYg7kNpeFnIA+R8Q==
 
 y18n@^3.2.1:
   version "3.2.1"
