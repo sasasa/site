@@ -104,6 +104,10 @@ button {
 /* MODULE */
 /* ---------------------------------------- */
 /* ATOM=============================== */
+$bgColor: #FCFAF6;
+.bg-color {
+  background-color: $bgColor;
+}
 .wf-notomedium {
   font-family: 'Noto Sans Japanese', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", sans-serif;  
   font-weight:500;
@@ -136,10 +140,15 @@ button {
   padding-left: 25px;
   padding-right: 25px;
 }
+body > section:not(:first-child),
+body > article {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 section h2,
 article h2 {
   margin-bottom: 40px;
-  padding-top: 120px;
+  // padding-top: 120px;
 }
 
 
@@ -538,9 +547,6 @@ header ul li a:hover {
   position: relative;
   box-sizing: border-box;
   padding: 30px 40px 25px;
-  // background-color: #EFEFFF;
-  // background-color: #e3e9ff;
-  // border: 1px solid #D8D8D8;
   display: block;
 }
 .voice:first-child {
@@ -562,7 +568,7 @@ header ul li a:hover {
 .voice img {
   border-radius: 50%;
   // border: 10px solid #EFEFFF;
-  border: 10px solid #ffffff;
+  border: 10px solid $bgColor;
   box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.4);
   margin: 0 auto;
   display: block;
