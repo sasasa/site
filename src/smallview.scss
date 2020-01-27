@@ -209,7 +209,7 @@
     border: none;
     background: none;
     cursor: pointer;
-    color: #7D90D7;
+    color: $color4;
     transition: all 0.4s ease-in-out;
   }
   .nav-button::before,
@@ -274,7 +274,7 @@
     margin-top: 0.5rem;
   }
   .open header ul a.js-anchor {
-    color: #FFFFFF;
+    color: $backgoundColor;
     padding-top: 0;
   }
 }

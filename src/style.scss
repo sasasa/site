@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "~swiper/css/swiper.min.css";
 @import "reset.scss";
+@import "color.scss";
 
 @font-face {
   font-family: 'Noto Sans Japanese';
@@ -38,7 +39,7 @@ html {
   overflow: auto;
 }
 body {
-  color: #111111;
+  color: $baseColor;
   font-size: 14px;
   line-height: 1.6;
   letter-spacing: 0;
@@ -74,10 +75,20 @@ img {
   max-width:100%;
   height:auto;
 }
-a:link { color: #111; text-decoration: underline;}
-a:visited { color: #111; }
-a:hover { color: #111; text-decoration: none;}
-a:active { color: #111; }
+a:link { 
+  color: $baseColor;
+  text-decoration: underline;
+}
+a:visited { 
+  color: $baseColor;
+}
+a:hover { 
+  color: $baseColor;
+  text-decoration: none;
+}
+a:active { 
+  color: $baseColor;
+}
 
 /* clearfix */
 .clearfix:after {
@@ -104,7 +115,11 @@ button {
 /* MODULE */
 /* ---------------------------------------- */
 /* ATOM=============================== */
-$bgColor: #FCFAF6;
+$narrowWidth: 668px;
+$narrowRatio: 42%;
+$wideRatio: 58%;
+$radius: 15px;
+
 .bg-color {
   background-color: $bgColor;
 }
@@ -165,7 +180,7 @@ article h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:#fff;
+  background-color: $backgoundColor;
 }
 .box-loader {
   display: flex;
@@ -177,7 +192,7 @@ article h2 {
   width: 22px;
   height: 22px;
   margin: 0 6px;
-  background-color:#eee;
+  background-color:#eeeeee;
   border-radius: 50%;
   position: relative;
 }
@@ -190,22 +205,22 @@ article h2 {
   /* どのような要素の変更が予測されているかブラウザーに助言 */
   /* https://developer.mozilla.org/ja/docs/Web/CSS/will-change */
   will-change: opacity, transform;
-  transition: opacity .3s linear, transform .3s cubic-bezier(0.38, 1.43, 0.96, 0.27);
+  transition: opacity .3s cubic-bezier(0.38, 1.43, 0.96, 0.27), transform .3s cubic-bezier(0.38, 1.43, 0.96, 0.27);
 }
 .box-loader .dot:nth-child(1) .color {
-  background-color: #FFEA82;
+  background-color: $color1;
 }
 .box-loader .dot:nth-child(2) .color {
-  background-color: #CD9F78;
+  background-color: $color2;
 }
 .box-loader .dot:nth-child(3) .color {
-  background-color: #8CCCC8;
+  background-color: $color3;
 }
 .box-loader .dot:nth-child(4) .color {
-  background-color: #7D90D7;
+  background-color: $color4;
 }
 .box-loader .dot:nth-child(5) .color {
-  background-color: #FFA4AF;
+  background-color: $color5;
 }
 .box-loader .dot.is-colored .color {
   opacity: 1;
@@ -287,7 +302,7 @@ article h2 {
 }
 .hero-catch .catch-03 {
   font-size: 1.6rem;
-  bottom: 4rem;
+  bottom: 1rem;
   right: 9rem;
 }
 .catch-01,
@@ -374,7 +389,7 @@ header ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba($color: #ffffff, $alpha: 0.6)
+  background: rgba($color: $backgoundColor, $alpha: 0.6)
 }
 header ul li {
   margin-right: 1.4rem;
@@ -383,7 +398,7 @@ header ul li {
   white-space: nowrap
 }
 header ul li:hover {
-  border-bottom: 3px solid #8CDCC8;
+  border-bottom: 3px solid $color3;
 }
 header ul li a:link {
   font-weight: 700;
@@ -399,79 +414,160 @@ header ul li a:hover {
 /* ---------------------------------------- */
 /* yoga */
 /* ---------------------------------------- */
-.ashtanga {
+@mixin box {
   width: 100%;
   position: relative;
   box-sizing: border-box;
   padding: 30px 40px 25px;
-  display: block;
+  display: block;  
+}
+@mixin first {
+  border-radius: $radius $radius 0 0;
+  border-top: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;  
+}
+@mixin second {
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+}
+@mixin third {
+  border-radius: 0 0 $radius $radius;
+  border-bottom: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
+  border-right: 1px solid $borderColor;
+}
+@mixin subtitle {
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+}
+@mixin minibox {
+  width: 30%;
+  padding: 60px 40px 25px;
+  border: 1px solid $borderColor;
+}
+@mixin borderAll {
+  border-radius: $radius $radius $radius $radius;
+}
+@mixin flexbox {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ashtanga {
+  @include box;
 }
 .ashtanga p {
   line-height: 1.8;
 }
 .ashtanga:first-child {
-  border-radius: 15px 15px 0 0;
-  border-top: 1px solid #D8D8D8;
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
+  @include first;
 }
 .ashtanga:nth-child(2) {
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
+  @include second;
 }
 .ashtanga:last-child {
-  border-radius: 0 0 15px 15px;
-  border-bottom: 1px solid #D8D8D8;
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
+  @include third;
 }
 .ashtanga h3 {
-  font-size: 18px;
-  font-weight: normal;
-  text-align: center;
+  @include subtitle;
   margin-bottom: 1.4em;
 }
 
 @media (min-width: 801px) {
   .ashtanga {
-    width: 30%;
-    padding: 60px 40px 25px;
-    border: 1px solid #D8D8D8;
+    @include minibox;
   }
   .ashtanga:first-child {
-    border-radius: 15px 15px 15px 15px;
+    @include borderAll;
   }
   .ashtanga:nth-child(2) {
-    border-radius: 15px 15px 15px 15px;
+    @include borderAll;
   }
   .ashtanga:last-child {
-    border-radius: 15px 15px 15px 15px;
+    @include borderAll;
   }
   #yoga .flexbox {
-    display: flex;
-    justify-content: space-between;
+    @include flexbox;
   }
 }
+/* ---------------------------------------- */
+/* voices */
+/* ---------------------------------------- */
+.voice {
+  @include box;
+}
+.voice:first-child {
+  @include first;
+}
+.voice:nth-child(2) {
+  @include second;
+}
+.voice:last-child {
+  @include third;
+}
+.voice img {
+  border-radius: 50%;
+  border: 10px solid $bgColor;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.4);
+  margin: 0 auto;
+  display: block;
+  width: 90px;
+  height: 90px;
+}
+.voice h3 {
+  @include subtitle;
+}
+
+@media (min-width: 801px) {
+  .voice {
+    @include minibox;
+  }
+  .voice:first-child {
+    @include borderAll;
+  }
+  .voice:nth-child(2) {
+    @include borderAll;
+  }
+  .voice:last-child {
+    @include borderAll;
+  }
+  .voice img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -55px;
+  }
+  #voices .flexbox {
+    @include flexbox;
+    margin-top: 90px;
+  }
+}
+
 
 /* ---------------------------------------- */
 /* instructor */
 /* ---------------------------------------- */
 #instructor .flex {
-  max-width:668px;
+  max-width: $narrowWidth;
   margin:0 auto;
   display: flex;
 }
 #instructor .info {
-  flex: 0 0 58%;
+  flex: 0 0 $wideRatio;
   line-height: 1.8;
 }
+#instructor .info h3 {
+  padding: 0 1rem;
+}
 #instructor .info p {
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   margin-bottom: 0;
 }
 #instructor .photo {
-  flex: 0 0 42%;
-  border-radius: 15px;
+  flex: 0 0 $narrowRatio;
+  border-radius: $radius;
   background-image: url(./img/danwang.jpg);
   background-position: center;
   background-size: cover;
@@ -509,14 +605,14 @@ header ul li a:hover {
 
 
 /* ---------------------------------------- */
-/* price */
+/* price event*/
 /* ---------------------------------------- */
 
 .dl-outline{
-  max-width:668px;
+  max-width: $narrowWidth;
   margin:0 auto;
-  border-top:2px solid #D8D8D8;
-  border-bottom:2px solid #D8D8D8;
+  border-top:2px solid $borderColor;
+  border-bottom:2px solid $borderColor;
   overflow:hidden;
   letter-spacing: 0.04em;
 }
@@ -533,81 +629,13 @@ header ul li a:hover {
   padding-right: 14px;
   padding-bottom: 20px;
   padding-left:177px;
-  border-bottom:1px solid #D8D8D8;
+  border-bottom:1px solid $borderColor;
 }
 .dl-outline dd:last-child{
   border-bottom: none;
 }
 
-/* ---------------------------------------- */
-/* voices */
-/* ---------------------------------------- */
-.voice {
-  width: 100%;
-  position: relative;
-  box-sizing: border-box;
-  padding: 30px 40px 25px;
-  display: block;
-}
-.voice:first-child {
-  border-radius: 15px 15px 0 0;
-  border-top: 1px solid #D8D8D8;
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
-}
-.voice:nth-child(2) {
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
-}
-.voice:last-child {
-  border-radius: 0 0 15px 15px;
-  border-bottom: 1px solid #D8D8D8;
-  border-left: 1px solid #D8D8D8;
-  border-right: 1px solid #D8D8D8;
-}
-.voice img {
-  border-radius: 50%;
-  // border: 10px solid #EFEFFF;
-  border: 10px solid $bgColor;
-  box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.4);
-  margin: 0 auto;
-  display: block;
-  width: 90px;
-  height: 90px;
-}
-.voice h3 {
-  font-size: 18px;
-  font-weight: normal;
-  text-align: center;
-}
 
-@media (min-width: 801px) {
-  .voice {
-    width: 30%;
-    padding: 60px 40px 25px;
-    border: 1px solid #D8D8D8;
-  }
-  .voice:first-child {
-    border-radius: 15px 15px 15px 15px;
-  }
-  .voice:nth-child(2) {
-    border-radius: 15px 15px 15px 15px;
-  }
-  .voice:last-child {
-    border-radius: 15px 15px 15px 15px;
-  }
-  .voice img {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -55px;
-  }
-  #voices .flexbox {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 90px;
-  }
-}
 
 
 /* ---------------------------------------- */
@@ -615,19 +643,19 @@ header ul li a:hover {
 /* ---------------------------------------- */
 #access .flex {
   display: flex;
-  max-width:668px;
+  max-width: $narrowWidth;
   margin: 0 auto;
 }
 #access .info {
-  flex: 0 0 42%;
+  flex: 0 0 $narrowRatio;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 1em;
   line-height: 1.2;
 }
 .gmap {
-  border-radius: 15px;
-  flex: 0 0 58%;
+  border-radius: $radius;
+  flex: 0 0 $wideRatio;
   height: 0;
   overflow: hidden;
   // 56.25%
@@ -663,7 +691,7 @@ header ul li a:hover {
   margin-bottom: 0;
   padding-left: 12px;
   padding-right: 12px;
-  border-radius: 15px;
+  border-radius: $radius;
   background-color: #D8D8D8;
 }
 .item .imgbox{
