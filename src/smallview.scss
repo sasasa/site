@@ -278,3 +278,9 @@
     padding-top: 0;
   }
 }
+@media (orientation: landscape) and (max-width: 1000px) {
+  .open header ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
