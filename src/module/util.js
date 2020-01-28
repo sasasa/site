@@ -1,4 +1,12 @@
 
+export　function changeBlank(string) {
+  if(string == "") {
+    return '-'
+  } else {
+    return string
+  }
+}
+
 export　function escape_html(string) {
   if(typeof string !== 'string') {
     return string;

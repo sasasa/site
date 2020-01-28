@@ -16,7 +16,7 @@ import Velocity from 'velocity-animate'
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import { escape_html, BOX_ID } from './module/util'
+import { escape_html, BOX_ID, changeBlank } from './module/util'
 
 import './style.scss'
 
@@ -224,36 +224,36 @@ async function fetch() {
   $('#at').text(escape_html(data[0].at))
 
   if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
-    $('#date').text(escape_html(clone.format('YYYY年MM月DD日(dddd)')))
+    $('.date').text(escape_html(clone.format('YYYY年MM月DD日(dddd)')))
   } else {
-    $('#date').text(
+    $('.date').text(
       escape_html(clone.format('YYYY年MM月DD日(dddd)')) +
       '～' +
       escape_html(lastDay.format('MM月DD日(dddd)'))
     )
   }
-  $('#event_name').text(escape_html(data[0].event_name))
+  $('.event_name').text(escape_html(changeBlank(data[0].event_name)))
   
-  $('#venue').text(escape_html(data[0].venue))
-  $('#time').text(escape_html(data[0].time))
-  $('#fee').text(escape_html(data[0].fee))
-  $('#hashtag').text(escape_html(data[0].hashtag))
+  $('.venue').text(escape_html(changeBlank(data[0].venue)))
+  $('.time').text(escape_html(changeBlank(data[0].time)))
+  $('.fee').text(escape_html(changeBlank(data[0].fee)))
+  $('.hashtag').text(escape_html(changeBlank(data[0].hashtag)))
 
   if(data[0].fee_item1) {
-    $('#price-table').append(`<dt>${escape_html(data[0].fee_item1)}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(data[0].fee1)}</dd>`);
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item1))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee1))}</dd>`);
   }
   if(data[0].fee_item2) {
-    $('#price-table').append(`<dt>${escape_html(data[0].fee_item2)}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(data[0].fee2)}</dd>`);
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item2))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee2))}</dd>`);
   }
   if(data[0].fee_item3) {
-    $('#price-table').append(`<dt>${escape_html(data[0].fee_item3)}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(data[0].fee3)}</dd>`);
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item3))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee3))}</dd>`);
   }
   if(data[0].fee_item4) {
-    $('#price-table').append(`<dt>${escape_html(data[0].fee_item4)}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(data[0].fee4)}</dd>`);
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item4))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee4))}</dd>`);
   }
   
 
