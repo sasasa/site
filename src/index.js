@@ -29,6 +29,10 @@ if(!document.currentScript) {
   objectFitImages()//IE only
 }
 
+import 'objectFitPolyfill'
+const elements = document.querySelectorAll('.fit');
+objectFitPolyfill(elements);
+
 
 
 

@@ -249,6 +249,8 @@ article h2 {
 }
 .hero-slider .item video {
   height: 100%;
+  width: 100%;
+  object-fit: fill;
 }
 .hero-slider .item-01 {
   background-image: url(./img/hero-slider-01.jpg);
@@ -264,7 +266,8 @@ article h2 {
   background-image: url(./img/hero-slider-04.jpg);
 }
 .hero-slider .item-05 {
-  background-image: url(./img/poster-01.png);
+  // background-image: url(./img/poster-01.png);
+  background-color: white;
 }
 
 .hero-slider .item img {
@@ -710,7 +713,7 @@ header ul li a:hover {
     max-width: 316px;
     height: 237px;
     object-fit: cover;
-    font-family: "object-fit: cover"
+    font-family: "object-fit: cover";
   }
 }
 .facility-slider .item {
@@ -795,21 +798,5 @@ footer .copyright{
   font-size:10px;
   letter-spacing: 0.04em;
 }
-
-
-// #bg-video {
-//   position: fixed;
-//   right: 0;
-//   bottom: 0;
-//   min-width: 100%;
-//   min-height: 100%;
-//   width: auto;
-//   height: auto;
-//   z-index: -100;
-//   z-index: 2000;
-//   background: url('./img/poster.png') no-repeat;
-//   background-size: cover;
-// }
-
 
 @import "smallview.scss";
