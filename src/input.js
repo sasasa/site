@@ -63,21 +63,54 @@ function validate() {
 
   const startMessage = /^\d{4}\.\d{1,2}\.\d{1,2}$/.test($('#start').val());
   if(!startMessage) {
-    $('.errorMes').text("開始日はxxxx.x.xの形式で入力してください")
-    $('.alert-danger').show(600)
-    $('.alert-danger').velocity("scroll", {
+    $('#error-date .errorMes').text("開始日はxxxx.x.xの形式で入力してください")
+    $('#error-date').show(600)
+    $('#error-date').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
   const termMessage = $('#term').val() > 0
   if(!termMessage) {
-    $('.errorMes').text("期間は1以上にしてください。")
-    $('.alert-danger').show(600)
-    $('.alert-danger').velocity("scroll", {
+    $('#error-date .errorMes').text("期間は1以上にしてください。")
+    $('#error-date').show(600)
+    $('#error-date').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  return startMessage && termMessage
+
+  const termfeeItem1 = $('#fee_item1').val().length > 16
+  if(!termfeeItem1) {
+    $('#error-fee .errorMes').text("料金項目1は16文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const termfeeItem2 = $('#fee_item2').val().length > 16
+  if(!termfeeItem2) {
+    $('#error-fee .errorMes').text("料金項目2は16文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const termfeeItem3 = $('#fee_item3').val().length > 16
+  if(!termfeeItem3) {
+    $('#error-fee .errorMes').text("料金項目3は16文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const termfeeItem4 = $('#fee_item4').val().length > 16
+  if(!termfeeItem4) {
+    $('#error-fee .errorMes').text("料金項目4は16文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  return startMessage && termMessage && termfeeItem1 && termfeeItem2 && termfeeItem3 && termfeeItem4
 }
 
 

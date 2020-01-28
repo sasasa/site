@@ -18,9 +18,9 @@
 
   <div class="container-fluid">
     
-    <div class="alert alert-danger mb-0 rounded-0" role="alert">
+    <div id="error-date" class="alert alert-danger mb-0 rounded-0" role="alert">
       <div class="errorMes alertMes">このアラートはあなたの注意が必要です。</div>
-    </div>
+    </div id="error-fee">
     
     <div id="alert-date" class="alert alert-success mb-0 rounded-0" role="alert">
       <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
@@ -112,13 +112,16 @@
     <div id="alert-fee" class="alert alert-success mb-0 rounded-0" role="alert">
       <div class="successMes alertMes">このアラートはあなたの注意が必要です。</div>
     </div>
+    <div id="error-fee" class="alert alert-danger mb-0 rounded-0" role="alert">
+      <div class="errorMes alertMes">このアラートはあなたの注意が必要です。</div>
+    </div>
 
     <div class="row rounded border shadow-sm py-5">
       
       <div class="col-6">
         <div class="jumbotron">
           <h1 class="display-5">料金表</h1>
-          <p>料金項目と料金を対で入力してください。</p>
+          <p>料金項目と料金を対で入力してください。上の料金項目の方が長すぎるとレイアウトが大きく崩れてしまうので</p>
         </div>
       </div>
       
@@ -126,21 +129,25 @@
         <div class="form-group mb-4">
           <label for="fee_item1 mb-2">料金項目1</label>
           <input type="text" class="form-control mb-2" id="fee_item1">
+          <label for="fee_item1 mb-2">料金1</label>
           <input type="text" class="form-control" id="fee1">
         </div>
         <div class="form-group mb-4">
           <label for="fee_item2 mb-2">料金項目2</label>
           <input type="text" class="form-control mb-2" id="fee_item2">
+          <label for="fee_item1 mb-2">料金2</label>
           <input type="text" class="form-control" id="fee2">
         </div>
         <div class="form-group mb-4">
           <label for="fee_item3 mb-2">料金項目3</label>
           <input type="text" class="form-control mb-2" id="fee_item3">
+          <label for="fee_item1 mb-2">料金3</label>
           <input type="text" class="form-control" id="fee3">
         </div>
         <div class="form-group mb-4">
           <label for="fee_item4 mb-2">料金項目4</label>
           <input type="text" class="form-control mb-2" id="fee_item4">
+          <label for="fee_item1 mb-2">料金4</label>
           <input type="text" class="form-control" id="fee4">
         </div>
         <input type="button" value="料金更新" class="btn btn-primary mb-2" id="fee_btn">
