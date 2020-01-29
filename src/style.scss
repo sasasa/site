@@ -585,6 +585,22 @@ header ul li a:hover {
 #instructor .info li {
   margin-right: 1rem;
 }
+@mixin link {
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+@mixin link-hover {
+  opacity: 0.4;
+  transition: opacity 0.2s ease-out;
+}
+#instructor .info a {
+  @include link;
+  font-weight: 500;
+}
+#instructor .info a:hover {
+  @include link-hover;
+}
+
 #instructor .photo {
   flex: 0 0 $narrowRatio;
   border-radius: $radius;
@@ -771,12 +787,10 @@ footer .footer-nav-unit li:last-child::after{
 }
 footer .footer-nav-unit li a{
   text-decoration: none;
-  opacity: 1;
-  transition: opacity 0.4s ease-out;
+  @include link;
 }
 footer .footer-nav-unit li a:hover{
-  opacity: 0.4;
-  transition: opacity 0.2s ease-out;
+  @include link-hover;
 }
 footer .footer-nav-unit li a svg{
   margin-right: 0.5rem;
