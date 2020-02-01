@@ -294,6 +294,7 @@ article h2 {
 }
 .hero-catch p {
   position: relative;
+  text-shadow: 0 0 3px pink;
 }
 .hero-catch span {
   position: absolute;
@@ -350,6 +351,7 @@ article h2 {
   left: 3rem;
   bottom: 0.05rem;
   z-index: 51;
+  text-shadow: 0 0 3px pink;
 }
 .hero-date .vertical {
   font-size: 0.8rem;
