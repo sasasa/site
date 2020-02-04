@@ -42,6 +42,18 @@ async function fetch() {
   $('#fee3').val(escape_html(data[0].fee3))
   $('#fee_item4').val(escape_html(data[0].fee_item4))
   $('#fee4').val(escape_html(data[0].fee4))
+  $('#fee_item5').val(escape_html(data[0].fee_item5))
+  $('#fee5').val(escape_html(data[0].fee5))
+  $('#fee_item6').val(escape_html(data[0].fee_item6))
+  $('#fee6').val(escape_html(data[0].fee6))
+  $('#fee_item7').val(escape_html(data[0].fee_item7))
+  $('#fee7').val(escape_html(data[0].fee7))
+  $('#fee_item8').val(escape_html(data[0].fee_item8))
+  $('#fee8').val(escape_html(data[0].fee8))
+  $('#fee_item9').val(escape_html(data[0].fee_item9))
+  $('#fee9').val(escape_html(data[0].fee9))
+  $('#fee_item10').val(escape_html(data[0].fee_item10))
+  $('#fee10').val(escape_html(data[0].fee10))
 
   pass = data[0].password
 
@@ -110,7 +122,56 @@ function validate() {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  return startMessage && termMessage && feeItem1 && feeItem2 && feeItem3 && feeItem4
+  const feeItem5 = $('#fee_item5').val().length < 16
+  if(!feeItem5) {
+    $('#error-fee .errorMes').text("料金項目5 は 15文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const feeItem6 = $('#fee_item6').val().length < 16
+  if(!feeItem6) {
+    $('#error-fee .errorMes').text("料金項目6 は 15文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const feeItem7 = $('#fee_item7').val().length < 16
+  if(!feeItem7) {
+    $('#error-fee .errorMes').text("料金項目7 は 15文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const feeItem8 = $('#fee_item8').val().length < 16
+  if(!feeItem8) {
+    $('#error-fee .errorMes').text("料金項目8 は 15文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const feeItem9 = $('#fee_item9').val().length < 16
+  if(!feeItem9) {
+    $('#error-fee .errorMes').text("料金項目9 は 15文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  const feeItem10 = $('#fee_item10').val().length < 16
+  if(!feeItem10) {
+    $('#error-fee .errorMes').text("料金項目10 は 15文字以下にしてください")
+    $('#error-fee').show(600)
+    $('#error-fee').velocity("scroll", {
+      duration: 100, easing: "easeInOutQuart"
+    });
+  }
+  return startMessage && termMessage && feeItem1 && feeItem2 && feeItem3 && feeItem4 &&
+  feeItem5 && feeItem6 && feeItem7 && feeItem8 && feeItem9 && feeItem10
 }
 
 
@@ -137,6 +198,19 @@ async function patch() {
     fee3: $('#fee3').val(),
     fee_item4: $('#fee_item4').val(),
     fee4: $('#fee4').val(),
+    fee_item5: $('#fee_item5').val(),
+    fee5: $('#fee5').val(),
+    fee_item6: $('#fee_item6').val(),
+    fee6: $('#fee6').val(),
+    fee_item7: $('#fee_item7').val(),
+    fee7: $('#fee7').val(),
+    fee_item8: $('#fee_item8').val(),
+    fee8: $('#fee8').val(),
+    fee_item9: $('#fee_item9').val(),
+    fee9: $('#fee9').val(),
+    fee_item10: $('#fee_item10').val(),
+    fee10: $('#fee10').val(),
+
     password: pass,
   }, BOX_ID, JBN_ID);
 }

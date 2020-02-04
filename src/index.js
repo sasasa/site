@@ -255,6 +255,30 @@ async function fetch() {
     $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item4))}</dt>`);
     $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee4))}</dd>`);
   }
+  if(data[0].fee_item5) {
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item5))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee5))}</dd>`);
+  }
+  if(data[0].fee_item6) {
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item6))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee6))}</dd>`);
+  }
+  if(data[0].fee_item7) {
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item7))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee7))}</dd>`);
+  }
+  if(data[0].fee_item8) {
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item8))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee8))}</dd>`);
+  }
+  if(data[0].fee_item9) {
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item9))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee9))}</dd>`);
+  }
+  if(data[0].fee_item10) {
+    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item10))}</dt>`);
+    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee10))}</dd>`);
+  }
   
 
   setWidth(data[0].width)
