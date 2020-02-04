@@ -237,6 +237,7 @@ async function fetch() {
   $('.venue').text(escape_html(changeBlank(data[0].venue)))
   $('.time').text(escape_html(changeBlank(data[0].time)))
   $('.fee').text(escape_html(changeBlank(data[0].fee)))
+  $('.content').text(escape_html(changeBlank(data[0].content)))
   $('.hashtag').text(escape_html(changeBlank(data[0].hashtag)))
 
   if(data[0].fee_item1) {

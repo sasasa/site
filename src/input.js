@@ -33,6 +33,7 @@ async function fetch() {
   $('#venue').val(escape_html(data[0].venue))
   $('#time').val(escape_html(data[0].time))
   $('#fee').val(escape_html(data[0].fee))
+  $('#content').val(escape_html(data[0].content))
   $('#hashtag').val(escape_html(data[0].hashtag))
   $('#fee_item1').val(escape_html(data[0].fee_item1))
   $('#fee1').val(escape_html(data[0].fee1))
@@ -189,6 +190,7 @@ async function patch() {
     venue: $('#venue').val(),
     time: $('#time').val(),
     fee: $('#fee').val(),
+    content: $('#content').val(),
     hashtag: $('#hashtag').val(),
     fee_item1: $('#fee_item1').val(),
     fee1: $('#fee1').val(),
