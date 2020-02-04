@@ -68,7 +68,9 @@
 
 // import "fetch-polyfill";
 
-// const vidtag = document.getElementById('bg-video');
+// iOS9以下のサファリは自動再生されない
+
+// これで可能か調査する
 
 // vidtag.src = mov;
 

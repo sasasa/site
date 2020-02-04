@@ -21,7 +21,28 @@ import { escape_html, BOX_ID, changeBlank } from './module/util'
 import './style.scss'
 
 import mov from './img/movie-01.mp4';
-// const vidtag = document.getElementById('bg-video');
+const vidtag = document.getElementById('bg-video');
+vidtag.addEventListener('canplay', function() {
+  const ua = navigator.userAgent;
+  if(/(iPhone|iPod)/.test(ua) && /OS 9/.test(ua)) {
+    // iOS9以下のサファリは自動再生されない
+    // これで可能か調査する
+    let lastTime = Date.now();
+    let ctime = 0;
+    setInterval(function() {
+      const curTime = Date.now();
+      const diff = Date.now() - lastTime;
+      lastTime = curTime;
+      ctime += diff/1000;
+      vidtag.currentTime = ctime;
+      if(vidtag.duration <= vidtag.currentTime) {
+        ctime = 0;
+      }
+    }, 1000/30);
+  }
+}, false)
+
+
 // vidtag.src = mov;
 
 import objectFitImages from 'object-fit-images'
