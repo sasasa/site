@@ -36,6 +36,10 @@ $font-family-base: 'Noto Sans Japanese';
 @import "~bootstrap/scss/bootstrap.scss";
 @import "./lib/bootstrap-datetimepicker.min.css";
 
+.alert {
+  margin-left: -15px;
+  margin-right: -15px;
+}
 .alertMes {
   text-align: center;
 }
@@ -68,10 +72,11 @@ body {
   color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 #password_panel .form-group {
-  margin-bottom: 2400px;
+  // margin-bottom: 2400px;
+  margin-top: 200px;
 }
 #password_panel input {
   width: 10rem;
