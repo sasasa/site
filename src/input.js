@@ -91,81 +91,81 @@ function validate() {
     });
   }
 
-  const feeItem1 = $('#fee_item1').val().length < 16
+  const feeItem1 = $('#fee_item1').val().length < 11
   if(!feeItem1) {
-    $('#error-fee .errorMes').text("料金項目1 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目1 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem2 = $('#fee_item2').val().length < 16
+  const feeItem2 = $('#fee_item2').val().length < 11
   if(!feeItem2) {
-    $('#error-fee .errorMes').text("料金項目2 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目2 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem3 = $('#fee_item3').val().length < 16
+  const feeItem3 = $('#fee_item3').val().length < 11
   if(!feeItem3) {
-    $('#error-fee .errorMes').text("料金項目3 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目3 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem4 = $('#fee_item4').val().length < 16
+  const feeItem4 = $('#fee_item4').val().length < 11
   if(!feeItem4) {
-    $('#error-fee .errorMes').text("料金項目4 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目4 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem5 = $('#fee_item5').val().length < 16
+  const feeItem5 = $('#fee_item5').val().length < 11
   if(!feeItem5) {
-    $('#error-fee .errorMes').text("料金項目5 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目5 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem6 = $('#fee_item6').val().length < 16
+  const feeItem6 = $('#fee_item6').val().length < 11
   if(!feeItem6) {
-    $('#error-fee .errorMes').text("料金項目6 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目6 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem7 = $('#fee_item7').val().length < 16
+  const feeItem7 = $('#fee_item7').val().length < 11
   if(!feeItem7) {
-    $('#error-fee .errorMes').text("料金項目7 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目7 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem8 = $('#fee_item8').val().length < 16
+  const feeItem8 = $('#fee_item8').val().length < 11
   if(!feeItem8) {
-    $('#error-fee .errorMes').text("料金項目8 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目8 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem9 = $('#fee_item9').val().length < 16
+  const feeItem9 = $('#fee_item9').val().length < 11
   if(!feeItem9) {
-    $('#error-fee .errorMes').text("料金項目9 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目9 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
     });
   }
-  const feeItem10 = $('#fee_item10').val().length < 16
+  const feeItem10 = $('#fee_item10').val().length < 11
   if(!feeItem10) {
-    $('#error-fee .errorMes').text("料金項目10 は 15文字以下にしてください")
+    $('#error-fee .errorMes').text("料金項目10 は 10文字以下にしてください")
     $('#error-fee').show(600)
     $('#error-fee').velocity("scroll", {
       duration: 100, easing: "easeInOutQuart"
