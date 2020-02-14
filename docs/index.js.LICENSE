@@ -92,6 +92,10 @@
 
 // when window width is <= 800px
 
+// 呼び出されるまで何もしない
+
+// 描画する前のタイミングで呼び出してもらう
+
 // const sec = $('.swiper-slide');
 
 // const nvp = sec.outerHeight() + sec.offset().top;
@@ -121,8 +125,6 @@
 // IntersectionObserverのインスタンスを生成
 
 // ヒーローイメージが表示されているとき
-
-// $header.removeClass("scrolled").hide()
 
 // ヒーローイメージが表示されていないとき
 

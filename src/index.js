@@ -46,13 +46,9 @@ vidtag.addEventListener('canplay', function() {
 // vidtag.src = mov;
 
 import objectFitImages from 'object-fit-images'
-if(!document.currentScript) {
-  objectFitImages()//IE only
-}
 
 import 'objectFitPolyfill'
-const elements = document.querySelectorAll('.fit');
-objectFitPolyfill(elements);
+
 
 
 
@@ -304,9 +300,21 @@ async function fetch() {
   
 
   setWidth(data[0].width)
-  $(window).resize(function() {
-    setWidth(data[0].width)
-    setFullHeight()
+
+  let isRunning = false
+  $(window).resize((e) => {
+    // 呼び出されるまで何もしない
+    if (!isRunning) {
+      isRunning = true
+
+      // 描画する前のタイミングで呼び出してもらう
+      window.requestAnimationFrame(() => {
+        setWidth(data[0].width)
+        setFullHeight()
+        isRunning = false
+        
+      })
+    }
   });
 }
 
@@ -316,6 +324,12 @@ $(document).ready(function(){
   $('.nav-button').click(() => {
     document.querySelector('html').classList.toggle('open')
   })
+
+  if(!document.currentScript) {
+    objectFitImages()//IE only
+  }
+  const elements = document.querySelectorAll('.fit');
+  objectFitPolyfill(elements);
 });
 
 function setFullHeight() {
@@ -340,8 +354,7 @@ function callback(entries, observer) {
     let element = entry.target;
     if(entry.isIntersecting) {
       // ヒーローイメージが表示されているとき
-      // $header.removeClass("scrolled").hide()
-      $header.removeClass("scrolled")//.hide()
+      $header.removeClass("scrolled")
     } else {
        // ヒーローイメージが表示されていないとき
       $header.show().addClass("scrolled")
