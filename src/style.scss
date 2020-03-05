@@ -506,6 +506,28 @@ header ul li a:hover {
   }
 }
 /* ---------------------------------------- */
+/* decision */
+/* ---------------------------------------- */
+@media (min-width: 801px) {
+  #decision .flexbox {
+    @include flexbox;
+  }
+}
+.ashtanga li {
+  list-style-type: circle;
+  list-style-position: inside; 
+}
+.ashtanga div {
+  margin-top: 2em;
+}
+#decision .dl-outline {
+  margin-top: 3em;
+}
+.dl-outline li {
+  list-style-position: inside;  
+}
+
+/* ---------------------------------------- */
 /* voices */
 /* ---------------------------------------- */
 .voice {
