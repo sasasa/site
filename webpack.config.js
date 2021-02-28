@@ -13,6 +13,8 @@ const TerserPlugin = require('terser-webpack-plugin');
 // favicon
 // const WebappWebpackPlugin = require('webapp-webpack-plugin')
 // const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+// CSS JSをインライン化する
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 module.exports = (env, argv) => {
   // [定数] webpack の出力オプションを指定します
@@ -159,7 +161,8 @@ module.exports = (env, argv) => {
     },
     output: {
       path: __dirname + '/docs',
-      filename: '[name].js?[hash]'
+      // filename: '[name].js?[hash]'
+      filename: '[name].js'
     },
     plugins: [
       new webpack.ProvidePlugin({
@@ -175,20 +178,29 @@ module.exports = (env, argv) => {
         Velocity: 'velocity-animate'
       }),
       new MiniCssExtractPlugin({
-        filename: '[name].css?[hash]',
+        // filename: '[name].css?[hash]',
+        filename: '[name].css',
         // filename: 'style.css?[hash]',
         // chunkFilename: '[id].css?[hash]',
       }),
       new HtmlWebpackPlugin({
+        inlineSource: '.(js|css)$',
+        inject: true,
         filename: "index.html",
         chunks: ['index'],
         template: "src/index.html",
+        minify: true,
       }),
       new HtmlWebpackPlugin({
+        inlineSource: '.(js|css)$',
+        inject: true,
         filename: "input.html",
         chunks: ['input'],
         template: "src/input.html",
+        minify: true,
       }),
+      new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
+      // new HtmlWebpackInlineSourcePlugin(),
       
       // new FaviconsWebpackPlugin('src/img/favicon.png'),
       // new WebappWebpackPlugin({
@@ -199,30 +211,31 @@ module.exports = (env, argv) => {
       new CleanWebpackPlugin(),
     ],
     optimization: {
-      splitChunks: {
-        // cacheGroups内にバンドルの設定を複数記述できる
-        cacheGroups: {
-          // 今回はvendorだが、任意の名前で問題ない
-          vendor: {
-            // node_modules配下のモジュールをバンドル対象とする
-            test: /node_modules/,
-            name: 'vendor',
-            chunks: 'initial',
-            enforce: true,
-          }
-        }
-      },
-      minimizer: [
-        new OptimizeCSSAssetsPlugin({}),
-        new TerserPlugin({
-          extractComments: 'all',
-          terserOptions: {
-            compress: {
-              drop_console: true,
-            },
-          },            
-        }),
-      ],
+      // splitChunks: {
+      //   // cacheGroups内にバンドルの設定を複数記述できる
+      //   cacheGroups: {
+      //     // 今回はvendorだが、任意の名前で問題ない
+      //     vendor: {
+      //       // node_modules配下のモジュールをバンドル対象とする
+      //       test: /node_modules/,
+      //       name: 'vendor',
+      //       chunks: 'initial',
+      //       enforce: true,
+      //     }
+      //   }
+      // },
+
+      // minimizer: [
+      //   new OptimizeCSSAssetsPlugin({}),
+      //   new TerserPlugin({
+      //     extractComments: 'all',
+      //     terserOptions: {
+      //       compress: {
+      //         drop_console: true,
+      //       },
+      //     },
+      //   }),
+      // ],
     },
   }
 };

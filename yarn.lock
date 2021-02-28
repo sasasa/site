@@ -4118,6 +4118,15 @@
     "relateurl" "0.2.x"
     "uglify-js" "3.4.x"
 
+"html-webpack-inline-source-plugin@^1.0.0-beta.2":
+  "integrity" "sha512-ydsEKdp0tnbmnqRAH2WSSMXerCNYhjes5b79uvP2BU3p6cyk+6ucNMsw5b5xD1QxphgvBBA3QqVmdcpu8QLlRQ=="
+  "resolved" "https://registry.npmjs.org/html-webpack-inline-source-plugin/-/html-webpack-inline-source-plugin-1.0.0-beta.2.tgz"
+  "version" "1.0.0-beta.2"
+  dependencies:
+    "escape-string-regexp" "^1.0.5"
+    "slash" "^1.0.0"
+    "source-map-url" "^0.4.0"
+
 "html-webpack-plugin@^4.5.2", "html-webpack-plugin@>=4.0.0 || ^4.0.0-beta.11":
   "integrity" "sha512-q5oYdzjKUIPQVjOosjgvCHQOv9Ett9CYYHlgvJeXG0qQvdSojnBq4vAdQBwn1+yGveAwHCoe/rMR86ozX3+c2A=="
   "resolved" "https://registry.npmjs.org/html-webpack-plugin/-/html-webpack-plugin-4.5.2.tgz"
@@ -7433,6 +7442,11 @@
   "version" "0.2.2"
   dependencies:
     "is-arrayish" "^0.3.1"
+
+"slash@^1.0.0":
+  "integrity" "sha1-xB8vbDn8FtHNF61LXYlhFK5HDVU="
+  "resolved" "https://registry.npmjs.org/slash/-/slash-1.0.0.tgz"
+  "version" "1.0.0"
 
 "slash@^3.0.0":
   "integrity" "sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q=="
