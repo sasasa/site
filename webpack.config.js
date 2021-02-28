@@ -11,7 +11,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // jsからcosole.logやコメントを削除
 const TerserPlugin = require('terser-webpack-plugin');  
 // favicon
-const WebappWebpackPlugin = require('webapp-webpack-plugin')
+// const WebappWebpackPlugin = require('webapp-webpack-plugin')
+// const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = (env, argv) => {
   // [定数] webpack の出力オプションを指定します
@@ -48,7 +49,9 @@ module.exports = (env, argv) => {
           test: /\.(sa|sc|c)ss$/,
           // Sassファイルの読み込みとコンパイル
           use: [
-            MiniCssExtractPlugin.loader,
+            {
+              loader: MiniCssExtractPlugin.loader,
+            },
             {
               loader: "css-loader",
               options: {
@@ -95,20 +98,21 @@ module.exports = (env, argv) => {
         */
         {
           // 対象となるファイルの拡張子
-          test: /\.(gif|png|jpg|eot|wof|woff|woff2|otf|ttf|svg)$/,
+          test: /\.(gif|png|jpg)$/i,
           // 画像をBase64として取り込む
           use: [
+            "webp-loader?{quality: 50}",
             {
               loader: 'url-loader',
               options: {
                 limit: 100 * 1024, // 100KB以上だったら埋め込まずファイルとして分離する
-                name: './img/[name].[ext]'
+                name: './img/[name].[ext].webp'
               }
             }
           ]
         },
         {
-          test: /\.(mov|mp4)$/,
+          test: /\.(mov|mp4|eot|wof|woff|woff2|otf|ttf)$/i,
           use: [
             {
               loader: 'file-loader',
@@ -172,6 +176,7 @@ module.exports = (env, argv) => {
       }),
       new MiniCssExtractPlugin({
         filename: '[name].css?[hash]',
+        // filename: 'style.css?[hash]',
         // chunkFilename: '[id].css?[hash]',
       }),
       new HtmlWebpackPlugin({
@@ -184,11 +189,13 @@ module.exports = (env, argv) => {
         chunks: ['input'],
         template: "src/input.html",
       }),
-      new WebappWebpackPlugin({
-        logo: './src/img/favicon.png',
-        prefix: 'assets/',
-        publicPath: './',
-      }),
+      
+      // new FaviconsWebpackPlugin('src/img/favicon.png'),
+      // new WebappWebpackPlugin({
+      //   logo: './src/img/favicon.png',
+      //   prefix: 'assets/',
+      //   publicPath: './',
+      // }),
       new CleanWebpackPlugin(),
     ],
     optimization: {
