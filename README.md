@@ -7,3 +7,5 @@ git clone git@github.com:sasasa/site.git
 npm install
 npm run start:dev
 ```
+
+https://sasasa.github.io/site/
