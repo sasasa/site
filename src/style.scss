@@ -847,3 +847,34 @@ footer .copyright{
 }
 
 @import "smallview.scss";
+
+
+.swiper-container {
+	position: relative;
+}
+.custom-shape-divider-bottom-1615337033 {
+	position: absolute;
+	bottom: 40px;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+	transform: rotate(180deg);
+  z-index: 1000;
+}
+
+.custom-shape-divider-bottom-1615337033 svg {
+	position: relative;
+	display: block;
+	width: calc(134% + 1.3px);
+	height: 128px;
+}
+
+.custom-shape-divider-bottom-1615337033 .shape-fill {
+	fill: #FFFFFF;
+}
+@media (max-width: 800px) {
+  .custom-shape-divider-bottom-1615337033 {
+    bottom: 107px;
+  }
+}
