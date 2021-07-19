@@ -1,3 +1,5 @@
+@import url(https://use.fontawesome.com/releases/v5.13.0/css/all.css);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap);
 /**
  * Swiper 5.4.5
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -573,24 +575,6 @@ input, select {
   /* display: inline-block; */
   min-height: 1%; }
 
-@font-face {
-  font-family: 'Noto Sans Japanese';
-  font-style: normal;
-  font-weight: 400;
-  src: local("Noto Sans CJK JP Regular"), url(img/NotoSansJP-Regular.woff2) format("woff2"), url(img/NotoSansJP-Regular.woff) format("woff"), url(img/NotoSansJP-Regular.otf) format("opentype"); }
-
-@font-face {
-  font-family: 'Noto Sans Japanese';
-  font-style: normal;
-  font-weight: 500;
-  src: local("Noto Sans CJK JP Medium"), url(img/NotoSansJP-Medium.woff2) format("woff2"), url(img/NotoSansJP-Medium.woff) format("woff"), url(img/NotoSansJP-Medium.otf) format("opentype"); }
-
-@font-face {
-  font-family: 'Noto Sans Japanese';
-  font-style: normal;
-  font-weight: 700;
-  src: local("Noto Sans CJK JP Bold"), url(img/NotoSansJP-Bold.woff2) format("woff2"), url(img/NotoSansJP-Bold.woff) format("woff"), url(img/NotoSansJP-Bold.otf) format("opentype"); }
-
 /* ---------------------------------------- */
 /* Base Style */
 /* ---------------------------------------- */
@@ -602,7 +586,7 @@ body {
   font-size: 14px;
   line-height: 1.6;
   letter-spacing: 0;
-  font-family: 'Noto Sans Japanese', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ",Helvetica, Arial,  sans-serif;
+  font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ",Helvetica, Arial,  sans-serif;
   -ms-font-feature-settings: "normal";
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
@@ -680,7 +664,7 @@ button {
   background-color: #FCFAF6; }
 
 .wf-notomedium {
-  font-family: 'Noto Sans Japanese', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", sans-serif;
+  font-family: 'Noto Sans JP', "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", Meiryo, "メイリオ", sans-serif;
   font-weight: 500; }
 
 .align-c {
@@ -1747,6 +1731,62 @@ footer .copyright {
 @media (max-width: 800px) {
   .custom-shape-divider-bottom-1615337033 {
     bottom: 107px; } }
+
+/* ---------------------------------------- */
+/* call_to_action */
+/* ---------------------------------------- */
+#call_to_action div {
+  margin: 0 auto;
+  max-width: 668px;
+  text-align: center; }
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem; }
+
+a.btn--circle {
+  width: 140px;
+  height: 140px;
+  padding: 20px 0 0;
+  border-radius: 50%;
+  color: #fff;
+  background: #eb6877;
+  -webkit-box-shadow: 0 7px 0 #e53b4e;
+  box-shadow: 0 7px 0 #e53b4e; }
+
+a.btn--circle i {
+  font-size: 150%; }
+
+.fa-position-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: calc(50% - 0.5rem); }
+
+a.btn--circle:hover {
+  -webkit-transform: translate(0, 4px);
+  transform: translate(0, 4px);
+  color: #fff;
+  -webkit-box-shadow: 0 3px 0 #e53b4e;
+  box-shadow: 0 3px 0 #e53b4e; }
 
 
 /*# sourceMappingURL=index.css.map*/
