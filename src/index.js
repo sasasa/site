@@ -3,8 +3,8 @@
 import 'intersection-observer';
 
 import '@babel/polyfill';
-import { JsonBox } from 'jsonbox-node'
-import moment from 'moment'
+// import { JsonBox } from 'jsonbox-node'
+// import moment from 'moment'
 import $ from 'jquery';
 
 import Swiper from 'swiper';
@@ -16,7 +16,7 @@ import Velocity from 'velocity-animate'
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/brands';
 
-import { escape_html, BOX_ID, changeBlank } from './module/util'
+// import { escape_html, BOX_ID, changeBlank } from './module/util'
 
 import './style.scss'
 
@@ -54,17 +54,17 @@ import 'objectFitPolyfill'
 
 
 (function() {
-  const requestAnimationFrame = window.requestAnimationFrame || 
-　　　　　　　　　　　　　　　　　　　window.mozRequestAnimationFrame ||
-                            　window.webkitRequestAnimationFrame || 
-　　　　　　　　　　　　　　　　　　　window.msRequestAnimationFrame;
-  window.requestAnimationFrame = requestAnimationFrame;
+  const requestAnimationFrame = window.requestAnimationFrame ||
+    window.mozRequestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.msRequestAnimationFrame;
+    window.requestAnimationFrame = requestAnimationFrame;
 })();
 (function() {
-  const cancelAnimationFrame = window.cancelAnimationFrame || 
-　　　　　　　　　　　　　　　　　　　window.mozcancelAnimationFrame ||
-                            　window.webkitcancelAnimationFrame || 
-　　　　　　　　　　　　　　　　　　　window.mscancelAnimationFrame;
+  const cancelAnimationFrame = window.cancelAnimationFrame ||
+    window.mozcancelAnimationFrame ||
+    window.webkitcancelAnimationFrame ||
+    window.mscancelAnimationFrame;
   window.cancelAnimationFrame = cancelAnimationFrame;
 })();
 
@@ -94,7 +94,7 @@ loading.startLoader = function() {
       index = 0;
     } else {
       index++;
-    }      
+    }
   }
   moveDots();
 
@@ -141,7 +141,7 @@ $('.swiper-wrapper').imagesLoaded({ background: true }, () => {
 });
 
 
-const $header = $('#header'); 
+const $header = $('#header');
 $header.hide();
 
 // const sec = $('.swiper-slide');
@@ -217,87 +217,87 @@ function initSwiper(){
 
 
 
-async function fetch() {
-  const jbn = new JsonBox();
-  const data = await jbn.read(BOX_ID);
-  moment.locale("ja", {
-    weekdays: ["日", "月", "火", "水", "木", "金", "土"],//dddd
-    // weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"]//ddd
-  })
-  const startDay = moment(data[0].start, "YYYY.MM.DD")
-  const clone = moment(startDay)
+function fetch() {
+  // const jbn = new JsonBox();
+  // const data = await jbn.read(BOX_ID);
+  // moment.locale("ja", {
+  //   weekdays: ["日", "月", "火", "水", "木", "金", "土"],//dddd
+  //   // weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"]//ddd
+  // })
+  // const startDay = moment(data[0].start, "YYYY.MM.DD")
+  // const clone = moment(startDay)
 
-  $('#start').text(escape_html(startDay.format('YYYY.MM.D')))
-  $('#start_day').text(escape_html(startDay.format('ddd').toUpperCase()))
+  // $('#start').text(escape_html(startDay.format('YYYY.MM.D')))
+  // $('#start_day').text(escape_html(startDay.format('ddd').toUpperCase()))
 
-  const lastDay = startDay.add(data[0].term - 1, 'days')
-  if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
-    $('#end').text("")
-    $('#end_day').text("")
-  } else {
-    $('#end').text(escape_html(lastDay.format('D')))
-    $('#end_day').text(lastDay.format('ddd').toUpperCase())
-  }
-  $('#at').text(escape_html(data[0].at))
+  // const lastDay = startDay.add(data[0].term - 1, 'days')
+  // if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
+  //   $('#end').text("")
+  //   $('#end_day').text("")
+  // } else {
+  //   $('#end').text(escape_html(lastDay.format('D')))
+  //   $('#end_day').text(lastDay.format('ddd').toUpperCase())
+  // }
+  // $('#at').text(escape_html(data[0].at))
 
-  if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
-    $('.date').text(escape_html(clone.format('YYYY年MM月DD日(dddd)')))
-  } else {
-    $('.date').text(
-      escape_html(clone.format('YYYY年MM月DD日(dddd)')) +
-      '～' +
-      escape_html(lastDay.format('MM月DD日(dddd)'))
-    )
-  }
-  $('.event_name').text(escape_html(changeBlank(data[0].event_name)))
-  
-  $('.venue').text(escape_html(changeBlank(data[0].venue)))
-  $('.time').text(escape_html(changeBlank(data[0].time)))
-  $('.fee').text(escape_html(changeBlank(data[0].fee)))
-  $('.content').text(escape_html(changeBlank(data[0].content)))
-  $('.hashtag').text(escape_html(changeBlank(data[0].hashtag)))
+  // if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
+  //   $('.date').text(escape_html(clone.format('YYYY年MM月DD日(dddd)')))
+  // } else {
+  //   $('.date').text(
+  //     escape_html(clone.format('YYYY年MM月DD日(dddd)')) +
+  //     '～' +
+  //     escape_html(lastDay.format('MM月DD日(dddd)'))
+  //   )
+  // }
+  // $('.event_name').text(escape_html(changeBlank(data[0].event_name)))
 
-  if(data[0].fee_item1) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item1))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee1))}</dd>`);
-  }
-  if(data[0].fee_item2) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item2))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee2))}</dd>`);
-  }
-  if(data[0].fee_item3) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item3))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee3))}</dd>`);
-  }
-  if(data[0].fee_item4) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item4))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee4))}</dd>`);
-  }
-  if(data[0].fee_item5) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item5))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee5))}</dd>`);
-  }
-  if(data[0].fee_item6) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item6))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee6))}</dd>`);
-  }
-  if(data[0].fee_item7) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item7))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee7))}</dd>`);
-  }
-  if(data[0].fee_item8) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item8))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee8))}</dd>`);
-  }
-  if(data[0].fee_item9) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item9))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee9))}</dd>`);
-  }
-  if(data[0].fee_item10) {
-    $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item10))}</dt>`);
-    $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee10))}</dd>`);
-  }
-  
+  // $('.venue').text(escape_html(changeBlank(data[0].venue)))
+  // $('.time').text(escape_html(changeBlank(data[0].time)))
+  // $('.fee').text(escape_html(changeBlank(data[0].fee)))
+  // $('.content').text(escape_html(changeBlank(data[0].content)))
+  // $('.hashtag').text(escape_html(changeBlank(data[0].hashtag)))
+
+  // if(data[0].fee_item1) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item1))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee1))}</dd>`);
+  // }
+  // if(data[0].fee_item2) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item2))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee2))}</dd>`);
+  // }
+  // if(data[0].fee_item3) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item3))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee3))}</dd>`);
+  // }
+  // if(data[0].fee_item4) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item4))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee4))}</dd>`);
+  // }
+  // if(data[0].fee_item5) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item5))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee5))}</dd>`);
+  // }
+  // if(data[0].fee_item6) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item6))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee6))}</dd>`);
+  // }
+  // if(data[0].fee_item7) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item7))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee7))}</dd>`);
+  // }
+  // if(data[0].fee_item8) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item8))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee8))}</dd>`);
+  // }
+  // if(data[0].fee_item9) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item9))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee9))}</dd>`);
+  // }
+  // if(data[0].fee_item10) {
+  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item10))}</dt>`);
+  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee10))}</dd>`);
+  // }
+
 
   setWidth(data[0].width)
 
@@ -312,7 +312,6 @@ async function fetch() {
         setWidth(data[0].width)
         setFullHeight()
         isRunning = false
-        
       })
     }
   });
