@@ -42044,7 +42044,7 @@ function fetch() {
   //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item10))}</dt>`);
   //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee10))}</dd>`);
   // }
-  setWidth(data[0].width);
+  // setWidth(data[0].width)
   var isRunning = false;
   jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).resize(function (e) {
     // 呼び出されるまで何もしない
@@ -42052,7 +42052,7 @@ function fetch() {
       isRunning = true; // 描画する前のタイミングで呼び出してもらう
 
       window.requestAnimationFrame(function () {
-        setWidth(data[0].width);
+        // setWidth(data[0].width)
         setFullHeight();
         isRunning = false;
       });
@@ -42060,9 +42060,42 @@ function fetch() {
   });
 }
 
+function fadeAnime() {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.fadeUpTrigger').each(function () {
+    //fadeUpTriggerというクラス名が
+    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50; //要素より、50px上の
+
+    var scroll = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scrollTop();
+    var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass('fadeUp'); // 画面内に入ったらfadeUpというクラス名を追記
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass('fadeUp'); // 画面外に出たらfadeUpというクラス名を外す
+    }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.zoomOutTrigger').each(function () {
+    //zoomOutTriggerというクラス名が
+    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50; //要素より、50px上の
+
+    var scroll = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scrollTop();
+    var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass('zoomOut'); // 画面内に入ったらzoomOutというクラス名を追記
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass('zoomOut'); // 画面外に出たらzoomOutというクラス名を外す
+    }
+  });
+}
+
+jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scroll(function () {
+  fadeAnime();
+});
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   setFullHeight();
   fetch();
+  fadeAnime();
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.nav-button').click(function () {
     document.querySelector('html').classList.toggle('open');
   });

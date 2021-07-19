@@ -940,3 +940,40 @@ a.btn--circle:hover {
   -webkit-box-shadow: 0 3px 0 #e53b4e;
   box-shadow: 0 3px 0 #e53b4e;
 }
+
+/* fadeUp */
+.fadeUp {
+  animation-name: fadeUpAnime;
+  animation-duration:0.8s;
+  animation-fill-mode:forwards;
+  opacity:0;
+}
+@keyframes fadeUpAnime {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* zoomOut */
+.zoomOut {
+	animation-name: zoomOutAnime;
+	animation-duration: 0.8s;
+	animation-fill-mode:forwards;
+}
+@keyframes zoomOutAnime {
+  from {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  to {
+    transform:scale(1);
+    opacity: 1;
+  }
+}

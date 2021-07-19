@@ -299,7 +299,7 @@ function fetch() {
   // }
 
 
-  setWidth(data[0].width)
+  // setWidth(data[0].width)
 
   let isRunning = false
   $(window).resize((e) => {
@@ -309,7 +309,7 @@ function fetch() {
 
       // 描画する前のタイミングで呼び出してもらう
       window.requestAnimationFrame(() => {
-        setWidth(data[0].width)
+        // setWidth(data[0].width)
         setFullHeight()
         isRunning = false
       })
@@ -317,9 +317,37 @@ function fetch() {
   });
 }
 
+function fadeAnime(){
+  $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+      $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+      $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
+    }
+  });
+  $('.zoomOutTrigger').each(function(){ //zoomOutTriggerというクラス名が
+    var elemPos = $(this).offset().top-50;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+      $(this).addClass('zoomOut');// 画面内に入ったらzoomOutというクラス名を追記
+    }else{
+      $(this).removeClass('zoomOut');// 画面外に出たらzoomOutというクラス名を外す
+    }
+  });
+}
+
+$(window).scroll(function (){
+  fadeAnime()
+});
+
 $(document).ready(function(){
   setFullHeight()
   fetch()
+  fadeAnime()
   $('.nav-button').click(() => {
     document.querySelector('html').classList.toggle('open')
   })
