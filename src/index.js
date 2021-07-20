@@ -318,24 +318,24 @@ function fetch() {
 }
 
 function fadeAnime(){
-  $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
-    var elemPos = $(this).offset().top-50;//要素より、50px上の
+  $('.fadeLeftTrigger').each(function(){
+    var elemPos = $(this).offset().top-50;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight){
-      $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
+      $(this).addClass('fadeLeft');
     }else{
-      $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
+      $(this).removeClass('fadeLeft');
     }
   });
-  $('.zoomOutTrigger').each(function(){ //zoomOutTriggerというクラス名が
-    var elemPos = $(this).offset().top-50;//要素より、50px上の
+  $('.zoomOutTrigger').each(function(){
+    var elemPos = $(this).offset().top-50;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight){
-      $(this).addClass('zoomOut');// 画面内に入ったらzoomOutというクラス名を追記
+      $(this).addClass('zoomOut');
     }else{
-      $(this).removeClass('zoomOut');// 画面外に出たらzoomOutというクラス名を外す
+      $(this).removeClass('zoomOut');
     }
   });
 }

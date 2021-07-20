@@ -1788,41 +1788,41 @@ a.btn--circle:hover {
   -webkit-box-shadow: 0 3px 0 #e53b4e;
   box-shadow: 0 3px 0 #e53b4e; }
 
-/* fadeUp */
-.fadeUp {
-  -webkit-animation-name: fadeUpAnime;
-          animation-name: fadeUpAnime;
+/* fadeLeft */
+.fadeLeft {
+  -webkit-animation-name: fadeLeftAnime;
+          animation-name: fadeLeftAnime;
   -webkit-animation-duration: 0.8s;
           animation-duration: 0.8s;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   opacity: 0; }
 
-@-webkit-keyframes fadeUpAnime {
+@-webkit-keyframes fadeLeftAnime {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px); }
-  50% {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px); }
+    -webkit-transform: translateX(-120px);
+            transform: translateX(-120px); }
+  80% {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px); }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
 
-@keyframes fadeUpAnime {
+@keyframes fadeLeftAnime {
   0% {
     opacity: 0;
-    -webkit-transform: translateY(100px);
-            transform: translateY(100px); }
-  50% {
-    -webkit-transform: translateY(-20px);
-            transform: translateY(-20px); }
+    -webkit-transform: translateX(-120px);
+            transform: translateX(-120px); }
+  80% {
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px); }
   100% {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0); } }
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
 
 /* zoomOut */
 .zoomOut {
@@ -1835,8 +1835,8 @@ a.btn--circle:hover {
 
 @-webkit-keyframes zoomOutAnime {
   from {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
     opacity: 0; }
   to {
     -webkit-transform: scale(1);
@@ -1845,8 +1845,8 @@ a.btn--circle:hover {
 
 @keyframes zoomOutAnime {
   from {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
     opacity: 0; }
   to {
     -webkit-transform: scale(1);

@@ -941,35 +941,35 @@ a.btn--circle:hover {
   box-shadow: 0 3px 0 #e53b4e;
 }
 
-/* fadeUp */
-.fadeUp {
-  animation-name: fadeUpAnime;
-  animation-duration:0.8s;
-  animation-fill-mode:forwards;
-  opacity:0;
+/* fadeLeft */
+.fadeLeft {
+  animation-name: fadeLeftAnime;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
-@keyframes fadeUpAnime {
+@keyframes fadeLeftAnime{
   0% {
     opacity: 0;
-    transform: translateY(100px);
+    transform: translateX(-120px);
   }
-  50% {
-    transform: translateY(-20px);
+  80% {
+    transform: translateX(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 /* zoomOut */
 .zoomOut {
 	animation-name: zoomOutAnime;
 	animation-duration: 0.8s;
-	animation-fill-mode:forwards;
+	animation-fill-mode: forwards;
 }
 @keyframes zoomOutAnime {
   from {
-    transform: scale(1.2);
+    transform: scale(1.4);
     opacity: 0;
   }
   to {

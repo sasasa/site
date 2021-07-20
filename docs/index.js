@@ -42061,30 +42061,26 @@ function fetch() {
 }
 
 function fadeAnime() {
-  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.fadeUpTrigger').each(function () {
-    //fadeUpTriggerというクラス名が
-    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50; //要素より、50px上の
-
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.fadeLeftTrigger').each(function () {
+    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50;
     var scroll = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scrollTop();
     var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
 
     if (scroll >= elemPos - windowHeight) {
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass('fadeUp'); // 画面内に入ったらfadeUpというクラス名を追記
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass('fadeLeft');
     } else {
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass('fadeUp'); // 画面外に出たらfadeUpというクラス名を外す
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass('fadeLeft');
     }
   });
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.zoomOutTrigger').each(function () {
-    //zoomOutTriggerというクラス名が
-    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50; //要素より、50px上の
-
+    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50;
     var scroll = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scrollTop();
     var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
 
     if (scroll >= elemPos - windowHeight) {
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass('zoomOut'); // 画面内に入ったらzoomOutというクラス名を追記
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass('zoomOut');
     } else {
-      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass('zoomOut'); // 画面外に出たらzoomOutというクラス名を外す
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass('zoomOut');
     }
   });
 }
