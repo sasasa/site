@@ -42113,6 +42113,30 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
 
   var elements = document.querySelectorAll('.fit');
   objectFitPolyfill(elements);
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.imgbox .mask').click(function () {
+    var imgSrc = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).children().attr('src');
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.bigimg').children().attr('src', imgSrc);
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.modal').fadeIn();
+    var ua = navigator.userAgent;
+
+    if ((ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0) {
+      // スマートフォン用処理
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('body,html').css('overflow-y', 'hidden');
+    } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+      // タブレット用処理
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('body,html').css('overflow-y', 'hidden');
+    } else {
+      // PC用処理
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()('body,html').css('overflow-y', 'scroll');
+    }
+
+    return false;
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.close-btn, .modal').click(function () {
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('.modal').fadeOut();
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('body,html').css('overflow-y', 'visible');
+    return false;
+  });
 });
 
 function setFullHeight() {

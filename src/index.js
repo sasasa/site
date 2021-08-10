@@ -356,7 +356,7 @@ $(window).scroll(function (){
   }
 })
 
-$(document).ready(function(){
+$(document).ready(function() {
   setFullHeight()
   fetch()
   fadeAnime()
@@ -369,6 +369,31 @@ $(document).ready(function(){
   }
   const elements = document.querySelectorAll('.fit');
   objectFitPolyfill(elements);
+
+  $('.imgbox .mask').click(function() {
+    var imgSrc = $(this).children().attr('src');
+    $('.bigimg').children().attr('src', imgSrc);
+    $('.modal').fadeIn();
+
+    var ua = navigator.userAgent;
+    if ((ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0) && ua.indexOf('Mobile') > 0) {
+      // スマートフォン用処理
+      $('body,html').css('overflow-y', 'hidden');
+    } else if (ua.indexOf('iPad') > 0 || ua.indexOf('Android') > 0) {
+      // タブレット用処理
+      $('body,html').css('overflow-y', 'hidden');
+    } else {
+      // PC用処理
+      $('body,html').css('overflow-y', 'scroll');
+    }
+    return false
+  });
+
+  $('.close-btn, .modal').click(function() {
+    $('.modal').fadeOut();
+    $('body,html').css('overflow-y', 'visible');
+    return false
+  });
 });
 
 function setFullHeight() {

@@ -770,6 +770,7 @@ header ul li a:hover {
     height: 237px;
     object-fit: cover;
     font-family: "object-fit: cover";
+    cursor: pointer;
   }
 }
 .facility-slider .item {
@@ -982,4 +983,74 @@ a.btn--circle:hover {
     transform:scale(1);
     opacity: 1;
   }
+}
+
+/*　波紋　*/
+
+.circle span.mask{
+	position: relative;/*波紋の基点となる位置を定義*/
+    display: block;
+    line-height: 0;/*行の高さを0にする*/
+    overflow: hidden;/*拡大してはみ出る要素を隠す*/
+}
+
+.circle span.mask::before {
+	position: absolute;
+	content:"";
+	transform: scale(0);/*円の大きさ初期値は0*/
+	opacity: 0;/*透過0*/
+	width:100%;/*円のサイズ指定*/
+	height:100%;/*円のサイズ指定*/
+	border-radius:50%;/*円の角丸指定*/
+	background: rgba(255,255,255,0.4);/*円の背景色*/
+}
+
+.circle span.mask:hover::before {/*hoverした時の変化*/
+	animation: circle 0.75s;/*アニメーションの名前と速度を定義*/
+}
+
+@keyframes circle {
+  0% {
+  transform: scale(0);
+  opacity: 1;/*透過なし*/
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+  transform: scale(2);/*アニメーションで大きくなった2倍の円の指定*/
+  }
+}
+
+// 画像モーダル
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  z-index: 1000;
+}
+.bigimg {
+  position: absolute;
+  width: 80%;
+  max-width: 800px;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+}
+.close-btn {
+  color: #fff;
+  font-size: 40px;
+  position: absolute;
+  right: 20px;
+  top: 0;
+}
+.close-btn a {
+  color: #fff;
+  text-decoration: none;
 }
