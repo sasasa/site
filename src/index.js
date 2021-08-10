@@ -20,28 +20,27 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 import './style.scss'
 
-import mov from './img/movie-01.mp4';
-const vidtag = document.getElementById('bg-video');
-vidtag.addEventListener('canplay', function() {
-  const ua = navigator.userAgent;
-  if(/(iPhone|iPod)/.test(ua) && /OS 9/.test(ua)) {
-    // iOS9以下のサファリは自動再生されない
-    // これで可能か調査する
-    let lastTime = Date.now();
-    let ctime = 0;
-    setInterval(function() {
-      const curTime = Date.now();
-      const diff = Date.now() - lastTime;
-      lastTime = curTime;
-      ctime += diff/1000;
-      vidtag.currentTime = ctime;
-      if(vidtag.duration <= vidtag.currentTime) {
-        ctime = 0;
-      }
-    }, 1000/30);
-  }
-}, false)
-
+// import mov from './img/movie-01.mp4';
+// const vidtag = document.getElementById('bg-video');
+// vidtag.addEventListener('canplay', function() {
+//   const ua = navigator.userAgent;
+//   if(/(iPhone|iPod)/.test(ua) && /OS 9/.test(ua)) {
+//     // iOS9以下のサファリは自動再生されない
+//     // これで可能か調査する
+//     let lastTime = Date.now();
+//     let ctime = 0;
+//     setInterval(function() {
+//       const curTime = Date.now();
+//       const diff = Date.now() - lastTime;
+//       lastTime = curTime;
+//       ctime += diff/1000;
+//       vidtag.currentTime = ctime;
+//       if(vidtag.duration <= vidtag.currentTime) {
+//         ctime = 0;
+//       }
+//     }, 1000/30);
+//   }
+// }, false)
 
 // vidtag.src = mov;
 
@@ -134,6 +133,8 @@ $('.swiper-wrapper').imagesLoaded({ background: true }, () => {
                 complete() {
                   window.cancelAnimationFrame(loading.requestID);
                   $('.loading').remove()
+                  slideAnime()
+                  GlowAnimeControl()
                 }
             });
     }
@@ -357,9 +358,30 @@ $(window).scroll(function (){
 })
 
 $(document).ready(function() {
+  var element = $(".glowAnime");
+  element.each(function () {
+    var text = $(this).text()
+    var textbox = ""
+    text.split('').forEach(function (t, i) {
+      if (t !== " ") {
+        if (i < 10) {
+          textbox += '<span style="animation-delay:.' + i + 's;">' + t + '</span>'
+        } else {
+          var n = i / 10
+          textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>'
+        }
+      } else {
+        textbox += t
+      }
+    })
+    $(this).html(textbox)
+  })
+
+
   setFullHeight()
   fetch()
   fadeAnime()
+
   $('.nav-button').click(() => {
     document.querySelector('html').classList.toggle('open')
   })
@@ -396,6 +418,20 @@ $(document).ready(function() {
   });
 });
 
+function GlowAnimeControl() {
+  $('.glowAnime').each(function () {
+    var elemPos = $(this).offset().top - 50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("glow");
+    } else {
+      $(this).removeClass("glow");
+    }
+  });
+}
+
+
 function setFullHeight() {
   var hSize = $(window).height();
   $('.hero-slider').height(hSize);
@@ -407,7 +443,20 @@ function setWidth(width) {
     $('.hero-date').css('width', 'auto')
   }
 }
-
+function slideAnime() {
+  $('.leftAnime').each(function(){
+    var elemPos = $(this).offset().top-50;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("slideAnimeLeftRight")
+      $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft")
+    } else {
+      $(this).removeClass("slideAnimeLeftRight");
+      $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft")
+    }
+  });
+}
 
 
 let element = document.getElementById('hero')

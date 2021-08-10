@@ -301,7 +301,9 @@ article h2 {
   position: relative;
   text-shadow: 0 0 3px pink;
 }
-.hero-catch span {
+.hero-catch .catch-01,
+.hero-catch .catch-02,
+.hero-catch .catch-03 {
   position: absolute;
   opacity: 0;
   transform: translateY(10px);
@@ -985,15 +987,13 @@ a.btn--circle:hover {
   }
 }
 
-/*　波紋　*/
-
+/*波紋*/
 .circle span.mask{
 	position: relative;/*波紋の基点となる位置を定義*/
     display: block;
     line-height: 0;/*行の高さを0にする*/
     overflow: hidden;/*拡大してはみ出る要素を隠す*/
 }
-
 .circle span.mask::before {
 	position: absolute;
 	content:"";
@@ -1005,11 +1005,9 @@ a.btn--circle:hover {
 	background: rgba(255,255,255,0.4);/*円の背景色*/
   z-index: 1000;
 }
-
 .circle:hover span.mask::before {/*hoverした時の変化*/
 	animation: circle 0.75s;/*アニメーションの名前と速度を定義*/
 }
-
 @keyframes circle {
   0% {
   transform: scale(0);
@@ -1023,7 +1021,7 @@ a.btn--circle:hover {
   }
 }
 
-// 画像モーダル
+/* 画像モーダル */
 .modal {
   position: fixed;
   top: 0;
@@ -1056,7 +1054,7 @@ a.btn--circle:hover {
   text-decoration: none;
 }
 
-/*　画像拡大＋回転　*/
+/*画像拡大＋回転*/
 .zoomInRotate img {
 	transform: scale(1);
 	transition: .3s ease-in-out;
@@ -1068,4 +1066,58 @@ a.btn--circle:hover {
     display: block;
     line-height: 0;/*行の高さを0にする*/
     overflow: hidden;/*拡大してはみ出る要素を隠す*/
+}
+
+/*========= 流れるテキスト ===============*/
+.slide-in {
+	overflow: hidden;
+}
+.slide-in_inner {
+	display: inline-block;
+}
+.leftAnime{
+  opacity: 0;
+}
+/*左右のアニメーション*/
+.slideAnimeLeftRight {
+  animation-name:slideTextX100;
+  animation-duration:0.8s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes slideTextX100 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slideAnimeRightLeft {
+  animation-name:slideTextX-100;
+  animation-duration:0.8s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+@keyframes slideTextX-100 {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*========= 光りながら出現させるためのCSS ===============*/
+.glowAnime span{opacity: 0;}
+/*アニメーションで透過を0から1に変化させtext-shadowをつける*/
+.glowAnime.glow span{ animation:glow_anime_on 1s ease-out forwards; }
+@keyframes glow_anime_on {
+  0% { opacity:0; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+  50% { opacity:1;text-shadow: 0 0 10px #fff,0 0 15px #fff; }
+  100% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
 }

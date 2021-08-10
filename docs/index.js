@@ -41732,17 +41732,6 @@ module.exports = function (module) {
 
 /***/ }),
 
-/***/ "./src/img/movie-01.mp4":
-/*!******************************!*\
-  !*** ./src/img/movie-01.mp4 ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/movie-01.mp4";
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -41769,12 +41758,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_style_scss__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _img_movie_01_mp4__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./img/movie-01.mp4 */ "./src/img/movie-01.mp4");
-/* harmony import */ var _img_movie_01_mp4__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_img_movie_01_mp4__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var object_fit_images__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! object-fit-images */ "./node_modules/object-fit-images/dist/ofi.common-js.js");
-/* harmony import */ var object_fit_images__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(object_fit_images__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var objectFitPolyfill__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! objectFitPolyfill */ "./node_modules/objectFitPolyfill/dist/objectFitPolyfill.min.js");
-/* harmony import */ var objectFitPolyfill__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(objectFitPolyfill__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var object_fit_images__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! object-fit-images */ "./node_modules/object-fit-images/dist/ofi.common-js.js");
+/* harmony import */ var object_fit_images__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(object_fit_images__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var objectFitPolyfill__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! objectFitPolyfill */ "./node_modules/objectFitPolyfill/dist/objectFitPolyfill.min.js");
+/* harmony import */ var objectFitPolyfill__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(objectFitPolyfill__WEBPACK_IMPORTED_MODULE_10__);
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -41795,30 +41782,28 @@ imagesLoaded__WEBPACK_IMPORTED_MODULE_4___default.a.makeJQueryPlugin(jquery__WEB
 
  // import { escape_html, BOX_ID, changeBlank } from './module/util'
 
-
-
-var vidtag = document.getElementById('bg-video');
-vidtag.addEventListener('canplay', function () {
-  var ua = navigator.userAgent;
-
-  if (/(iPhone|iPod)/.test(ua) && /OS 9/.test(ua)) {
-    // iOS9以下のサファリは自動再生されない
-    // これで可能か調査する
-    var lastTime = Date.now();
-    var ctime = 0;
-    setInterval(function () {
-      var curTime = Date.now();
-      var diff = Date.now() - lastTime;
-      lastTime = curTime;
-      ctime += diff / 1000;
-      vidtag.currentTime = ctime;
-
-      if (vidtag.duration <= vidtag.currentTime) {
-        ctime = 0;
-      }
-    }, 1000 / 30);
-  }
-}, false); // vidtag.src = mov;
+ // import mov from './img/movie-01.mp4';
+// const vidtag = document.getElementById('bg-video');
+// vidtag.addEventListener('canplay', function() {
+//   const ua = navigator.userAgent;
+//   if(/(iPhone|iPod)/.test(ua) && /OS 9/.test(ua)) {
+//     // iOS9以下のサファリは自動再生されない
+//     // これで可能か調査する
+//     let lastTime = Date.now();
+//     let ctime = 0;
+//     setInterval(function() {
+//       const curTime = Date.now();
+//       const diff = Date.now() - lastTime;
+//       lastTime = curTime;
+//       ctime += diff/1000;
+//       vidtag.currentTime = ctime;
+//       if(vidtag.duration <= vidtag.currentTime) {
+//         ctime = 0;
+//       }
+//     }, 1000/30);
+//   }
+// }, false)
+// vidtag.src = mov;
 
 
 
@@ -41903,6 +41888,8 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()('.swiper-wrapper').imagesLoaded({
         complete: function complete() {
           window.cancelAnimationFrame(loading.requestID);
           jquery__WEBPACK_IMPORTED_MODULE_2___default()('.loading').remove();
+          slideAnime();
+          GlowAnimeControl();
         }
       });
     }
@@ -42100,6 +42087,24 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scroll(function () {
   }
 });
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
+  var element = jquery__WEBPACK_IMPORTED_MODULE_2___default()(".glowAnime");
+  element.each(function () {
+    var text = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).text();
+    var textbox = "";
+    text.split('').forEach(function (t, i) {
+      if (t !== " ") {
+        if (i < 10) {
+          textbox += '<span style="animation-delay:.' + i + 's;">' + t + '</span>';
+        } else {
+          var n = i / 10;
+          textbox += '<span style="animation-delay:' + n + 's;">' + t + '</span>';
+        }
+      } else {
+        textbox += t;
+      }
+    });
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).html(textbox);
+  });
   setFullHeight();
   fetch();
   fadeAnime();
@@ -42108,7 +42113,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   });
 
   if (!document.currentScript) {
-    object_fit_images__WEBPACK_IMPORTED_MODULE_10___default()(); //IE only
+    object_fit_images__WEBPACK_IMPORTED_MODULE_9___default()(); //IE only
   }
 
   var elements = document.querySelectorAll('.fit');
@@ -42139,6 +42144,20 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   });
 });
 
+function GlowAnimeControl() {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.glowAnime').each(function () {
+    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50;
+    var scroll = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scrollTop();
+    var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass("glow");
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass("glow");
+    }
+  });
+}
+
 function setFullHeight() {
   var hSize = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
   jquery__WEBPACK_IMPORTED_MODULE_2___default()('.hero-slider').height(hSize);
@@ -42150,6 +42169,22 @@ function setWidth(width) {
   } else {
     jquery__WEBPACK_IMPORTED_MODULE_2___default()('.hero-date').css('width', 'auto');
   }
+}
+
+function slideAnime() {
+  jquery__WEBPACK_IMPORTED_MODULE_2___default()('.leftAnime').each(function () {
+    var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).offset().top - 50;
+    var scroll = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scrollTop();
+    var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).addClass("slideAnimeLeftRight");
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");
+    } else {
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).removeClass("slideAnimeLeftRight");
+      jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
+    }
+  });
 }
 
 var element = document.getElementById('hero');
