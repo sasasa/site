@@ -1779,6 +1779,7 @@ a.btn--circle {
   padding: 20px 0 0;
   border-radius: 50%;
   color: #fff;
+  text-shadow: 0 0 3px #000000;
   background: #eb6877;
   -webkit-box-shadow: 0 7px 0 #e53b4e;
   box-shadow: 0 7px 0 #e53b4e; }
