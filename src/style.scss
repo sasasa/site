@@ -61,7 +61,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video, a {
   box-sizing: border-box;
@@ -76,18 +76,18 @@ img {
   max-width:100%;
   height:auto;
 }
-a:link { 
+a:link {
   color: $baseColor;
   text-decoration: underline;
 }
-a:visited { 
+a:visited {
   color: $baseColor;
 }
-a:hover { 
+a:hover {
   color: $baseColor;
   text-decoration: none;
 }
-a:active { 
+a:active {
   color: $baseColor;
 }
 
@@ -236,9 +236,11 @@ article h2 {
 }
 .hero-slider {
   height: 100vh;
+  overflow: hidden;
 }
 .hero-wrapper {
   max-height: initial;
+  overflow: hidden;
 }
 .hero-slider .item {
   height:100%;
@@ -247,6 +249,8 @@ article h2 {
   background-position: center;
   background-repeat: no-repeat;
   margin: 0;
+  overflow: hidden;
+  transform-origin: center;
 }
 .hero-slider .item video {
   height: 100%;
@@ -329,7 +333,7 @@ article h2 {
 .catch-02 {
   animation-delay: 3.2s;
 }
-.catch-03 { 
+.catch-03 {
   animation-delay: 3.4s;
 }
 @keyframes fadeIn{
@@ -370,7 +374,7 @@ article h2 {
   top:19px;
   left:30px;
   width: 50px;
-  height: 121px;  
+  height: 121px;
 }
 .header-logo a{
   display: block;
@@ -379,7 +383,7 @@ article h2 {
 }
 .header-logo a:hover{
   opacity: 0.5;
-  transition: opacity 0.2s ease-out;  
+  transition: opacity 0.2s ease-out;
 }
 /* ---------------------------------------- */
 /* header */
@@ -433,13 +437,13 @@ header ul li a:hover {
   position: relative;
   box-sizing: border-box;
   padding: 30px 40px 25px;
-  display: block;  
+  display: block;
 }
 @mixin first {
   border-radius: $radius $radius 0 0;
   border-top: 1px solid $borderColor;
   border-left: 1px solid $borderColor;
-  border-right: 1px solid $borderColor;  
+  border-right: 1px solid $borderColor;
 }
 @mixin second {
   border-left: 1px solid $borderColor;
@@ -516,7 +520,7 @@ header ul li a:hover {
 }
 .ashtanga li {
   list-style-type: circle;
-  list-style-position: inside; 
+  list-style-position: inside;
 }
 .ashtanga div {
   margin-top: 2em;
@@ -525,7 +529,7 @@ header ul li a:hover {
   margin-top: 3em;
 }
 .dl-outline li {
-  list-style-position: inside;  
+  list-style-position: inside;
 }
 
 /* ---------------------------------------- */
@@ -632,6 +636,8 @@ header ul li a:hover {
   background-image: url(./img/danwang.jpg);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 
@@ -682,7 +688,7 @@ header ul li a:hover {
   width:auto;
   padding-top:20px;
   padding-left:14px;
-  padding-bottom: 20px;  
+  padding-bottom: 20px;
 }
 .dl-outline dd{
   margin-bottom: 0;

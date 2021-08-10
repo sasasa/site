@@ -342,7 +342,19 @@ function fadeAnime(){
 
 $(window).scroll(function (){
   fadeAnime()
-});
+
+  var elemPos = $('#instructor .photo').offset().top+200;
+  var scroll = $(window).scrollTop();
+  var windowHeight = $(window).height()
+  var pos = scroll - elemPos + windowHeight
+  // console.log(pos)
+  if (pos > 0 && $(window).width() > 800) {
+    $('#instructor .photo').css({
+      backgroundSize: 'auto ' + (100 + pos/10)+'%',
+      backgroundPosition: '50% ' + pos/40  + "%",
+    })
+  }
+})
 
 $(document).ready(function(){
   setFullHeight()

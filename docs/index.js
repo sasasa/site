@@ -42087,6 +42087,17 @@ function fadeAnime() {
 
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scroll(function () {
   fadeAnime();
+  var elemPos = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#instructor .photo').offset().top + 200;
+  var scroll = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).scrollTop();
+  var windowHeight = jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).height();
+  var pos = scroll - elemPos + windowHeight; // console.log(pos)
+
+  if (pos > 0 && jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).width() > 800) {
+    jquery__WEBPACK_IMPORTED_MODULE_2___default()('#instructor .photo').css({
+      backgroundSize: 'auto ' + (100 + pos / 10) + '%',
+      backgroundPosition: '50% ' + pos / 40 + "%"
+    });
+  }
 });
 jquery__WEBPACK_IMPORTED_MODULE_2___default()(document).ready(function () {
   setFullHeight();

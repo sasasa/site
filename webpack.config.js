@@ -9,7 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 // ビルド先のフォルダをcleanする
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // jsからcosole.logやコメントを削除
-const TerserPlugin = require('terser-webpack-plugin');  
+const TerserPlugin = require('terser-webpack-plugin');
 // favicon
 // const WebappWebpackPlugin = require('webapp-webpack-plugin')
 // const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
