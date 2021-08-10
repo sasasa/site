@@ -20,8 +20,8 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 import './style.scss'
 
-// import mov from './img/movie-01.mp4';
-// const vidtag = document.getElementById('bg-video');
+import mov from './img/movie-01.mp4';
+const vidtag = document.getElementById('bg-video');
 // vidtag.addEventListener('canplay', function() {
 //   const ua = navigator.userAgent;
 //   if(/(iPhone|iPod)/.test(ua) && /OS 9/.test(ua)) {
