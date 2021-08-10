@@ -1886,9 +1886,10 @@ a.btn--circle:hover {
   border-radius: 50%;
   /*円の角丸指定*/
   background: rgba(255, 255, 255, 0.4);
-  /*円の背景色*/ }
+  /*円の背景色*/
+  z-index: 1000; }
 
-.circle span.mask:hover::before {
+.circle:hover span.mask::before {
   /*hoverした時の変化*/
   -webkit-animation: circle 0.75s;
           animation: circle 0.75s;
@@ -1950,6 +1951,24 @@ a.btn--circle:hover {
 .close-btn a {
   color: #fff;
   text-decoration: none; }
+
+/*　画像拡大＋回転　*/
+.zoomInRotate img {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out; }
+
+.zoomInRotate:hover img {
+  -webkit-transform: rotate(5deg) scale(1.2);
+          transform: rotate(5deg) scale(1.2); }
+
+.zoomInRotate .mask {
+  display: block;
+  line-height: 0;
+  /*行の高さを0にする*/
+  overflow: hidden;
+  /*拡大してはみ出る要素を隠す*/ }
 
 
 /*# sourceMappingURL=index.css.map*/
