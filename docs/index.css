@@ -939,10 +939,9 @@ article h2 {
 .header-logo {
   position: fixed;
   z-index: 1002;
-  top: 19px;
+  top: 10px;
   left: 30px;
-  width: 50px;
-  height: 121px; }
+  width: 50px; }
 
 .header-logo a {
   display: block;
@@ -954,6 +953,13 @@ article h2 {
   opacity: 0.5;
   -webkit-transition: opacity 0.2s ease-out;
   transition: opacity 0.2s ease-out; }
+
+.header-logo img {
+  display: inline-block;
+  width: 102px;
+  height: 70px;
+  -o-object-fit: contain;
+     object-fit: contain; }
 
 /* ---------------------------------------- */
 /* header */
@@ -1414,6 +1420,12 @@ footer .inner {
   font-size: 13px;
   color: #444;
   line-height: 1.6; }
+
+.footer-logo img {
+  width: 52px;
+  height: 40.3px;
+  -o-object-fit: contain;
+     object-fit: contain; }
 
 @media screen and (min-width: 801px) {
   footer .footer-logo {
@@ -1952,9 +1964,10 @@ a.btn--circle:hover {
   right: 20px;
   top: 0; }
 
-.close-btn a {
+.close-btn span {
   color: #fff;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
 
 /*画像拡大＋回転*/
 .zoomInRotate img {
