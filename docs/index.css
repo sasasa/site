@@ -2059,9 +2059,13 @@ a.btn--circle:hover {
   50% {
     opacity: 1;
     text-shadow: 0 0 10px #fff,0 0 15px #fff; }
+  99% {
+    opacity: 1;
+    text-shadow: 0 0 0 #fff,0 0 0 #fff; }
   100% {
     opacity: 1;
-    text-shadow: 0 0 0 #fff,0 0 0 #fff; } }
+    text-shadow: .04em .04em 0 #fff,.08em .08em 0 #aaa;
+    -webkit-text-shadow: .04em .04em 0 #fff, .08em .08em 0 #aaa; } }
 
 @keyframes glow_anime_on {
   0% {
@@ -2070,9 +2074,13 @@ a.btn--circle:hover {
   50% {
     opacity: 1;
     text-shadow: 0 0 10px #fff,0 0 15px #fff; }
+  99% {
+    opacity: 1;
+    text-shadow: 0 0 0 #fff,0 0 0 #fff; }
   100% {
     opacity: 1;
-    text-shadow: 0 0 0 #fff,0 0 0 #fff; } }
+    text-shadow: .04em .04em 0 #fff,.08em .08em 0 #aaa;
+    -webkit-text-shadow: .04em .04em 0 #fff, .08em .08em 0 #aaa; } }
 
 
 /*# sourceMappingURL=index.css.map*/

@@ -1120,5 +1120,10 @@ a.btn--circle:hover {
 @keyframes glow_anime_on {
   0% { opacity:0; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
   50% { opacity:1;text-shadow: 0 0 10px #fff,0 0 15px #fff; }
-  100% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+  99% { opacity:1; text-shadow: 0 0 0 #fff,0 0 0 #fff;}
+  100% {
+    opacity:1;
+    text-shadow: .04em .04em 0 #fff,.08em .08em 0 #aaa;
+    -webkit-text-shadow: .04em .04em 0 #fff, .08em .08em 0 #aaa;
+  }
 }
