@@ -1125,7 +1125,9 @@ header ul li a:hover {
   margin: 0 auto;
   display: block;
   width: 90px;
-  height: 90px; }
+  height: 90px;
+  -o-object-fit: cover;
+     object-fit: cover; }
 
 .voice h3 {
   font-size: 18px;
