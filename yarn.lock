@@ -1978,7 +1978,9 @@
     "lodash.uniq" "^4.5.0"
 
 "caniuse-lite@^1.0.0", "caniuse-lite@^1.0.30001109", "caniuse-lite@^1.0.30001181":
-  "version" "1.0.30001192"
+  "integrity" "sha512-jUNz+a9blQTQVu4uFcn17uAD8IDizPzQkIKh3LCJfg9BkyIqExYYdyc/ZSlWUSKb8iYiXxKsxbv4zYSvkqjrxw=="
+  "resolved" "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001340.tgz"
+  "version" "1.0.30001340"
 
 "caseless@~0.12.0":
   "resolved" "https://registry.npmjs.org/caseless/-/caseless-0.12.0.tgz"

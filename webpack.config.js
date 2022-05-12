@@ -157,7 +157,7 @@ module.exports = (env, argv) => {
     },
     entry: {
       'index': './src/index.js',
-      'input': './src/input.js'
+      // 'input': './src/input.js'
     },
     output: {
       path: __dirname + '/docs',
@@ -191,14 +191,14 @@ module.exports = (env, argv) => {
         template: "src/index.html",
         minify: true,
       }),
-      new HtmlWebpackPlugin({
-        inlineSource: '.(js|css)$',
-        inject: true,
-        filename: "input.html",
-        chunks: ['input'],
-        template: "src/input.html",
-        minify: true,
-      }),
+      // new HtmlWebpackPlugin({
+      //   inlineSource: '.(js|css)$',
+      //   inject: true,
+      //   filename: "input.html",
+      //   chunks: ['input'],
+      //   template: "src/input.html",
+      //   minify: true,
+      // }),
       new HtmlWebpackInlineSourcePlugin(HtmlWebpackPlugin),
       // new HtmlWebpackInlineSourcePlugin(),
       
