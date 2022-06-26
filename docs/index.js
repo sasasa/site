@@ -12189,21 +12189,21 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
     height: '100%'
   };
 
-  function fillBlack(_abstract) {
+  function fillBlack(abstract) {
     var force = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
-    if (_abstract.attributes && (_abstract.attributes.fill || force)) {
-      _abstract.attributes.fill = 'black';
+    if (abstract.attributes && (abstract.attributes.fill || force)) {
+      abstract.attributes.fill = 'black';
     }
 
-    return _abstract;
+    return abstract;
   }
 
-  function deGroup(_abstract2) {
-    if (_abstract2.tag === 'g') {
-      return _abstract2.children;
+  function deGroup(abstract) {
+    if (abstract.tag === 'g') {
+      return abstract.children;
     } else {
-      return [_abstract2];
+      return [abstract];
     }
   }
 
@@ -12797,9 +12797,8 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
   var mutators = {
     replace: function replace(mutation) {
       var node = mutation[0];
-      var _abstract3 = mutation[1];
-
-      var newOuterHTML = _abstract3.map(function (a) {
+      var abstract = mutation[1];
+      var newOuterHTML = abstract.map(function (a) {
         return toHtml(a);
       }).join('\n');
 
@@ -12813,7 +12812,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
     },
     nest: function nest(mutation) {
       var node = mutation[0];
-      var _abstract4 = mutation[1]; // If we already have a replaced node we do not want to continue nesting within it.
+      var abstract = mutation[1]; // If we already have a replaced node we do not want to continue nesting within it.
       // Short-circuit to the standard replacement
 
       if (~classArray(node).indexOf(config.replacementClass)) {
@@ -12821,10 +12820,9 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
       }
 
       var forSvg = new RegExp("".concat(config.familyPrefix, "-.*"));
-      delete _abstract4[0].attributes.style;
-      delete _abstract4[0].attributes.id;
-
-      var splitClasses = _abstract4[0].attributes.class.split(' ').reduce(function (acc, cls) {
+      delete abstract[0].attributes.style;
+      delete abstract[0].attributes.id;
+      var splitClasses = abstract[0].attributes.class.split(' ').reduce(function (acc, cls) {
         if (cls === config.replacementClass || cls.match(forSvg)) {
           acc.toSvg.push(cls);
         } else {
@@ -12836,13 +12834,10 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
         toNode: [],
         toSvg: []
       });
-
-      _abstract4[0].attributes.class = splitClasses.toSvg.join(' ');
-
-      var newInnerHTML = _abstract4.map(function (a) {
+      abstract[0].attributes.class = splitClasses.toSvg.join(' ');
+      var newInnerHTML = abstract.map(function (a) {
         return toHtml(a);
       }).join('\n');
-
       node.setAttribute('class', splitClasses.toNode.join(' '));
       node.setAttribute(DATA_FA_I2SVG, '');
       node.innerHTML = newInnerHTML;
@@ -13496,7 +13491,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
           var extra = meta.extra;
           extra.attributes[DATA_FA_PSEUDO_ELEMENT] = position;
           findIcon(iconName, prefix).then(function (main) {
-            var _abstract5 = makeInlineSvgAbstract(_objectSpread({}, meta, {
+            var abstract = makeInlineSvgAbstract(_objectSpread({}, meta, {
               icons: {
                 main: main,
                 mask: emptyCanonicalIcon()
@@ -13506,7 +13501,6 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
               extra: extra,
               watchable: true
             }));
-
             var element = DOCUMENT.createElement('svg');
 
             if (position === ':before') {
@@ -13515,7 +13509,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/@ba
               node.appendChild(element);
             }
 
-            element.outerHTML = _abstract5.map(function (a) {
+            element.outerHTML = abstract.map(function (a) {
               return toHtml(a);
             }).join('\n');
             node.removeAttribute(pendingAttribute);
@@ -22867,10 +22861,10 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 
 
   function finalPropName(name) {
-    var _final = jQuery.cssProps[name] || vendorProps[name];
+    var final = jQuery.cssProps[name] || vendorProps[name];
 
-    if (_final) {
-      return _final;
+    if (final) {
+      return final;
     }
 
     if (name in emptyStyle) {
@@ -41785,11 +41779,7 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-// import "es6-promise/auto";
-// import "fetch-polyfill";
 
- // import { JsonBox } from 'jsonbox-node'
-// import moment from 'moment'
 
 
 
@@ -41797,31 +41787,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 imagesLoaded__WEBPACK_IMPORTED_MODULE_4___default.a.makeJQueryPlugin(jquery__WEBPACK_IMPORTED_MODULE_2___default.a);
 
 
- // import { escape_html, BOX_ID, changeBlank } from './module/util'
 
 
 
-var vidtag = document.getElementById('bg-video'); // vidtag.addEventListener('canplay', function() {
-//   const ua = navigator.userAgent;
-//   if(/(iPhone|iPod)/.test(ua) && /OS 9/.test(ua)) {
-//     // iOS9以下のサファリは自動再生されない
-//     // これで可能か調査する
-//     let lastTime = Date.now();
-//     let ctime = 0;
-//     setInterval(function() {
-//       const curTime = Date.now();
-//       const diff = Date.now() - lastTime;
-//       lastTime = curTime;
-//       ctime += diff/1000;
-//       vidtag.currentTime = ctime;
-//       if(vidtag.duration <= vidtag.currentTime) {
-//         ctime = 0;
-//       }
-//     }, 1000/30);
-//   }
-// }, false)
-// vidtag.src = mov;
-
+var vidtag = document.getElementById('bg-video');
 
 
 
@@ -41913,18 +41882,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()('.swiper-wrapper').imagesLoaded({
   });
 });
 var $header = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#header');
-$header.hide(); // const sec = $('.swiper-slide');
-// const nvp = sec.outerHeight() + sec.offset().top;
-// $(window).scroll(function () {
-//   var distanceTop = $(document).scrollTop();
-//   if (distanceTop > nvp) {
-//     $header.show().addClass("scroll")
-//   }
-//   if (distanceTop < nvp) {
-//     $header.removeClass("scroll").hide()
-//   }
-// });
-
+$header.hide();
 jquery__WEBPACK_IMPORTED_MODULE_2___default()('.js-anchor').click(function (e) {
   e.preventDefault();
   var href = jquery__WEBPACK_IMPORTED_MODULE_2___default()(this).attr("href");
@@ -41934,11 +41892,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()('.js-anchor').click(function (e) {
     complete: function complete() {
       document.querySelector('html').classList.remove('open');
     }
-  }); // document.querySelector(href).scrollIntoView({
-  //   behavior: "smooth",
-  //   block: "start"
-  // });
-
+  });
   return false;
 });
 
@@ -41974,81 +41928,6 @@ function initSwiper() {
 }
 
 function fetch() {
-  // const jbn = new JsonBox();
-  // const data = await jbn.read(BOX_ID);
-  // moment.locale("ja", {
-  //   weekdays: ["日", "月", "火", "水", "木", "金", "土"],//dddd
-  //   // weekdaysShort: ["日", "月", "火", "水", "木", "金", "土"]//ddd
-  // })
-  // const startDay = moment(data[0].start, "YYYY.MM.DD")
-  // const clone = moment(startDay)
-  // $('#start').text(escape_html(startDay.format('YYYY.MM.D')))
-  // $('#start_day').text(escape_html(startDay.format('ddd').toUpperCase()))
-  // const lastDay = startDay.add(data[0].term - 1, 'days')
-  // if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
-  //   $('#end').text("")
-  //   $('#end_day').text("")
-  // } else {
-  //   $('#end').text(escape_html(lastDay.format('D')))
-  //   $('#end_day').text(lastDay.format('ddd').toUpperCase())
-  // }
-  // $('#at').text(escape_html(data[0].at))
-  // if(lastDay.format('YYYY.MM.D') == clone.format('YYYY.MM.D')) {
-  //   $('.date').text(escape_html(clone.format('YYYY年MM月DD日(dddd)')))
-  // } else {
-  //   $('.date').text(
-  //     escape_html(clone.format('YYYY年MM月DD日(dddd)')) +
-  //     '～' +
-  //     escape_html(lastDay.format('MM月DD日(dddd)'))
-  //   )
-  // }
-  // $('.event_name').text(escape_html(changeBlank(data[0].event_name)))
-  // $('.venue').text(escape_html(changeBlank(data[0].venue)))
-  // $('.time').text(escape_html(changeBlank(data[0].time)))
-  // $('.fee').text(escape_html(changeBlank(data[0].fee)))
-  // $('.content').text(escape_html(changeBlank(data[0].content)))
-  // $('.hashtag').text(escape_html(changeBlank(data[0].hashtag)))
-  // if(data[0].fee_item1) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item1))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee1))}</dd>`);
-  // }
-  // if(data[0].fee_item2) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item2))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee2))}</dd>`);
-  // }
-  // if(data[0].fee_item3) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item3))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee3))}</dd>`);
-  // }
-  // if(data[0].fee_item4) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item4))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee4))}</dd>`);
-  // }
-  // if(data[0].fee_item5) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item5))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee5))}</dd>`);
-  // }
-  // if(data[0].fee_item6) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item6))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee6))}</dd>`);
-  // }
-  // if(data[0].fee_item7) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item7))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee7))}</dd>`);
-  // }
-  // if(data[0].fee_item8) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item8))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee8))}</dd>`);
-  // }
-  // if(data[0].fee_item9) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item9))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee9))}</dd>`);
-  // }
-  // if(data[0].fee_item10) {
-  //   $('#price-table').append(`<dt>${escape_html(changeBlank(data[0].fee_item10))}</dt>`);
-  //   $('#price-table').append(`<dd>${escape_html(changeBlank(data[0].fee10))}</dd>`);
-  // }
-  // setWidth(data[0].width)
   var isRunning = false;
   jquery__WEBPACK_IMPORTED_MODULE_2___default()(window).resize(function (e) {
     // 呼び出されるまで何もしない

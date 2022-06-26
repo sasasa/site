@@ -8,8 +8,8 @@ module.exports = function(api) {
       {
         // サポートするブラウザ、この設定に応じて、必要な polyfill のみが import される
         "targets": {
-          "ie": 11,
-          "node": "current",
+          // "ie": 11,
+          // "node": "current",
         },
         // 必要な polyfill のみを import させたい場合、'usage'を指定する（必須）
         useBuiltIns: 'usage',
@@ -17,7 +17,7 @@ module.exports = function(api) {
         corejs: 3,
         // trueにすると利用しているポリフィルなどの情報が出力される
         // polyfill が import されているかどうかを確認するためのものなので必須ではない
-        debug: true
+        debug: false
       }
     ]
   ];

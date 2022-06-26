@@ -170,10 +170,10 @@ module.exports = (env, argv) => {
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
       }),
-      new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|ja/),
-      new webpack.ProvidePlugin({
-        moment: "moment"
-      }),
+      // new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|ja/),
+      // new webpack.ProvidePlugin({
+      //   moment: "moment"
+      // }),
       new webpack.ProvidePlugin({
         Velocity: 'velocity-animate'
       }),
