@@ -7,10 +7,8 @@ module.exports = function(api) {
       '@babel/preset-env',
       {
         // サポートするブラウザ、この設定に応じて、必要な polyfill のみが import される
-        "targets": {
-          // "ie": 11,
-          // "node": "current",
-        },
+        "targets": [">10% in JP", "not ie <= 11", "not op_mini all"],
+
         // 必要な polyfill のみを import させたい場合、'usage'を指定する（必須）
         useBuiltIns: 'usage',
         // polyfill を利用する core-js のバージョンを指定する（指定しないとバージョン2が利用され警告が出力される）

@@ -1,6 +1,6 @@
-import 'intersection-observer';
+// import 'intersection-observer';
 
-import '@babel/polyfill';
+// import '@babel/polyfill';
 import $ from 'jquery';
 
 import Swiper from 'swiper';
@@ -15,10 +15,10 @@ import '@fortawesome/fontawesome-free/js/brands';
 import './style.scss'
 
 import mov from './img/movie-01.mp4';
-const vidtag = document.getElementById('bg-video');
-import objectFitImages from 'object-fit-images'
+// const vidtag = document.getElementById('bg-video');
+// import objectFitImages from 'object-fit-images'
 
-import 'objectFitPolyfill'
+// import 'objectFitPolyfill'
 
 (function() {
   const requestAnimationFrame = window.requestAnimationFrame ||
@@ -248,9 +248,6 @@ $(document).ready(function() {
     document.querySelector('html').classList.toggle('open')
   })
 
-  if(!document.currentScript) {
-    objectFitImages()//IE only
-  }
   const elements = document.querySelectorAll('.fit');
   objectFitPolyfill(elements);
 
